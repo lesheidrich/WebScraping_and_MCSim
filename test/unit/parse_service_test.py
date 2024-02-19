@@ -6,8 +6,8 @@ methods for parsing HTML content related to basketball player data from the Real
 """
 
 import unittest
-import pandas as pd
 from test.content.parse_service_html import DEPTH_HTML, PLAYER_HTML, INDIVIDUAL_HTML
+import pandas as pd
 from webscraper.parse_service import RealGMParser
 
 

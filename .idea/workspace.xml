@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="secrets put back">
-      <change afterPath="$PROJECT_DIR$/test/content/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/content/parse_service_html.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/parse_service_test.py" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="test parser done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/linter/.pylintrc" beforeDir="false" afterPath="$PROJECT_DIR$/test/linter/.pylintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/parse_service_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/parse_service_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webscraper/parse_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/parse_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708349895521</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test parser done">
+      <option name="closed" value="true" />
+      <created>1708359311736</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708359311736</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -255,6 +261,7 @@
     <MESSAGE value="lint and gitignore" />
     <MESSAGE value="selenium_service decorated and refactored" />
     <MESSAGE value="secrets put back" />
-    <option name="LAST_COMMIT_MESSAGE" value="secrets put back" />
+    <MESSAGE value="test parser done" />
+    <option name="LAST_COMMIT_MESSAGE" value="test parser done" />
   </component>
 </project>
