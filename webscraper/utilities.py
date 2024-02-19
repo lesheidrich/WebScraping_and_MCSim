@@ -213,6 +213,19 @@ class ProxyKit:
         return False
 
     @staticmethod
+    def is_valid_ip(ip_address: str) -> bool:
+        """
+        Validates proxy string format.
+        :param ip_address: ip address in format: '127.0.0.1'
+        :return: True for proper format, otherwise False
+        """
+        proxy_pattern = re.compile(r'^(\d{1,3}\.){3}\d{1,3}$')
+        if proxy_pattern.match(ip_address):
+            return True
+
+        return False
+
+    @staticmethod
     def proxy_to_dict(proxy: str) -> dict | None:
         """
         Function utilizes ProxyKit.is_valid_proxy to check proxy string validity, then

@@ -105,6 +105,24 @@ class TestProxyKit(unittest.TestCase):
         actual = ProxyKit.is_valid_proxy(improper)
         self.assertFalse(actual)
 
+    def test_is_valid_ip_proper(self):
+        """
+        Ensures proper functionality of ip string validation function.
+        :return: None
+        """
+        proper = "127.0.0.1"
+        actual = ProxyKit.is_valid_ip(proper)
+        self.assertTrue(actual)
+
+    def test_is_valid_ip_improper(self):
+        """
+        Ensures proper functionality of ip string validation through improper proxy test.
+        :return: None
+        """
+        improper = "127.0.0"
+        actual = ProxyKit.is_valid_ip(improper)
+        self.assertFalse(actual)
+
     def test_proxy_to_dict_proper(self):
         """
         Tests proxy conversion after proxy testing with correct parameters.
