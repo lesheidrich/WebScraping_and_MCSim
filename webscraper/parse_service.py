@@ -3,6 +3,8 @@ from io import StringIO
 import pandas as pd
 import bs4
 
+from log.logger import Logger
+
 
 class RealGMParser:
     @staticmethod
@@ -18,8 +20,7 @@ class RealGMParser:
     @staticmethod
     def full_name_populate_depth_position(player_name, player_df, r, depth_df, ind, col):
         if player_name in player_df["Player"].values:
-            # depth = r[depth_df.columns[0]] if r[depth_df.columns[0]] in ["Starters", "Lim PT"] else str(ind + 1)
-            depth = 1 if r[depth_df.columns[0]] == "Starters" else (
+            depth = "1" if r[depth_df.columns[0]] == "Starters" else (
                 r[depth_df.columns[0]] if r[depth_df.columns[0]] == "Lim PT" else str(ind + 1))
             player_index = player_df.index[player_df["Player"] == player_name]
             player_df.at[player_index[0], "Depth"] = depth
@@ -29,8 +30,7 @@ class RealGMParser:
     @staticmethod
     def initial_name_populate_depth_position(player_df, player_name, r, depth_df, ind, col):
         if player_df['Player'].apply(lambda x: bool(re.search(player_name, x))).any():
-            # depth = r[depth_df.columns[0]] if r[depth_df.columns[0]] in ["Starters", "Lim PT"] else str(ind + 1)
-            depth = 1 if r[depth_df.columns[0]] == "Starters" else (
+            depth = "1" if r[depth_df.columns[0]] == "Starters" else (
                 r[depth_df.columns[0]] if r[depth_df.columns[0]] == "Lim PT" else str(ind + 1))
             player_index = player_df.index[player_df['Player'].apply(lambda x: bool(re.search(player_name, x)))]
             player_df.at[player_index[0], "Depth"] = depth
@@ -50,19 +50,8 @@ class RealGMParser:
                     if not (RealGMParser.full_name_populate_depth_position(name, df_player, row, df_depth, i, column) or
                             RealGMParser.initial_name_populate_depth_position(df_player, pattern, row, df_depth, i,
                                                                               column)):
-                        print(f"Player {name} is missing from the Players table!")
-                    # if name in df_player["Player"].values:
-                    #     depth = row[df_depth.columns[0]] if row[df_depth.columns[0]] in ["Starters", "Lim PT"] else i+1
-                    #     player_index = df_player.index[df_player["Player"] == name]
-                    #     df_player.at[player_index[0], "Depth"] = depth
-                    #     df_player.at[player_index[0], "Position"] = column
-                    # elif df_player['Player'].apply(lambda x: bool(re.search(pattern, x))).any():
-                    #     depth = row[df_depth.columns[0]] if row[df_depth.columns[0]] in ["Starters", "Lim PT"] else i+1
-                    #     player_index = df_player.index[df_player['Player'].apply(lambda x: bool(re.search(pattern, x)))]
-                    #     df_player.at[player_index[0], "Depth"] = depth
-                    #     df_player.at[player_index[0], "Position"] = column
-                    # else:
-                    #     print(f"Player {name} is missing from the Players table!")
+                        log = Logger(log_file="app_test_log.log", name="Depth Parser", log_level="INFO")
+                        log.info(f"Player {name} is missing from the Players table!")
 
     @staticmethod
     def players_df_add_columns(df):

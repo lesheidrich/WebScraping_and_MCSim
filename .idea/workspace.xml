@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="selenium_service decorated and refactored" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="secrets put back">
+      <change afterPath="$PROJECT_DIR$/test/content/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/content/parse_service_html.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/parse_service_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscraper/parse_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/parse_service.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +46,16 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python tests.Python tests for logger_test.TestLogger.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_depth_table_2_df.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_full_name_populate_depth_position.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_html_table_2_df.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_html_table_append_df.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_initial_name_populate_depth_position.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_depth_2_players.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_footnote_unavailable.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_footnote_unavailable_not_found.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_players_df_add_columns.executor": "Run",
     "Python tests.Python tests for proxy_handler_test.TestProxyHandler.executor": "Run",
     "Python tests.Python tests for selenium_service_test.TestChromeDriver.executor": "Run",
     "Python tests.Python tests for selenium_service_test.TestFirefoxDriver.executor": "Run",
@@ -49,17 +67,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/dblin/PycharmProjects/WebScraping_and_MCSim/test",
+    "last_opened_file_path": "C:/Users/dblin/PycharmProjects/WebScraping_and_MCSim",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\linter" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\unit" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\webscraper\proxy" />
-      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\webscraper" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
   <component name="RunManager" selected="Python.regression_test">
@@ -107,7 +128,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for proxy_handler_test.TestProxyHandler" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for parse_service_test.TestRealGMParser" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,11 +139,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;proxy_handler_test.TestProxyHandler&quot;" />
+      <option name="_new_target" value="&quot;parse_service_test.TestRealGMParser&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for selenium_service_test.TestChromeDriver" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for parse_service_test.TestRealGMParser.test_full_name_populate_depth_position" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -133,11 +154,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;selenium_service_test.TestChromeDriver&quot;" />
+      <option name="_new_target" value="&quot;parse_service_test.TestRealGMParser.test_full_name_populate_depth_position&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for selenium_service_test.TestFirefoxDriver" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for parse_service_test.TestRealGMParser.test_html_table_append_df" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,11 +169,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;selenium_service_test.TestFirefoxDriver&quot;" />
+      <option name="_new_target" value="&quot;parse_service_test.TestRealGMParser.test_html_table_append_df&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for selenium_service_test.TestWebDriverFactory" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for parse_service_test.TestRealGMParser.test_parse_depth_2_players" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,17 +184,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;selenium_service_test.TestWebDriverFactory&quot;" />
+      <option name="_new_target" value="&quot;parse_service_test.TestRealGMParser.test_parse_depth_2_players&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.regression_test" />
-        <item itemvalue="Python tests.Python tests for proxy_handler_test.TestProxyHandler" />
-        <item itemvalue="Python tests.Python tests for selenium_service_test.TestWebDriverFactory" />
-        <item itemvalue="Python tests.Python tests for selenium_service_test.TestChromeDriver" />
-        <item itemvalue="Python tests.Python tests for selenium_service_test.TestFirefoxDriver" />
+        <item itemvalue="Python tests.Python tests for parse_service_test.TestRealGMParser" />
+        <item itemvalue="Python tests.Python tests for parse_service_test.TestRealGMParser.test_full_name_populate_depth_position" />
+        <item itemvalue="Python tests.Python tests for parse_service_test.TestRealGMParser.test_html_table_append_df" />
+        <item itemvalue="Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_depth_2_players" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708349758296</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="secrets put back">
+      <option name="closed" value="true" />
+      <created>1708349895521</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708349895521</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,6 +254,7 @@
     <MESSAGE value="webscraper reinitialization" />
     <MESSAGE value="lint and gitignore" />
     <MESSAGE value="selenium_service decorated and refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="selenium_service decorated and refactored" />
+    <MESSAGE value="secrets put back" />
+    <option name="LAST_COMMIT_MESSAGE" value="secrets put back" />
   </component>
 </project>
