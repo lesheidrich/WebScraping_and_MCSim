@@ -1,5 +1,4 @@
 import unittest
-
 from test.linter.linter import TestLint
 from test.unit.selenium_service_test import TestWebDriverFactory, TestChromeDriver, TestFirefoxDriver
 from test.unit.webscraper_utilities_test import TestWebKit, TestProxyKit
