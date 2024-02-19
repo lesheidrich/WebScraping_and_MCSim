@@ -3,7 +3,8 @@
 
 disable=
     too-few-public-methods,
-    protected-access
+    protected-access,
+    expression-not-assigned
 
 max-line-length=110
 

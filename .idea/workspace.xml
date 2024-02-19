@@ -4,42 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/WebScraping_and_MCSim.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_secrets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/integration/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/linter/.pylintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/linter/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/linter/linter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/logger_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/proxy_handler_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/selenium_service_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/webscraper_utilities_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/parse_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/proxy/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/proxy/proxies_free-updated.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/proxy/proxies_full.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/proxy/proxies_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/proxy/proxy_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/selenium_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/utilities.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webscraper/webscraper.py" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="webscraper reinitialization">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/linter/.pylintrc" beforeDir="false" afterPath="$PROJECT_DIR$/test/linter/.pylintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/linter/linter.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/linter/linter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,9 +198,20 @@
       <option name="presentableId" value="Default" />
       <updated>1708340286792</updated>
     </task>
+    <task id="LOCAL-00001" summary="webscraper reinitialization">
+      <option name="closed" value="true" />
+      <created>1708344062381</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708344062382</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="webscraper reinitialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="webscraper reinitialization" />
   </component>
 </project>
