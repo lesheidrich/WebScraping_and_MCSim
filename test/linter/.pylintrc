@@ -1,0 +1,9 @@
+[MASTER]
+
+
+disable=
+    too-few-public-methods,
+    protected-access
+
+max-line-length=110
+
