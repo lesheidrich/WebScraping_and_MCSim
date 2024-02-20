@@ -1,16 +1,11 @@
-from typing import Optional, Literal
-
-from pandas import DataFrame
+from typing import Optional
 from controller.dto_service import DataTransferObject, Persist
+from log.logger import Logger
 
 
 class ScrapeControl:
     def __init__(self, proxies_csv: Optional[str], season: str, team: str,
                  check_proxies: bool = False, db_host: Optional[str] = None):
-        # scrape_method: Literal["firefox_selenium_scrape", "firefox_selenium_proxy_scrape",
-        #                        "chrome_selenium_scrape", "chrome_selenium_proxy_scrape",
-        #                        "requests_scrape", "requests_proxy_scrape",
-        #                        "scrapy_scrape", "scrapy_proxy_scrape"]):
         self.dto = DataTransferObject(proxies_csv, check_proxies)
         self.db_host = db_host
         self.players = []
@@ -21,33 +16,59 @@ class ScrapeControl:
         self.urls = self.set_link_tree()
         self.in_playoffs = Persist.team_in_playoffs(self.team, self.season, db_host)
         self.df_depth = None
+        self.log = Logger(log_file="app_test_log.log", name="Scrape Control", log_level="INFO")
 
     def run_all(self, scrape_method: str) -> None:
+        """
+        Method scrapes and persists all tables from RealGM for specified season and team.
+        The link tree is parsed to account for the team playing in the playoffs, and
+        removes playoff links otherwise. It then proceeds to scrape.
+        In case of an error during scraping, the process attempts to continue on using
+        Firefox WebDriver for the page that caused the error (in case website's js blocks
+        scrape attempt).
+        :param scrape_method: str of specified scrape method to utilize
+        :return: None
+        """
         url_depth = f"{self.base}s/{self.team}/Depth_Charts"
         self.df_depth = self.dto.new_depth_df(scrape_method, url_depth, self.season)
 
         for category, (links, tables) in self.urls.items():
-            print(f"Category: {category}")
+            self.log.info(f"Scraping category: {category}, team: {self.team}, season: {self.season}.")
             for link, table in zip(links, tables):
                 if (not self.in_playoffs and "Playoff" not in link) or self.in_playoffs:
                     try:
                         method = getattr(self, f"process_{category}")
                         method(scrape_method, link, table)
                     except Exception as e:
+                        self.log.warning(f"Scrape method {scrape_method} failed for {link} on table {table}."
+                                         f" {e}")
                         print(f"LOG: scrape method {scrape_method} failed for {link} on table {table}. {e}")
                         method = getattr(self, f"process_{category}")
                         method("firefox_selenium_scrape", link, table)
 
-    def run_single(self, category_type: str, scrape_method: str):
+    def run_single(self, category_type: str, scrape_method: str) -> None:
+        """
+        Runs specified scrape and persist method. Use to process only the team, individual, or
+        player table.
+        :param category_type: category to scrape: 'team', 'individual', 'player'
+        :param scrape_method: str of chosen scrape method
+        :return: None
+        """
         links = self.urls[category_type]
         method = getattr(self, f"process_{category_type}")
 
         for _ in range(len(links[0])):
             if (not self.in_playoffs and "Playoff" not in links[0][_]) or self.in_playoffs:
-                print(links[0][_], links[1][_])
                 method(scrape_method, links[0][_], links[1][_])
 
     def process_player(self, scrape_method: str, url: str, table_name: str) -> None:
+        """
+        Scrapes player data from specified RealGM URL to specified table in db.
+        :param scrape_method: str of chosen scrape method
+        :param url: str URL of website to scrape
+        :param table_name: str name of table to populate with scraped data
+        :return: None
+        """
         if self.df_depth is None:
             url_depth = f"{self.base}s/{self.team}/Depth_Charts"
             self.df_depth = self.dto.new_depth_df(scrape_method, url_depth, self.season)
@@ -58,19 +79,38 @@ class ScrapeControl:
         Persist.insert(df_player, table_name, "player", self.db_host)
 
     def process_individual(self, scrape_method: str, url: str, table_name: str) -> None:
+        """
+        Scrapes individual tables from RealGM to specified table in database.
+        Method follows next page link from initial page to gather entire table
+        for the specified team and season.
+        :param scrape_method: str of chosen scrape method
+        :param url: str URL of website to scrape
+        :param table_name: str name of table to populate with scraped data
+        :return: None
+        """
         df_individual = self.dto.merged_individual_df(scrape_method, url)
         Persist.insert(df_individual, table_name, "individual", self.db_host)
 
     def process_team(self, scrape_method: str, url: str, table_name: str) -> None:
+        """
+        Scrapes team table from RealGM to specified table in database.
+        :param scrape_method: str of chosen scrape method
+        :param url: str URL of website to scrape
+        :param table_name: str name of table to populate with scraped data
+        :return: None
+        """
         if not Persist.team_in_db(self.season, table_name, self.db_host):
-            print(f"Adding team {self.team} with season {self.season}")
             df_team = self.dto.new_team_df(scrape_method, url)
             df_team['Season'] = self.season
             Persist.insert(df_team, table_name, "team", self.db_host)
         else:
-            print(f"Team {self.team} with season {self.season} is already in the database.")
+            self.log.info(f"Team {self.team} with season {self.season} is already in the database.")
 
     def set_link_tree(self) -> dict:
+        """
+        Provides dictionary of URLs for RealGM scraping based on initialization args.
+        :return: dictionary of URLs
+        """
         return {
             "player": [
                 [
@@ -89,7 +129,7 @@ class ScrapeControl:
             "team": [
                 [
                     f"{self.base}-stats/{self.year}/Advanced_Stats/Team_Totals/Regular_Season",
-                    f"{self.base}-stats/{self.year}/Advanced_Stats/Team_Totals/Playoff"
+                    f"{self.base}-stats/{self.year}/Advanced_Stats/Team_Totals/Playoffs"
                 ],
                 [
                     "team_regular",
@@ -107,10 +147,3 @@ class ScrapeControl:
                 ]
             ]
         }
-
-# def begin_monte_carlo():
-#     conn = MySQLHandler()
-#     if not conn.season_in_db("2005-2006", "BOS"):
-#         print("scrape it")
-#     conn.disconnect()
-#     print("perform monte carlo")

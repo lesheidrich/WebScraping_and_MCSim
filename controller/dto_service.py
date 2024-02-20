@@ -66,6 +66,7 @@ class DataTransferObject:
         return df_player
 
     def get_soup(self, scrape_method: str, url: str) -> str:
+        self.scrape_method_validation(scrape_method)
         scrape_function = getattr(self.scraper, scrape_method)
 
         if "request" in scrape_method:
@@ -73,11 +74,42 @@ class DataTransferObject:
 
         return scrape_function(url)
 
+    def scrape_method_validation(self, scrape_method: str) -> None:
+        """
+        Checks scrape method to ensure name is acceptable based on available methods.
+        :param scrape_method: str of scrape method name
+        :return: None
+        :raises: ValueError if scrape_method not in list of accepted method names
+        """
+        method_list = ["firefox_selenium_scrape", "firefox_selenium_proxy_scrape", "chrome_selenium_scrape",
+                       "chrome_selenium_proxy_scrape", "requests_scrape", "requests_proxy_scrape"]
+        if scrape_method not in method_list:
+            raise ValueError(f"{scrape_method} is not an accepted scrape method.")
+
 
 class Persist:
+    """
+    Class providing methods for persisting and retrieving data from a MySQL database.
+
+    Methods:
+        insert: Static method to insert DataFrame into a specified table in the database.
+        get_game_data: Static method to retrieve game data between two teams for a specified season.
+        team_in_playoffs: Static method to check if a team is in the playoffs for a specified season.
+        season_in_db: Static method to check if a season is already in the database.
+        team_in_db: Static method to check if a team is in the database for a specified season.
+    """
     @staticmethod
     def insert(df, table_name: str, preset_headers: Literal["team", "individual", "player"],
                db_host: Optional[str] = None) -> None:
+        """
+        Persists df into specified table in db.
+        :param df: df to persist
+        :param table_name: str of destination table
+        :param preset_headers: preset headers to use: "team", "individual", "player"
+        :param db_host: str of db host URL for MySQLHandler instance to connect. Defaults
+        to None (for xampp's nba db)
+        :return: None
+        """
         conn = MySQLHandler(db_host)
         for index, row in df.iterrows():
             data = row.to_dict()
@@ -89,13 +121,22 @@ class Persist:
 
     @staticmethod
     def get_game_data(home: str, away: str, season: str, db_host: Optional[str] = None) -> pd.DataFrame:
+        """
+        Gets df of game dates for specified nba teams in season.
+        :param home: str of nba team, format: "Chicago Bulls"
+        :param away: str of nba team, format: "Chicago Bulls"
+        :param season: str of season to check, format: '1991-1992'
+        :param db_host: str of db host URL for MySQLHandler instance to connect. Defaults
+        to None (for xampp's nba db)
+        :return: df of game dates for teams in season
+        """
         conn = MySQLHandler(db_host)
         season_start, season_end = season.split("-")[0], season.split("-")[1]
 
         start = f'date BETWEEN "{season_start}-01-01" AND "{season_start}-12-31" AND game_type = "playoff"'
         end = f'date BETWEEN "{season_end}-01-01" AND "{season_end}-12-31" AND game_type = "playoff"'
 
-        condition = (f'home_team LIKE "%{home}%" AND visitor_team LIKE "%{away}%" '
+        condition = (f'home_team="{home}" AND visitor_team="{away}" '
                      f'AND date > "{str(conn.read("schedule", "MAX(date)", start)[1][0])}" '
                      f'AND date <= "{str(conn.read("schedule", "MAX(date)", end)[1][0])}" '
                      f'ORDER BY date;')
@@ -106,6 +147,14 @@ class Persist:
 
     @staticmethod
     def team_in_playoffs(team: str, season: str, db_host: Optional[str] = None) -> bool:
+        """
+        Checks if arg team is in the playoffs for the arg season.
+        :param team: str of nba team, format: Boston-Celtics/2
+        :param season: str of season to check, format: '1991-1992'
+        :param db_host: str of db host URL for MySQLHandler instance to connect. Defaults
+        to None (for xampp's nba db)
+        :return: True if arg team is in playoffs
+        """
         conn = MySQLHandler(db_host)
         result = conn.in_playoffs(team, season)
         conn.disconnect()
@@ -113,6 +162,14 @@ class Persist:
 
     @staticmethod
     def season_in_db(season: str, team: str, db_host: Optional[str] = None) -> bool:
+        """
+        Checks if arg season is in the db already.
+        :param season: str of season to check, format: '1991-1992'
+        :param team: str of team to check, format: "BOS"
+        :param db_host: str of db host URL for MySQLHandler instance to connect. Defaults
+        to None (for xampp's nba db)
+        :return: True if season in db
+        """
         conn = MySQLHandler(db_host)
         result = conn.season_in_db(season, team)
         conn.disconnect()
@@ -120,7 +177,15 @@ class Persist:
 
     @staticmethod
     def team_in_db(season: str, table_name: str, db_host: Optional[str] = None) -> bool:
+        """
+        Checks if arg team is in the database already.
+        :param season: str of season to check, format: '1991-1992'
+        :param table_name: str of table to check
+        :param db_host: str of db host URL for MySQLHandler instance to connect. Defaults
+        to None (for xampp's nba db)
+        :return: True if team in database for season
+        """
         conn = MySQLHandler(db_host)
-        result = conn.read(table_name, f'season="{season}"')
+        result = conn.read(table_name, "*", f'season="{season}"')
         conn.disconnect()
         return len(result) > 1
