@@ -1,9 +1,59 @@
+"""
+Module: control_service.py
+
+Module for controlling the scraping and persistence of data from RealGM website.
+
+This module provides a ScrapeControl class that facilitates the scraping and persistence of various data
+tables from the RealGM website. It utilizes DataTransferObject and Persist classes for data handling and
+persistence operations, respectively.
+
+Classes:
+    - ScrapeControl: A class for controlling the scraping and persistence of data from RealGM.
+
+Dependencies:
+    - DataTransferObject: A class for handling data transfer.
+    - Persist: A class for persisting data to a database.
+    - Logger: A class for logging information during scraping and persistence operations.
+"""
+
 from typing import Optional
 from controller.dto_service import DataTransferObject, Persist
 from log.logger import Logger
 
 
 class ScrapeControl:
+    """
+        Class for controlling the scraping and persistence of data from RealGM website.
+
+        Attributes:
+            dto (DataTransferObject): An instance of the DataTransferObject class for handling data transfer.
+            db_host (Optional[str]): The URL of the database host. Defaults to None.
+            players (list): A list to store player data.
+            base (str): The base URL of the RealGM website.
+            season (str): The season for which data is being scraped, in the format 'YYYY-YYYY'.
+            team (str): The name of the NBA team for which data is being scraped.
+            year (str): The last four digits of the season, extracted from the 'season' attribute.
+            urls (dict): A dictionary containing URLs for different categories of data scraping.
+            in_playoffs (bool): A boolean indicating whether the specified team is in the playoffs for
+            the given season.
+            df_depth (DataFrame): A DataFrame to store depth chart data.
+            log (Logger): An instance of the Logger class for logging information.
+
+        Methods:
+            run_all(scrape_method: str) -> None:
+                Scrapes and persists all tables from RealGM for the specified season and team.
+            run_single(category_type: str, scrape_method: str) -> None:
+                Processes only the specified category of data scraping for the team.
+            process_player(scrape_method: str, url: str, table_name: str) -> None:
+                Scrapes player data from the specified RealGM URL and persists it to the specified table
+                in the database.
+            process_individual(scrape_method: str, url: str, table_name: str) -> None:
+                Scrapes individual tables from RealGM to the specified table in the database.
+            process_team(scrape_method: str, url: str, table_name: str) -> None:
+                Scrapes team table from RealGM to the specified table in the database.
+            set_link_tree() -> dict:
+                Provides a dictionary of URLs for RealGM scraping based on initialization arguments.
+        """
     def __init__(self, proxies_csv: Optional[str], season: str, team: str,
                  check_proxies: bool = False, db_host: Optional[str] = None):
         self.dto = DataTransferObject(proxies_csv, check_proxies)
@@ -39,10 +89,10 @@ class ScrapeControl:
                     try:
                         method = getattr(self, f"process_{category}")
                         method(scrape_method, link, table)
+                    # pylint: disable=W0718
                     except Exception as e:
                         self.log.warning(f"Scrape method {scrape_method} failed for {link} on table {table}."
                                          f" {e}")
-                        print(f"LOG: scrape method {scrape_method} failed for {link} on table {table}. {e}")
                         method = getattr(self, f"process_{category}")
                         method("firefox_selenium_scrape", link, table)
 

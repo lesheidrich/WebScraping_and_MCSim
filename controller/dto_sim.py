@@ -3,7 +3,7 @@ from typing import Optional
 from model.db_handler import MySQLHandler
 import pandas as pd
 from model.teams import Teams
-from simulator.tools import GameTools
+# from simulator.tools import GameTools
 
 
 class TeamBuilder:

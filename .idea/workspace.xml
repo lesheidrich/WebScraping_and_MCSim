@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="controller">
-      <change afterPath="$PROJECT_DIR$/test/unit/dto_service_test.py" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="persist class tests done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/control_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/control_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/dto_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/dto_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_sim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/linter/.pylintrc" beforeDir="false" afterPath="$PROJECT_DIR$/test/linter/.pylintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +116,7 @@
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for dto_service_test.TestPersist">
+  <component name="RunManager" selected="Python.regression_test">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -136,6 +139,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="regression_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WebScraping_and_MCSim" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/regression_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for dto_service_test.TestPersist" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -148,21 +173,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;dto_service_test.TestPersist&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for dto_service_test.TestPersist.test_season_in_db" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="WebScraping_and_MCSim" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;dto_service_test.TestPersist.test_season_in_db&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -213,11 +223,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.regression_test" />
         <item itemvalue="Python tests.Python tests for dto_service_test.TestPersist" />
         <item itemvalue="Python tests.Python tests for dto_service_test.TestPersist.test_team_in_db_false" />
         <item itemvalue="Python tests.Python tests for dto_service_test.TestPersist.test_team_in_db_true" />
         <item itemvalue="Python tests.Python tests for dto_service_test.TestPersist.test_season_in_db_false" />
-        <item itemvalue="Python tests.Python tests for dto_service_test.TestPersist.test_season_in_db" />
       </list>
     </recent_temporary>
   </component>
@@ -317,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708445561791</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="persist class tests done">
+      <option name="closed" value="true" />
+      <created>1708456305300</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708456305300</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -331,6 +349,7 @@
     <MESSAGE value="webscraper integration test" />
     <MESSAGE value="db handler tested" />
     <MESSAGE value="controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="controller" />
+    <MESSAGE value="persist class tests done" />
+    <option name="LAST_COMMIT_MESSAGE" value="persist class tests done" />
   </component>
 </project>

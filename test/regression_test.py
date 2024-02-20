@@ -1,6 +1,7 @@
 import unittest
 
 from test.unit.db_handler_test import TestMySQLHandler
+from test.unit.dto_service_test import TestPersist
 from test.unit.teams_test import TestTeams
 from test.unit.webscraper_test import TestScraperFacade
 from test.linter.linter import TestLint
@@ -28,7 +29,8 @@ def regression_test() -> unittest.TestSuite:
         unittest.TestLoader().loadTestsFromTestCase(TestRealGMParser),
         # unittest.TestLoader().loadTestsFromTestCase(TestScraperFacade),
         unittest.TestLoader().loadTestsFromTestCase(TestTeams),
-        unittest.TestLoader().loadTestsFromTestCase(TestMySQLHandler)
+        unittest.TestLoader().loadTestsFromTestCase(TestMySQLHandler),
+        unittest.TestLoader().loadTestsFromTestCase(TestPersist)
     ])
     return test_suite
 
