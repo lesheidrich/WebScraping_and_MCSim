@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="webscraper integration test">
-      <change afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/data/create_tables.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/data/in_playoffs.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/data/issues.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/data/nba.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/data/schedule.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/db_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/teams.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/db_handler_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit/teams_test.py" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="db handler tested">
+      <change afterPath="$PROJECT_DIR$/controller/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/control_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/dto_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/dto_sim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/integration/webscraper_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/webscraper_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscraper/selenium_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/selenium_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscraper/webscraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/webscraper.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,24 +90,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/dblin/PycharmProjects/WebScraping_and_MCSim",
+    "last_opened_file_path": "C:/Users/dblin/PycharmProjects/WebScraping_and_MCSim/controller",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\controller" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\model" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\linter" />
-      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\unit" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\unit" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for db_handler_test.TestMySQLHandler">
+  <component name="RunManager" selected="Python.regression_test">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -224,8 +214,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler" />
         <item itemvalue="Python.regression_test" />
+        <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler" />
         <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs_false" />
         <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs" />
         <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db_false" />
@@ -312,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708387377440</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="db handler tested">
+      <option name="closed" value="true" />
+      <created>1708443458477</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708443458477</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -324,6 +322,7 @@
     <MESSAGE value="test parser done" />
     <MESSAGE value="parse service tested and commented" />
     <MESSAGE value="webscraper integration test" />
-    <option name="LAST_COMMIT_MESSAGE" value="webscraper integration test" />
+    <MESSAGE value="db handler tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="db handler tested" />
   </component>
 </project>
