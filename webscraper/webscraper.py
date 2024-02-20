@@ -38,7 +38,9 @@ class ScraperFacade:
         """
         firefox = WebDriverFactory().firefox()
         WebKit.random_delay()
-        return firefox.return_content(url, proxy)
+        result = firefox.return_content(url, proxy)
+        del firefox
+        return result
 
     def firefox_selenium_proxy_scrape(self, url: str) -> str:
         """
@@ -57,7 +59,9 @@ class ScraperFacade:
         """
         chrome = WebDriverFactory().chrome()
         WebKit.random_delay()
-        return chrome.return_content(url, proxy)
+        result = chrome.return_content(url, proxy)
+        del chrome
+        return result
 
     def chrome_selenium_proxy_scrape(self, url: str) -> str:
         """

@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="webscraper integration test">
+      <change afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/data/create_tables.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/data/in_playoffs.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/data/issues.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/data/nba.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/data/schedule.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/db_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/teams.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/db_handler_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/teams_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/integration/webscraper_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/integration/webscraper_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscraper/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/utilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/integration/webscraper_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/webscraper_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscraper/selenium_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/selenium_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webscraper/webscraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/webscraper.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +54,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_connect.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_disconnect.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_execute_query.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs_false.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_insert.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_read.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db_false.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db_true.executor": "Run",
     "Python tests.Python tests for logger_test.TestLogger.executor": "Run",
     "Python tests.Python tests for parse_service_test.TestRealGMParser.executor": "Run",
     "Python tests.Python tests for parse_service_test.TestRealGMParser.test_depth_table_2_df.executor": "Run",
@@ -59,6 +80,11 @@
     "Python tests.Python tests for selenium_service_test.TestChromeDriver.executor": "Run",
     "Python tests.Python tests for selenium_service_test.TestFirefoxDriver.executor": "Run",
     "Python tests.Python tests for selenium_service_test.TestWebDriverFactory.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.test_from_city_name.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.test_from_full_name.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.test_from_link_name.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.test_from_short_name.executor": "Run",
     "Python tests.Python tests for webscraper_test.TestScraperFacade.executor": "Run",
     "Python tests.Python tests for webscraper_test.TestScraperFacade.test_chrome_selenium_scrape.executor": "Run",
     "Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_proxy_scrape.executor": "Run",
@@ -80,17 +106,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\model" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\linter" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\unit" />
-      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\webscraper\proxy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\unit" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for webscraper_test.TestScraperFacade">
+  <component name="RunManager" selected="Python tests.Python tests for db_handler_test.TestMySQLHandler">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -113,88 +140,95 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for webscraper_test.TestScraperFacade" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="regression_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WebScraping_and_MCSim" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/regression_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for db_handler_test.TestMySQLHandler" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade&quot;" />
+      <option name="_new_target" value="&quot;db_handler_test.TestMySQLHandler&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for webscraper_test.TestScraperFacade.test_chrome_selenium_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade.test_chrome_selenium_scrape&quot;" />
+      <option name="_new_target" value="&quot;db_handler_test.TestMySQLHandler.test_in_playoffs&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs_false" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade.test_firefox_selenium_scrape&quot;" />
+      <option name="_new_target" value="&quot;db_handler_test.TestMySQLHandler.test_in_playoffs_false&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for webscraper_test.TestScraperFacade.test_ip_valid" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for db_handler_test.TestMySQLHandler.test_season_in_db_false" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade.test_ip_valid&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for webscraper_test.TestScraperFacade.test_requests_proxy_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="WebScraping_and_MCSim" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade.test_requests_proxy_scrape&quot;" />
+      <option name="_new_target" value="&quot;db_handler_test.TestMySQLHandler.test_season_in_db_false&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade" />
-        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade.test_ip_valid" />
-        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_scrape" />
-        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade.test_chrome_selenium_scrape" />
-        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade.test_requests_proxy_scrape" />
+        <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler" />
+        <item itemvalue="Python.regression_test" />
+        <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs_false" />
+        <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs" />
+        <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db_false" />
       </list>
     </recent_temporary>
   </component>
@@ -270,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708371963411</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="webscraper integration test">
+      <option name="closed" value="true" />
+      <created>1708387377440</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708387377440</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

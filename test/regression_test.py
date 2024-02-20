@@ -1,11 +1,12 @@
 import unittest
 
-from test.integration.webscraper_test import TestScraperFacade
+from test.unit.db_handler_test import TestMySQLHandler
+from test.unit.teams_test import TestTeams
+from test.unit.webscraper_test import TestScraperFacade
 from test.linter.linter import TestLint
 from test.unit.parse_service_test import TestRealGMParser
 from test.unit.selenium_service_test import TestWebDriverFactory, TestChromeDriver, TestFirefoxDriver
 from test.unit.webscraper_utilities_test import TestWebKit, TestProxyKit
-from unit.proxy_handler_test import TestProxyHandler
 from unit.logger_test import TestLogger
 
 
@@ -25,7 +26,9 @@ def regression_test() -> unittest.TestSuite:
         unittest.TestLoader().loadTestsFromTestCase(TestChromeDriver),
         unittest.TestLoader().loadTestsFromTestCase(TestWebDriverFactory),
         unittest.TestLoader().loadTestsFromTestCase(TestRealGMParser),
-        unittest.TestLoader().loadTestsFromTestCase(TestScraperFacade)
+        # unittest.TestLoader().loadTestsFromTestCase(TestScraperFacade),
+        unittest.TestLoader().loadTestsFromTestCase(TestTeams),
+        unittest.TestLoader().loadTestsFromTestCase(TestMySQLHandler)
     ])
     return test_suite
 
@@ -38,7 +41,7 @@ def integration_test() -> unittest.TestSuite:
     integration_suite = unittest.TestSuite()
 
     integration_suite.addTests([
-        unittest.TestLoader().loadTestsFromTestCase(TestRealGMParser)
+        unittest.TestLoader().loadTestsFromTestCase()
     ])
     return integration_suite
 

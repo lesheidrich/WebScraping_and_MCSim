@@ -144,9 +144,12 @@ class FirefoxDriver(WebDriver):
         firefox_options = self._setup_options()
         if proxy_address:
             self._setup_proxy(firefox_options, proxy_address)
-        firefox_driver = Firefox(options=firefox_options)
 
-        return self._return_and_quit(firefox_driver, url)
+        firefox_driver = Firefox(options=firefox_options)
+        try:
+            return self._return_and_quit(firefox_driver, url)
+        finally:
+            firefox_driver.quit()
 
 
 class ChromeDriver(WebDriver):
@@ -198,7 +201,10 @@ class ChromeDriver(WebDriver):
         chrome_options = self._setup_options()
         self._setup_proxy(chrome_options, proxy_address)
         chrome_driver = Chrome(options=chrome_options)
-        return self._return_and_quit(chrome_driver, url)
+        try:
+            return self._return_and_quit(chrome_driver, url)
+        finally:
+            chrome_driver.quit()
 
 
 # class UndetectedChromeDriver(WebDriver):
