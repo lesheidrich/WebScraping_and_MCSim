@@ -80,13 +80,14 @@ class ScraperFacade:
         WebKit.random_delay()
         return requests.get(url, headers=header, proxies=proxy_dict, timeout=timeout)
 
-    def requests_proxy_scrape(self, url: str) -> requests.Response:
+    def requests_proxy_scrape(self, url: str, timeout: int = 120) -> requests.Response:
         """
         Scrapes the given URL using the Requests library with a rotating proxy.
+        :param timeout: int of seconds for request timeout, default: 120 sec
         :param url: str URL of website to scrape
         :return: Response obj, containing html content str
         """
-        return self.proxy_kit.apply_rotating_proxy(self.requests_scrape, url)
+        return self.proxy_kit.apply_rotating_proxy(self.requests_scrape, url, timeout=timeout)
 
     # def undetected_chrome_selenium_scrape(self, url: str, proxy=None):
     #     """

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="parse service tested and commented">
-      <change afterPath="$PROJECT_DIR$/test/integration/webscraper_test.py" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="webscraper integration test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/webscraper_utilities_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/webscraper_utilities_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/integration/webscraper_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/integration/webscraper_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webscraper/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/utilities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webscraper/webscraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/webscraper.py" afterDir="false" />
     </list>
@@ -60,7 +60,11 @@
     "Python tests.Python tests for selenium_service_test.TestFirefoxDriver.executor": "Run",
     "Python tests.Python tests for selenium_service_test.TestWebDriverFactory.executor": "Run",
     "Python tests.Python tests for webscraper_test.TestScraperFacade.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.test_chrome_selenium_scrape.executor": "Run",
     "Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_proxy_scrape.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_scrape.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.test_ip_valid.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.test_requests_proxy_scrape.executor": "Run",
     "Python tests.Python tests for webscraper_utilities_test.TestProxyKit.executor": "Run",
     "Python tests.Python tests for webscraper_utilities_test.TestProxyKit.test_is_valid_ip_proper.executor": "Run",
     "Python tests.Python tests for webscraper_utilities_test.TestProxyKit.test_proxy_to_dict_improper.executor": "Run",
@@ -86,7 +90,7 @@
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_proxy_scrape">
+  <component name="RunManager" selected="Python tests.Python tests for webscraper_test.TestScraperFacade">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -109,7 +113,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_proxy_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for webscraper_test.TestScraperFacade" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -120,77 +124,77 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade.test_firefox_selenium_proxy_scrape&quot;" />
+      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for webscraper_utilities_test.TestProxyKit" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for webscraper_test.TestScraperFacade.test_chrome_selenium_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_utilities_test.TestProxyKit&quot;" />
+      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade.test_chrome_selenium_scrape&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for webscraper_utilities_test.TestProxyKit.test_is_valid_ip_proper" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_utilities_test.TestProxyKit.test_is_valid_ip_proper&quot;" />
+      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade.test_firefox_selenium_scrape&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for webscraper_utilities_test.TestProxyKit.test_proxy_to_dict_improper" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for webscraper_test.TestScraperFacade.test_ip_valid" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_utilities_test.TestProxyKit.test_proxy_to_dict_improper&quot;" />
+      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade.test_ip_valid&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for webscraper_utilities_test.TestWebKit" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for webscraper_test.TestScraperFacade.test_requests_proxy_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webscraper_utilities_test.TestWebKit&quot;" />
+      <option name="_new_target" value="&quot;webscraper_test.TestScraperFacade.test_requests_proxy_scrape&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_proxy_scrape" />
-        <item itemvalue="Python tests.Python tests for webscraper_utilities_test.TestWebKit" />
-        <item itemvalue="Python tests.Python tests for webscraper_utilities_test.TestProxyKit" />
-        <item itemvalue="Python tests.Python tests for webscraper_utilities_test.TestProxyKit.test_proxy_to_dict_improper" />
-        <item itemvalue="Python tests.Python tests for webscraper_utilities_test.TestProxyKit.test_is_valid_ip_proper" />
+        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade" />
+        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade.test_ip_valid" />
+        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_scrape" />
+        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade.test_chrome_selenium_scrape" />
+        <item itemvalue="Python tests.Python tests for webscraper_test.TestScraperFacade.test_requests_proxy_scrape" />
       </list>
     </recent_temporary>
   </component>
@@ -258,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708367535827</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="webscraper integration test">
+      <option name="closed" value="true" />
+      <created>1708371963411</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708371963411</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -269,6 +281,7 @@
     <MESSAGE value="secrets put back" />
     <MESSAGE value="test parser done" />
     <MESSAGE value="parse service tested and commented" />
-    <option name="LAST_COMMIT_MESSAGE" value="parse service tested and commented" />
+    <MESSAGE value="webscraper integration test" />
+    <option name="LAST_COMMIT_MESSAGE" value="webscraper integration test" />
   </component>
 </project>

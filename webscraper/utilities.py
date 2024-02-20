@@ -254,7 +254,7 @@ class ProxyKit:
 
             try:
                 log.info(f"apply rotating proxy: using proxy: {proxy}")
-
+                print(f"apply rotating proxy: using proxy: {proxy}")
                 # callable function passed as arg depending on chosen scrape strategy
                 response = function(url, proxy, *args, **kwargs)
                 if (isinstance(response, requests.Response) and response.status_code == 200) or \

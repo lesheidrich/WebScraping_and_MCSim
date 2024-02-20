@@ -1,4 +1,6 @@
 import unittest
+
+from test.integration.webscraper_test import TestScraperFacade
 from test.linter.linter import TestLint
 from test.unit.parse_service_test import TestRealGMParser
 from test.unit.selenium_service_test import TestWebDriverFactory, TestChromeDriver, TestFirefoxDriver
@@ -22,10 +24,23 @@ def regression_test() -> unittest.TestSuite:
         unittest.TestLoader().loadTestsFromTestCase(TestFirefoxDriver),
         unittest.TestLoader().loadTestsFromTestCase(TestChromeDriver),
         unittest.TestLoader().loadTestsFromTestCase(TestWebDriverFactory),
+        unittest.TestLoader().loadTestsFromTestCase(TestRealGMParser),
+        unittest.TestLoader().loadTestsFromTestCase(TestScraperFacade)
+    ])
+    return test_suite
+
+
+def integration_test() -> unittest.TestSuite:
+    """
+    Compiles all integration tests into a single runnable integration test
+    :return: test suite of all integration tests
+    """
+    integration_suite = unittest.TestSuite()
+
+    integration_suite.addTests([
         unittest.TestLoader().loadTestsFromTestCase(TestRealGMParser)
     ])
-
-    return test_suite
+    return integration_suite
 
 
 if __name__ == '__main__':
