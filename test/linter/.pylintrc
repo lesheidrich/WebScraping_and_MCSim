@@ -5,7 +5,8 @@ disable=
     too-few-public-methods,
     protected-access,
     expression-not-assigned,
-    too-many-arguments
+    too-many-arguments,
+    too-many-instance-attributes
 
 max-line-length=110
 
