@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="scrape integration testing">
-      <change afterPath="$PROJECT_DIR$/simulator/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simulator/game_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simulator/monte_carlo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simulator/tools.py" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="dto_sim commented">
+      <change afterPath="$PROJECT_DIR$/test/unit/dto_sim_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/dto_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_sim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/game_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/game_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/linter/.pylintrc" beforeDir="false" afterPath="$PROJECT_DIR$/test/linter/.pylintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +76,17 @@
     "Python tests.Python tests for dto_service_test.TestPersist.test_team_in_db_true.executor": "Run",
     "Python tests.Python tests for dto_service_test.TestPersist.test_team_in_playoffs.executor": "Run",
     "Python tests.Python tests for dto_service_test.TestPersist.test_team_in_playoffs_false.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_date_w_individual.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_date_w_individual_date_repetition.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_get_player_data.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_get_team_data.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_len.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_mj.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date_ok.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date_previous.executor": "Run",
     "Python tests.Python tests for logger_test.TestLogger.executor": "Run",
     "Python tests.Python tests for parse_service_test.TestRealGMParser.executor": "Run",
     "Python tests.Python tests for parse_service_test.TestRealGMParser.test_depth_table_2_df.executor": "Run",
@@ -127,7 +139,7 @@
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.regression_test">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -172,73 +184,73 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for control_service_test.TestScrapeControl.test_run_all" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for dto_sim_test.TestTeamBuilder" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_run_all&quot;" />
+      <option name="_new_target" value="&quot;dto_sim_test.TestTeamBuilder&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for control_service_test.TestScrapeControl.test_run_singe_individual" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for dto_sim_test.TestTeamBuilder.test_roster" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_run_singe_individual&quot;" />
+      <option name="_new_target" value="&quot;dto_sim_test.TestTeamBuilder.test_roster&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for control_service_test.TestScrapeControl.test_run_singe_player" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for dto_sim_test.TestTeamBuilder.test_roster_len" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_run_singe_player&quot;" />
+      <option name="_new_target" value="&quot;dto_sim_test.TestTeamBuilder.test_roster_len&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for control_service_test.TestScrapeControl.test_run_singe_team" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for dto_sim_test.TestTeamBuilder.test_roster_mj" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_run_singe_team&quot;" />
+      <option name="_new_target" value="&quot;dto_sim_test.TestTeamBuilder.test_roster_mj&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_all" />
         <item itemvalue="Python.regression_test" />
-        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_individual" />
-        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_player" />
-        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_team" />
+        <item itemvalue="Python tests.Python tests for dto_sim_test.TestTeamBuilder" />
+        <item itemvalue="Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_mj" />
+        <item itemvalue="Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_len" />
+        <item itemvalue="Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster" />
       </list>
     </recent_temporary>
   </component>
@@ -370,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708475292794</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="dto_sim commented">
+      <option name="closed" value="true" />
+      <created>1708529749310</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708529749310</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -388,6 +408,7 @@
     <MESSAGE value="commented and decorated dto and control service. altered loop in insert to _ from index" />
     <MESSAGE value="loosened lint" />
     <MESSAGE value="scrape integration testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="scrape integration testing" />
+    <MESSAGE value="dto_sim commented" />
+    <option name="LAST_COMMIT_MESSAGE" value="dto_sim commented" />
   </component>
 </project>

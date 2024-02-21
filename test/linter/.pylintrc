@@ -6,7 +6,8 @@ disable=
     protected-access,
     expression-not-assigned,
     too-many-arguments,
-    too-many-instance-attributes
+    too-many-instance-attributes,
+    invalid-name
 
 max-line-length=110
 

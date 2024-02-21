@@ -3,6 +3,7 @@ import unittest
 from test.integration.control_service_test import TestScrapeControl
 from test.unit.db_handler_test import TestMySQLHandler
 from test.unit.dto_service_test import TestPersist
+from test.unit.dto_sim_test import TestTeamBuilder
 from test.unit.teams_test import TestTeams
 from test.unit.webscraper_test import TestScraperFacade
 from test.linter.linter import TestLint
@@ -31,7 +32,8 @@ def unittests() -> unittest.TestSuite:
         # unittest.TestLoader().loadTestsFromTestCase(TestScraperFacade),
         unittest.TestLoader().loadTestsFromTestCase(TestTeams),
         unittest.TestLoader().loadTestsFromTestCase(TestMySQLHandler),
-        unittest.TestLoader().loadTestsFromTestCase(TestPersist)
+        unittest.TestLoader().loadTestsFromTestCase(TestPersist),
+        unittest.TestLoader().loadTestsFromTestCase(TestTeamBuilder)
     ])
     return test_suite
 

@@ -32,8 +32,8 @@ Usage:
 
 from datetime import datetime
 from typing import Optional
-from model.db_handler import MySQLHandler
 import pandas as pd
+from model.db_handler import MySQLHandler
 from model.teams import Teams
 
 
@@ -116,7 +116,7 @@ class TeamBuilder:
         :param df: player df for team and season
         :return: None
         """
-        for i, row in df.iterrows():
+        for _, row in df.iterrows():
             if row["position"]:
                 position = getattr(self.roster, row["position"])
                 position.append(Player(self.individual_df[self.individual_df['player'] == row["player"]],
@@ -192,7 +192,7 @@ class TeamBuilder:
         table = f"player_{game_type}_{h_or_a}"
         return self.get_data(condition, table)
 
-    def get_data(self, condition: str, table_name: str) -> pd.DataFrame:  # TODO: change check for table and just return result
+    def get_data(self, condition: str, table_name: str) -> pd.DataFrame:
         """
         Reads specified table from db and converts it to df.
         :param condition: str for condition to use in SQL command after WHERE
@@ -351,7 +351,8 @@ class Player:
         points*(.75) + 2.383*(assists)*(.25) + offensive rebounds*(0.588)*(.25) + steals*(.530)*(.25)
         :return: float of average adjusted points
         """
-        return self.totalPpercent * 0.75 + 2.383 * self.AST * 0.25 + 5 * self.ORB * 0.25 + self.STL * 0.53 * 0.25
+        return (self.totalPpercent * 0.75 + 2.383 * self.AST * 0.25 + 5 * self.ORB * 0.25 + self.STL * 0.53
+                * 0.25)
 
     def calulate_totalPpercent(self) -> float:
         """
