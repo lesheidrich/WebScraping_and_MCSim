@@ -1,28 +1,81 @@
+"""
+Module: monte_carlo.py
+
+Module for conducting Monte Carlo simulations of basketball games.
+
+This module provides classes for simulating basketball games using Monte Carlo methods.
+
+Classes:
+    - Simulation: Class for simulating a single basketball game and tracking home and away scores.
+    - MonteCarlo: Class for conducting Monte Carlo simulations to predict game outcomes based on historical
+      data.
+
+Dependencies:
+    - random: Python's built-in library for generating random numbers.
+    - matplotlib.pyplot: Library for creating plots and visualizations.
+    - numpy: Library for numerical computing.
+    - TeamBuilder: Class from controller.dto_sim module for building basketball teams.
+    - Teams: Class from model.teams module representing basketball teams.
+    - GameBuilder: Class from simulator.game_service module for managing game simulations.
+    - GameTools: Class from simulator.tools module providing various tools for game simulations.
+"""
+
+import random
 from typing import Optional
 import matplotlib.pyplot as plt
 import numpy as np
-
 from controller.dto_sim import TeamBuilder
-from log.logger import Logger
 from model.teams import Teams
 from simulator.game_service import GameBuilder
 from simulator.tools import GameTools
 
 
 class Simulation:
-    def __init__(self, db_host: Optional[str], season: str, home_team: Teams, away_team: Teams, game_date: str,
-                 game_type: str):
+    """
+    Class builds Monte Carlo simulation for a single basketball game, and tracks home and away scores.
+    Instances used by MonteCarlo class.
+
+    Attributes:
+        game (GameBuilder): An instance of GameBuilder for managing the game simulation.
+        home_pts (int): The total points scored by the home team.
+        away_pts (int): The total points scored by the away team.
+
+    Methods:
+        play_game(): Runs the simulation of the basketball game between the home and away teams.
+        possession(has_ball: TeamBuilder): Simulates a possession during the game, determining turnovers,
+            shot attempts, and scoring.
+        get_pace(): Calculates and returns the pace of the game based on the statistical attributes of the
+        teams.
+    """
+    def __init__(self, db_host: Optional[str], season: str, home_team: Teams, away_team: Teams,
+                 game_date: str, game_type: str):
         self.game = GameBuilder(db_host, season, home_team, away_team, game_date, game_type)
         self.home_pts = 0
         self.away_pts = 0
 
-    def play_game(self):
-        for i in range(self.get_pace()):
+    def play_game(self) -> None:
+        """
+        Runs game between home and away TeamBuilder instances. Uses pace from instances to define
+        a pace for the game. Iterates over possessions until pace is reached. Note that not all
+        possessions lead to points scored.
+        :return: None
+        """
+        for _ in range(self.get_pace()):
             self.possession(self.game.has_ball)
 
     def possession(self, has_ball: TeamBuilder) -> None:
+        """
+        Possessions start by identifying Roster instance Players instances that are on the court for the
+        current play. From these, the players are selected that are actively involved in the offensive.
+        Turnover (TOV) is calculated using simulate_stat(). Here, a weighted probability based step function
+        decides if the ball is turned over in order for the other team to take possession of the ball.
+        If the possession continues, the Player instances involved in the offense attempt a shot. The same
+        step function decides success, in which case the other team takes possession. On failure, the step
+        function calculates if an offensive rebound (ORB) was successful, else the ball is turned over.
+        :param has_ball: TeamBuilder instance's home or away
+        :return: None
+        """
         # print("home" if has_ball == self.game.home else "away" if has_ball == self.game.away else "error")
-
         oncourt = self.game.on_court(self.game.has_ball.roster)
         touches_ball = self.game.in_current_play(oncourt, self.game.has_ball.roster)
 
@@ -51,14 +104,51 @@ class Simulation:
                 self.game.switch_possession()
 
     def get_pace(self) -> int:
+        """
+        Returns pace of game based on stats from both teams. Formula:
+        game pace = home pace + away pace - (random % of time delta)
+        :return: int for pace of game
+        """
         home_pace = self.game.home.team_df["Pace"].iloc[0]
         away_pace = self.game.away.team_df["Pace"].iloc[0]
-        return int(home_pace + away_pace)
+
+        pace_delta = home_pace + away_pace
+        random_mult = random.uniform(0, 1)
+        return int(home_pace + away_pace - (pace_delta * random_mult))
 
 
 class MonteCarlo:
-    def __init__(self, db_host: Optional[str], season: str, home_team: Teams, away_team: Teams, game_date: str,
-                 game_type: str, epochs: int = 10000):
+    """
+    Monte Carlo simulation class for predicting game outcomes based on historical data.
+
+    This class initializes a Monte Carlo simulation with the provided parameters:
+    - db_host: Optional[str]: The host address of the database.
+    - season: str: The season for which the simulation is being run.
+    - home_team: Teams: The home team for the game.
+    - away_team: Teams: The away team for the game.
+    - game_date: str: The date of the game.
+    - game_type: str: The type of game (e.g., regular, playoff).
+    - epochs: int: The number of simulation epochs to run (default is 10,000).
+
+    Methods:
+        - run: Runs the Monte Carlo simulation for the desired number of epochs.
+        - histogram: Builds a histogram from the simulated epochs.
+
+    Attributes:
+        - db_host: str: The host address of the database.
+        - season: str: The season for which the simulation is being run.
+        - home_team: Teams: The home team for the game.
+        - away_team: Teams: The away team for the game.
+        - game_date: str: The date of the game.
+        - game_type: str: The type of game (e.g., regular, playoff).
+        - epochs: int: The number of simulation epochs to run.
+        - home_scores: numpy.array: An array to store the final scores of the home team in each simulation
+          epoch.
+        - away_scores: numpy.array: An array to store the final scores of the away team in each simulation
+          epoch.
+    """
+    def __init__(self, db_host: Optional[str], season: str, home_team: Teams, away_team: Teams,
+                 game_date: str, game_type: str, epochs: int = 10000):
         self.db_host = db_host
         self.season = season
         self.home_team = home_team
@@ -70,22 +160,30 @@ class MonteCarlo:
         self.away_scores = np.array([])
 
     def run(self) -> None:
-        for epoch in range(self.epochs):
-
-            print(epoch) if epoch % 100 == 0 else None
-
-            game = Simulation(self.db_host, self.season, self.home_team, self.away_team, self.game_date, self.game_type)
+        """
+        Runs the Monte Carlo simulation for the desired amount of epochs, documenting final scores per team.
+        :return: None
+        """
+        for _ in range(self.epochs):
+            game = Simulation(self.db_host, self.season, self.home_team, self.away_team, self.game_date,
+                              self.game_type)
             game.play_game()
             self.home_scores = np.append(self.home_scores, game.home_pts)
             self.away_scores = np.append(self.away_scores, game.away_pts)
-        self.historgram()
+        plt.show(self.historgram())
 
-    def historgram(self) -> None:
-        plt.hist(self.home_scores, bins=20, color='yellow', alpha=0.7, label=f'Home: {self.home_team.short_name}')
-        plt.hist(self.away_scores, bins=20, color='blue', alpha=0.7, label=f'Visitor: {self.away_team.short_name}')
+    def historgram(self) -> plt.figure:
+        """
+        Builds histogram from simulated epochs.
+        :return: matplotlib histogram figure of epoch simulations
+        """
+        plt.hist(self.home_scores, bins=20, color='yellow', alpha=0.7, label=f'Home: '
+                                                                             f'{self.home_team.short_name}')
+        plt.hist(self.away_scores, bins=20, color='blue', alpha=0.7, label=f'Visitor: '
+                                                                           f'{self.away_team.short_name}')
         plt.xlabel('Team Scores (PPG)')
         plt.ylabel('Frequency (simulations)')
         plt.title('Team Scores Histogram')
         plt.legend()
         plt.grid(True)
-        plt.show()
+        return plt.figure()
