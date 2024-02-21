@@ -1,13 +1,89 @@
+"""
+Module: dto_sim.py
+
+Module for building team data to be used by Monte Carlo sim.
+
+This module provides a class, `TeamBuilder`, for constructing team rosters by retrieving and processing game
+data from a MySQL database. It utilizes individual game data to calculate player statistics and populate
+roster positions accordingly.
+
+Classes:
+    - TeamBuilder: Class for building team data to be used by Monte Carlo sim.
+    - Roster: Represents a team's roster.
+    - Player: Represents a basketball player with stats built from the last 365 days of games.
+
+Attributes:
+    - pd: pandas library for data manipulation.
+    - MySQLHandler: Custom module for handling MySQL database operations.
+    - Teams: Enum representing basketball teams.
+
+Usage:
+    Example usage of `TeamBuilder` class:
+    ```
+    from datetime import datetime
+    from model.db_handler import MySQLHandler
+    import pandas as pd
+    from model.teams import Teams
+
+    # Initialize a TeamBuilder instance
+    builder = TeamBuilder(db_host=None, season="1991-1992", team=Teams.from_short_name('CHI'),
+                          game_date="1993-04-30", game_type="regular", h_or_a="home")
+"""
+
 from datetime import datetime
 from typing import Optional
 from model.db_handler import MySQLHandler
 import pandas as pd
 from model.teams import Teams
-# from simulator.tools import GameTools
 
 
 class TeamBuilder:
-    def __init__(self, db_host: Optional[str], season: str, team: Teams, game_date: str, game_type: str, h_or_a: str):
+    """
+    Class for building team data to be used by Monte Carlo sim.
+    Contains dfs for team, individual, and player tables from db.
+
+    This class is responsible for constructing team rosters by retrieving and processing game data
+    from a MySQL database. It utilizes individual game data to calculate player statistics and populate
+    roster positions accordingly.
+
+        Args:
+        db_host (Optional[str]): The host address of the MySQL database.
+        season (str): The season for which to build the team roster (e.g., '1991-1992').
+        team (Teams): The team for which to build the roster.
+        game_date (str): The date of the game in 'YYYY-MM-DD' format.
+        game_type (str): The type of game, either 'regular' or 'playoff'.
+        h_or_a (str): Specifies whether the game is home ('home') or away ('away').
+
+    Attributes:
+        conn (MySQLHandler): Connection to the MySQL database.
+        team_df (pd.DataFrame): DataFrame containing team data for the specified season and game type.
+        player_df (pd.DataFrame): DataFrame containing player data for the specified team, season, and game
+        type.
+        individual_df (pd.DataFrame): DataFrame containing individual game data modified to account for
+        recent games.
+        h_or_a (str): Indicates whether the game is home or away.
+        roster (Roster): Instance of the Roster class to hold player positions.
+
+    Methods:
+        disconnect(self): Disconnects from the MySQL database.
+        build_roster(self, df: pd.DataFrame): Populates the roster instance's position lists based on player
+        data.
+        date_w_individual(self, team: Teams, game_date: str, game_type: str,
+                          high_thresh: float = 0.985, mid_thresh: float = 0.8) -> pd.DataFrame:
+            Modifies individual game data to account for recent games and returns the modified DataFrame.
+        get_individual_data(self, team_short: str, game_date: str, game_type: str) -> pd.DataFrame:
+            Retrieves individual game data for the specified team, game date, and game type.
+        get_team_data(self, season: str, team: Teams, game_type: str) -> pd.DataFrame:
+            Retrieves team data for the specified season and game type.
+        get_player_data(self, team_short: str, season: str, game_type: str, h_or_a: str) -> pd.DataFrame:
+            Retrieves player data for the specified team, season, game type, and home/away status.
+        get_data(self, condition: str, table_name: str) -> pd.DataFrame:
+            Reads data from the specified table in the MySQL database and returns it as a DataFrame.
+        validate_game_date(self, season: str, game_date: str) -> None:
+            Validates that the game date falls within the chosen season.
+    """
+    def __init__(self, db_host: Optional[str], season: str, team: Teams, game_date: str, game_type: str,
+                 h_or_a: str):
         self.validate_game_date(season, game_date)
         self.conn = MySQLHandler(db_host)
         self.team_df = self.get_team_data(season, team, game_type)
@@ -19,20 +95,50 @@ class TeamBuilder:
         self.disconnect()
 
     def __del__(self):
-        self.disconnect()
+        if self.conn.connection.is_connected:
+            self.disconnect()
 
     def disconnect(self) -> None:
+        """
+        Disconnects from db.
+        :return: None
+        """
         self.conn.disconnect()
 
     def build_roster(self, df: pd.DataFrame) -> None:
+        """
+        Populates roster instance's position lists (e.g.: Roster.SG, etc.)
+        Follows player df to reconstruct roster stats from individual game data
+        (from the last 365 days, where last 2-3 games have a greater weight, and
+        last few weeks of season are also weighted compared to earlier games). Stats
+        are loaded into Player instances, which populate the Roster position lists.
+        All stats are calculated averages from individual games.
+        :param df: player df for team and season
+        :return: None
+        """
         for i, row in df.iterrows():
             if row["position"]:
-                position = getattr(self.roster, row["position"])  # eg: roster.PF
+                position = getattr(self.roster, row["position"])
                 position.append(Player(self.individual_df[self.individual_df['player'] == row["player"]],
                                        row["player"], row["GP"], row["depth"], row["MPG"]))
 
     def date_w_individual(self, team: Teams, game_date: str, game_type: str,
                           high_thresh: float = 0.985, mid_thresh: float = 0.8) -> pd.DataFrame:
+        """
+        Modifies individual games df by making most recent games count for more in averages.
+        Instead of using weights:
+            - last 2-3 games are in df 5x
+            - last few weeks of games are in df 3x
+            - anything past 20% of current date in 365 day range only counts 1x
+        These stats are calculated into yearly player averages by build_roster and stored in
+        Player instances.
+        :param team: Teams object for team in table
+        :param game_date: str of game date: "1993-04-30"
+        :param game_type: str for game type: 'regular' or 'playoff'
+        :param high_thresh: float threshold for where to repeat games 5x from, default: 0.985
+        :param mid_thresh: float threshold for where to repeat games 3x from, default: 0.8
+        :return: individual games df with rows repeating where games more recent
+        """
         df = self.get_individual_data(team.short_name, game_date, game_type)
         df['date'] = pd.to_datetime(df['date'])
         game_date_dt = pd.to_datetime(game_date)
@@ -48,23 +154,51 @@ class TeamBuilder:
 
         return pd.concat([p_5x, p_3x, p_1x], ignore_index=True).sort_values(by=['date'])
 
-    def get_individual_data(self, team_short: str, game_date: str, game_type: str):
+    def get_individual_data(self, team_short: str, game_date: str, game_type: str) -> pd.DataFrame:
+        """
+        Gets individual df of game data from previous 365 days, up until game_date for game type.
+        :param team_short: str short form of team, format: 'CHI'
+        :param game_date: str of game date: '1993-04-30'
+        :param game_type: str for game type: 'regular' or 'playoff'
+        :return: individual df
+        """
         condition = (f'team="{team_short}" AND date >= "{int(game_date[:4]) - 1}{game_date[4:]}" '
                      f'AND date < "{game_date}" ORDER BY date')
         table = f"individual_games_{game_type}"
         return self.get_data(condition, table)
 
-    def get_team_data(self, season: str, team: Teams, game_type: str):
+    def get_team_data(self, season: str, team: Teams, game_type: str) -> pd.DataFrame:
+        """
+        Gets team df for season and game type.
+        :param season: str of season, format: '1991-1992'
+        :param team: str of team's city name, format: 'Chicago'
+        :param game_type: str for game type: 'regular' or 'playoff'
+        :return: team df for season and game type
+        """
         condition = f'season="{season}" AND team="{team.city_name}"'
         table = f"team_{game_type}"
         return self.get_data(condition, table)
 
-    def get_player_data(self, team_short: str, season: str, game_type: str, h_or_a: str):
+    def get_player_data(self, team_short: str, season: str, game_type: str, h_or_a: str) -> pd.DataFrame:
+        """
+        Gets player df for seasn and game type.
+        :param team_short: str short form of team, format: 'CHI'
+        :param season: str of season, format: '1991-1992'
+        :param game_type: str for game type: 'regular' or 'playoff'
+        :param h_or_a: str of 'home' or 'away'
+        :return: player df for season and game type
+        """
         condition = f'season="{season}" AND team="{team_short}" ORDER BY player'
         table = f"player_{game_type}_{h_or_a}"
         return self.get_data(condition, table)
 
-    def get_data(self, condition: str, table_name: str) -> pd.DataFrame:
+    def get_data(self, condition: str, table_name: str) -> pd.DataFrame:  # TODO: change check for table and just return result
+        """
+        Reads specified table from db and converts it to df.
+        :param condition: str for condition to use in SQL command after WHERE
+        :param table_name: str of table to read from
+        :return: df of read table's data
+        """
         table = self.conn.read(table_name, "*", condition)
         result = pd.DataFrame(table[1:], columns=table[0])
         if not len(result) > 0:
@@ -73,7 +207,14 @@ class TeamBuilder:
                              f"conditions: {condition}! Please check your database for missing values.")
         return result
 
-    def validate_game_date(self, season, game_date) -> None:
+    def validate_game_date(self, season: str, game_date: str) -> None:
+        """
+        Checks to make sure the game_date is inside the chosen season. Raises ValueError if test failed.
+        :param season: str of season, format: '1991-1992'
+        :param game_date: str of game date: '1993-04-30'
+        :return: None
+        :raises: ValueError if game_date outside season
+        """
         start_year, end_year = map(int, season.split('-'))
         game_date_dt = datetime.strptime(game_date, '%Y-%m-%d')
         season_start = datetime(start_year, 8, 30)
@@ -84,6 +225,20 @@ class TeamBuilder:
 
 
 class Roster:
+    """
+    Represents a team's roster. The class is made up of lists representing each position. Each list
+    is populated with Player instances containing stat averages from the previous 365 days games.
+
+    Attributes:
+        PF (list): List of Player instances in the power forward position.
+        SF (list): List of Player instances in the small forward position.
+        PG (list): List of Player instances in the point guard position.
+        SG (list): List of Player instances in the shooting guard position.
+        C (list): List of Player instances in the center position.
+
+    Methods:
+        __iter__(): Returns an iterator over all players in the roster.
+    """
     def __init__(self):
         self.PF = []
         self.SF = []
@@ -96,6 +251,49 @@ class Roster:
 
 
 class Player:
+    """
+    Class instances represent basketball players with stats built from the last 365 days of games which
+    the player participated in. All stats represent averages of their performance in this timeframe, with
+    the last 2-3 games counting five-fold, and the last 20% of the year (representing last few weeks)
+    counting three-fold compared to earlier game stats. These weigh the most recent performance of the player
+    at a greater value than their earlier performance in the timeframe.
+
+    Attributes:
+        TOV (float): Turnovers per game.
+        BLK (float): Blocks per game.
+        STL (float): Steals per game.
+        AST (float): Assists per game.
+        REB (float): Total rebounds per game.
+        DRB (float): Defensive rebounds per game.
+        ORB (float): Offensive rebounds per game.
+        FTA (float): Free throw attempts per game.
+        FTM (float): Free throws made per game.
+        threePA (float): Three-point attempts per game.
+        threePM (float): Three-pointers made per game.
+        FGA (float): Field goal attempts per game.
+        FGM (float): Field goals made per game.
+        PTS (float): Points per game.
+        FGpercent (float): Field goal percentage.
+        threePpercent (float): Three-point percentage.
+        FTpercent (float): Free throw percentage.
+        name (str): Name of the player.
+        GP (int): Games played.
+        depth (str): Player's depth in the team roster.
+        playtime_w (float): Player's playtime weight.
+        totalPpercent (float): Total points percentage.
+        adjusted_points (float): Adjusted points per game.
+        player_w (float): Player's overall weight.
+
+    Methods:
+        populate_attribs(df: pd.DataFrame) -> None: Populates player attributes from filtered individual
+        games df and player df.
+        calculate_adjusted_points() -> float: Calculates adjusted points per game.
+        calulate_totalPpercent() -> float: Calculates total points percentage.
+        handle_zero_div(num, den) -> float: Handles percentage stat attribute creation in case of n/0.
+        calculate_playtime_w(depth: str, avg_min: float, df: pd.DataFrame) -> float: Calculates player's
+        playtime weight.
+        played_last_game(df) -> bool: Checks if the player played the last game.
+    """
     def __init__(self, df: pd.DataFrame, player: str, GP: str, depth: str, avg_min: float):
         # avg stats
         self.TOV = None
@@ -176,14 +374,15 @@ class Player:
     def calculate_playtime_w(self, depth: str, avg_min: float, df: pd.DataFrame) -> float:
         """
         Play probability logic:
-          - first string players probability is increased by sigmoid function (incremenet size
-            decreases as probability increases) as long as play prob is under 0.89.
-          - second string players probability are decreased.
-          - third string players are severely decreased (threefold)
+          - first string players probability is left unchanged
+          - second string players probability are decreased to ensure they play as 'bench' players
+          - third string players are severely decreased (2%) as they don't play regularly
           - all other depths are 0
-          - if a player is injured in last 2 games, 0 is passed, and play probability is also 0.
-        :param depth:
-        :param avg_min:
+          - if a player didn't play int heir previous game, they are presumed to be injured and receive
+            a playtime weight of 0
+        :param df: individual games df filtered for player
+        :param depth: str of player depth
+        :param avg_min: float value for average min played per game
         :return: float for player's play probability per game
         """
         prob = avg_min / 48
@@ -200,7 +399,7 @@ class Player:
 
         return prob if prob > 0 else 0
 
-    def played_last_game(self, df) -> bool:
+    def played_last_game(self, df: pd.DataFrame) -> bool:
         """
         Checks last game for player to ensure playtime not 0 (presume injured).
         :param df: players individual games DataFrame

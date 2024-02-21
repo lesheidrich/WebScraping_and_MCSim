@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="loosened lint">
-      <change afterPath="$PROJECT_DIR$/model/data/nba_test.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/integration/control_service_test.py" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="scrape integration testing">
+      <change afterPath="$PROJECT_DIR$/simulator/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simulator/game_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simulator/monte_carlo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simulator/tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/control_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/control_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/dto_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/dto_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_sim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/db_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/db_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,24 +110,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/dblin/PycharmProjects/WebScraping_and_MCSim",
+    "last_opened_file_path": "C:/Users/dblin/PycharmProjects/WebScraping_and_MCSim/simulator",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\simulator" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\controller" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\model" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test" />
-      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\linter" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\unit" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_individual">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -170,6 +170,21 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for control_service_test.TestScrapeControl.test_run_all" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="WebScraping_and_MCSim" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_run_all&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests for control_service_test.TestScrapeControl.test_run_singe_individual" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
@@ -217,28 +232,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for control_service_test.TestScrapeControl.test_truncate_all" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="WebScraping_and_MCSim" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_truncate_all&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_all" />
+        <item itemvalue="Python.regression_test" />
         <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_individual" />
         <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_player" />
         <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_team" />
-        <item itemvalue="Python.regression_test" />
-        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_truncate_all" />
       </list>
     </recent_temporary>
   </component>
@@ -362,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708459268780</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="scrape integration testing">
+      <option name="closed" value="true" />
+      <created>1708475292794</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708475292794</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -379,6 +387,7 @@
     <MESSAGE value="persist class tests done" />
     <MESSAGE value="commented and decorated dto and control service. altered loop in insert to _ from index" />
     <MESSAGE value="loosened lint" />
-    <option name="LAST_COMMIT_MESSAGE" value="loosened lint" />
+    <MESSAGE value="scrape integration testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="scrape integration testing" />
   </component>
 </project>
