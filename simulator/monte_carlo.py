@@ -170,13 +170,15 @@ class MonteCarlo:
             game.play_game()
             self.home_scores = np.append(self.home_scores, game.home_pts)
             self.away_scores = np.append(self.away_scores, game.away_pts)
-        plt.show(self.historgram())
+        self.historgram()
+        plt.show()
 
     def historgram(self) -> plt.figure:
         """
         Builds histogram from simulated epochs.
         :return: matplotlib histogram figure of epoch simulations
         """
+        fig = plt.figure()
         plt.hist(self.home_scores, bins=20, color='yellow', alpha=0.7, label=f'Home: '
                                                                              f'{self.home_team.short_name}')
         plt.hist(self.away_scores, bins=20, color='blue', alpha=0.7, label=f'Visitor: '
@@ -186,4 +188,4 @@ class MonteCarlo:
         plt.title('Team Scores Histogram')
         plt.legend()
         plt.grid(True)
-        return plt.figure()
+        return fig
