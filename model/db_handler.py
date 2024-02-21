@@ -262,3 +262,12 @@ class MySQLHandler:
             return result == 1
         except IndexError:
             return False
+
+    def truncate_table(self, table_name: str) -> None:
+        """
+        Truncates specified table.
+        :param table_name: str of table name to truncate
+        :return: None
+        """
+        query = f'TRUNCATE {table_name};'
+        self.execute_and_commit(query)

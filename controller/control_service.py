@@ -16,7 +16,7 @@ Dependencies:
     - Logger: A class for logging information during scraping and persistence operations.
 """
 
-from typing import Optional
+from typing import Optional, Literal
 from controller.dto_service import DataTransferObject, Persist
 from log.logger import Logger
 
@@ -96,7 +96,7 @@ class ScrapeControl:
                         method = getattr(self, f"process_{category}")
                         method("firefox_selenium_scrape", link, table)
 
-    def run_single(self, category_type: str, scrape_method: str) -> None:
+    def run_single(self, category_type: Literal['team', 'individual', 'player'], scrape_method: str) -> None:
         """
         Runs specified scrape and persist method. Use to process only the team, individual, or
         player table.

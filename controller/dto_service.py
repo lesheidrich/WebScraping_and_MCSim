@@ -133,7 +133,7 @@ class DataTransferObject:
         :return: True if there is a next page
         """
         soup = BeautifulSoup(html_string, 'html.parser')
-        a_tag = soup.find("a", text="Next Page »")
+        a_tag = soup.find("a", string="Next Page »")
         return a_tag is not None
 
     def new_team_df(self, scrape_method_str: str, url: str) -> pd.DataFrame:

@@ -1,5 +1,6 @@
 import unittest
 
+from test.integration.control_service_test import TestScrapeControl
 from test.unit.db_handler_test import TestMySQLHandler
 from test.unit.dto_service_test import TestPersist
 from test.unit.teams_test import TestTeams
@@ -11,7 +12,7 @@ from test.unit.webscraper_utilities_test import TestWebKit, TestProxyKit
 from unit.logger_test import TestLogger
 
 
-def regression_test() -> unittest.TestSuite:
+def unittests() -> unittest.TestSuite:
     """
     Compiles all unit tests into a single runnable regression test
     :return: test suite of all unit tests
@@ -35,7 +36,7 @@ def regression_test() -> unittest.TestSuite:
     return test_suite
 
 
-def integration_test() -> unittest.TestSuite:
+def integration_tests() -> unittest.TestSuite:
     """
     Compiles all integration tests into a single runnable integration test
     :return: test suite of all integration tests
@@ -43,13 +44,16 @@ def integration_test() -> unittest.TestSuite:
     integration_suite = unittest.TestSuite()
 
     integration_suite.addTests([
-        unittest.TestLoader().loadTestsFromTestCase()
+        unittest.TestLoader().loadTestsFromTestCase(TestScrapeControl)
     ])
     return integration_suite
 
 
 if __name__ == '__main__':
-    runner = unittest.TextTestRunner()
-    runner.run(regression_test())
+    unit = unittest.TextTestRunner()
+    integration = unittest.TextTestRunner()
+
+    unit.run(unittests())
+    # integration.run(integration_tests)
 
     TestLint.run_linter(exceptions=["parse_service_html.py", "regression_test.py", "main.py"])
