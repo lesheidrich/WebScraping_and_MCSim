@@ -20,7 +20,6 @@ Dependencies:
     - GameTools: Class from simulator.tools module providing various tools for game simulations.
 """
 
-import random
 from typing import Optional
 import matplotlib.pyplot as plt
 import numpy as np
@@ -105,16 +104,12 @@ class Simulation:
 
     def get_pace(self) -> int:
         """
-        Returns pace of game based on stats from both teams. Formula:
-        game pace = home pace + away pace - (random % of time delta)
+        Returns pace of game based on stats from both teams.
         :return: int for pace of game
         """
         home_pace = self.game.home.team_df["Pace"].iloc[0]
         away_pace = self.game.away.team_df["Pace"].iloc[0]
-
-        pace_delta = home_pace + away_pace
-        random_mult = random.uniform(0, 1)
-        return int(home_pace + away_pace - (pace_delta * random_mult))
+        return int(home_pace + away_pace)
 
 
 class MonteCarlo:
@@ -159,7 +154,7 @@ class MonteCarlo:
         self.home_scores = np.array([])
         self.away_scores = np.array([])
 
-    def run(self) -> None:
+    def run(self) -> plt.figure:
         """
         Runs the Monte Carlo simulation for the desired amount of epochs, documenting final scores per team.
         :return: None
@@ -170,8 +165,7 @@ class MonteCarlo:
             game.play_game()
             self.home_scores = np.append(self.home_scores, game.home_pts)
             self.away_scores = np.append(self.away_scores, game.away_pts)
-        self.historgram()
-        plt.show()
+        return self.historgram()
 
     def historgram(self) -> plt.figure:
         """

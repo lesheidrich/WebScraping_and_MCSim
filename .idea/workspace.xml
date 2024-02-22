@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="mc commented and decorated">
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="histogram fix">
+      <change afterPath="$PROJECT_DIR$/test/integration/monte_carlo_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit/game_service_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulator/monte_carlo.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/monte_carlo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +85,15 @@
     "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date.executor": "Run",
     "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date_ok.executor": "Run",
     "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date_previous.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_choose_player.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_in_current_play.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_on_court.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_switch_possession.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_tip_off.executor": "Run",
     "Python tests.Python tests for logger_test.TestLogger.executor": "Run",
+    "Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff.executor": "Run",
+    "Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_regular.executor": "Run",
     "Python tests.Python tests for parse_service_test.TestRealGMParser.executor": "Run",
     "Python tests.Python tests for parse_service_test.TestRealGMParser.test_depth_table_2_df.executor": "Run",
     "Python tests.Python tests for parse_service_test.TestRealGMParser.test_full_name_populate_depth_position.executor": "Run",
@@ -134,7 +145,7 @@
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -179,7 +190,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for dto_sim_test.TestTeamBuilder" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for game_service_test.TestGameBuilder" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,11 +201,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;dto_sim_test.TestTeamBuilder&quot;" />
+      <option name="_new_target" value="&quot;game_service_test.TestGameBuilder&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for dto_sim_test.TestTeamBuilder.test_roster" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for game_service_test.TestGameBuilder.test_tip_off" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -205,47 +216,47 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;dto_sim_test.TestTeamBuilder.test_roster&quot;" />
+      <option name="_new_target" value="&quot;game_service_test.TestGameBuilder.test_tip_off&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for dto_sim_test.TestTeamBuilder.test_roster_len" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for monte_carlo_test.TestMonteCarlo.test_playoff" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;dto_sim_test.TestTeamBuilder.test_roster_len&quot;" />
+      <option name="_new_target" value="&quot;monte_carlo_test.TestMonteCarlo.test_playoff&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for dto_sim_test.TestTeamBuilder.test_roster_mj" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for monte_carlo_test.TestMonteCarlo.test_regular" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;dto_sim_test.TestTeamBuilder.test_roster_mj&quot;" />
+      <option name="_new_target" value="&quot;monte_carlo_test.TestMonteCarlo.test_regular&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff" />
+        <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_regular" />
         <item itemvalue="Python.regression_test" />
-        <item itemvalue="Python tests.Python tests for dto_sim_test.TestTeamBuilder" />
-        <item itemvalue="Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_mj" />
-        <item itemvalue="Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_len" />
-        <item itemvalue="Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster" />
+        <item itemvalue="Python tests.Python tests for game_service_test.TestGameBuilder.test_tip_off" />
+        <item itemvalue="Python tests.Python tests for game_service_test.TestGameBuilder" />
       </list>
     </recent_temporary>
   </component>
@@ -401,7 +412,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708551304169</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="histogram fix">
+      <option name="closed" value="true" />
+      <created>1708551618202</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1708551618202</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -422,6 +441,7 @@
     <MESSAGE value="dto_sim commented" />
     <MESSAGE value="game service done" />
     <MESSAGE value="mc commented and decorated" />
-    <option name="LAST_COMMIT_MESSAGE" value="mc commented and decorated" />
+    <MESSAGE value="histogram fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="histogram fix" />
   </component>
 </project>

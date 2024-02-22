@@ -1,9 +1,11 @@
 import unittest
 
 from test.integration.control_service_test import TestScrapeControl
+from test.integration.monte_carlo_test import TestMonteCarlo
 from test.unit.db_handler_test import TestMySQLHandler
 from test.unit.dto_service_test import TestPersist
 from test.unit.dto_sim_test import TestTeamBuilder
+from test.unit.game_service_test import TestGameBuilder
 from test.unit.teams_test import TestTeams
 from test.unit.webscraper_test import TestScraperFacade
 from test.linter.linter import TestLint
@@ -33,7 +35,8 @@ def unittests() -> unittest.TestSuite:
         unittest.TestLoader().loadTestsFromTestCase(TestTeams),
         unittest.TestLoader().loadTestsFromTestCase(TestMySQLHandler),
         unittest.TestLoader().loadTestsFromTestCase(TestPersist),
-        unittest.TestLoader().loadTestsFromTestCase(TestTeamBuilder)
+        unittest.TestLoader().loadTestsFromTestCase(TestTeamBuilder),
+        unittest.TestLoader().loadTestsFromTestCase(TestGameBuilder)
     ])
     return test_suite
 
@@ -46,7 +49,8 @@ def integration_tests() -> unittest.TestSuite:
     integration_suite = unittest.TestSuite()
 
     integration_suite.addTests([
-        unittest.TestLoader().loadTestsFromTestCase(TestScrapeControl)
+        unittest.TestLoader().loadTestsFromTestCase(TestScrapeControl),
+        unittest.TestLoader().loadTestsFromTestCase(TestMonteCarlo)
     ])
     return integration_suite
 
