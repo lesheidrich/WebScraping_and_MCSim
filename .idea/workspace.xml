@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="plt runtime GUI threading issue fixed">
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="exception handling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/host_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/host_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/monte_carlo.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/monte_carlo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +144,7 @@
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -249,10 +251,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff" />
+        <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_regular" />
         <item itemvalue="Python tests.Python tests for dto_service_test.TestPersist.test_get_game_data" />
         <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo" />
-        <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_regular" />
-        <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff" />
         <item itemvalue="Python.regression_test" />
       </list>
     </recent_temporary>
@@ -433,7 +435,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708875535320</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="exception handling">
+      <option name="closed" value="true" />
+      <created>1708876305064</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1708876305064</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -457,6 +467,7 @@
     <MESSAGE value="histogram fix" />
     <MESSAGE value="mc tested" />
     <MESSAGE value="plt runtime GUI threading issue fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="plt runtime GUI threading issue fixed" />
+    <MESSAGE value="exception handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception handling" />
   </component>
 </project>

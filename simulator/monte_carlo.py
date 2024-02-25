@@ -20,8 +20,10 @@ Dependencies:
     - GameTools: Class from simulator.tools module providing various tools for game simulations.
 """
 import _io
+import base64
+import statistics
 from io import BytesIO
-from typing import Optional
+from typing import Optional, List
 import matplotlib.pyplot as plt
 import numpy as np
 from controller.dto_sim import TeamBuilder
@@ -155,10 +157,10 @@ class MonteCarlo:
         self.home_scores = np.array([])
         self.away_scores = np.array([])
 
-    def run(self) -> _io.BytesIO:
+    def run(self) -> list[str]:
         """
         Runs the Monte Carlo simulation for the desired amount of epochs, documenting final scores per team.
-        :return: None
+        :return: (str) [prob. density plot, violin plot, 'mode and percentage stats']
         """
         for _ in range(self.epochs):
             game = Simulation(self.db_host, self.season, self.home_team, self.away_team, self.game_date,
@@ -166,14 +168,15 @@ class MonteCarlo:
             game.play_game()
             self.home_scores = np.append(self.home_scores, game.home_pts)
             self.away_scores = np.append(self.away_scores, game.away_pts)
-        return self.historgram()
 
-    def historgram(self) -> _io.BytesIO:
+        return [self.prob_density(), self.violin_plot(), self.get_stats()]
+
+    def prob_density(self) -> str:
         """
-        Builds histogram from simulated epochs.
-        :return: matplotlib histogram figure of epoch simulations
+        Builds probability density plot as BytesIO buffer.
+        :return: BytesIO buffer matplotlib prob. density figure of epoch simulations
         """
-        fig, ax = plt.subplots()  # Create figure and axes without displaying
+        fig, ax = plt.subplots()
         ax.hist(self.home_scores, bins=20, color='yellow', alpha=0.7, label=f'Home: {self.home_team.short_name}')
         ax.hist(self.away_scores, bins=20, color='blue', alpha=0.7, label=f'Visitor: {self.away_team.short_name}')
         ax.set_xlabel('Team Scores (PPG)')
@@ -182,9 +185,50 @@ class MonteCarlo:
         ax.legend()
         ax.grid(True)
 
-        # Save the figure to a BytesIO buffer
+        return self.save_2_bytesIO_buffer_string(fig)
+
+    def violin_plot(self) -> str:
+        """
+        Creates violin plot showing distribution of scores per epoch as BytesIO buffer.
+        :return: BytesIO buffer of matplotlib figure showing the violin plot.
+        """
+        fig, ax = plt.subplots()
+        violin_parts = ax.violinplot([self.home_scores, self.away_scores], showmeans=True)
+        for pc, color in zip(violin_parts['bodies'], ['yellow', 'blue']):
+            pc.set_facecolor(color)
+        ax.set_ylabel('Team Scores (PPG)')
+        ax.set_title('Violin Plot of Team Scores')
+        ax.set_xticks([1, 2])
+        ax.set_xticklabels([f'Home: {self.home_team.short_name}', f'Visitor: {self.away_team.short_name}'])
+        ax.grid(True)
+
+        return self.save_2_bytesIO_buffer_string(fig)
+
+    def save_2_bytesIO_buffer_string(self, fig) -> str:
+        """
+        Converts matplotlib figure to BytesIO buffer to enable base64 conversion by Flask.
+        :param fig: matplotlib figure of plotted graph
+        :return: BytesIO buffer of matplotlib figure
+        """
         buffer = BytesIO()
         fig.savefig(buffer, format='png')
         plt.close(fig)
         buffer.seek(0)
-        return buffer
+        return base64.b64encode(buffer.getvalue()).decode('utf-8')
+
+    def get_stats(self) -> str:
+        """
+        Geneartes a str of CSV:
+        [0]: home team win %
+        [1]: away team win %
+        [2]: mode of home scores
+        [3]: mode of away scores
+        :return: csv str of team win stats
+        """
+        home_wins = sum(1 for home_score, away_score in zip(self.home_scores, self.away_scores)
+                        if home_score > away_score)
+        h_wins = int(home_wins/self.epochs*100)
+        a_wins = int((self.epochs - home_wins)/self.epochs*100)
+        h_mode = int(statistics.mode(self.home_scores))
+        a_mode = int(statistics.mode(self.away_scores))
+        return f"{h_wins},{a_wins},{h_mode},{a_mode}"

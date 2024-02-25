@@ -67,11 +67,11 @@ class Host:
                 mc = MonteCarlo(self.db, self.season, self.home, self.away, self.game_date, game_type, epochs)
                 result = mc.run()
 
-                image_base64 = base64.b64encode(result.getvalue()).decode('utf-8')
                 return {
                     'status': 200,
-                    'message': "none",
-                    'image': image_base64
+                    'message': result[2],
+                    'image': result[0],
+                    'image2': result[1]
                 }
             except Exception as e:
                 return self.pack_json(e, 400)

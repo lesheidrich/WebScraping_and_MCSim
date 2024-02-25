@@ -42,7 +42,8 @@ class TestMonteCarlo(unittest.TestCase):
         game_type = "regular"
         mc = MonteCarlo(None, season, home, away, game_date, game_type, 10)
         result = mc.run()
-        self.assertTrue(isinstance(result, _io.BytesIO))
+        self.assertTrue(isinstance(result, list))
+        self.assertTrue(isinstance(result[0], str))
         self.assertIsNotNone(result)
 
     def test_playoff(self):
@@ -57,5 +58,6 @@ class TestMonteCarlo(unittest.TestCase):
         game_type = "playoff"
         mc = MonteCarlo(None, season, home, away, game_date, game_type, 10)
         result = mc.run()
-        self.assertTrue(isinstance(result, _io.BytesIO))
+        self.assertTrue(isinstance(result, list))
+        self.assertTrue(isinstance(result[0], str))
         self.assertIsNotNone(result)
