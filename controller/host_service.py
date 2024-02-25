@@ -15,7 +15,7 @@ from simulator.monte_carlo import MonteCarlo
 
 class Host:
     def __init__(self):
-        matplotlib.use('Agg')
+        matplotlib.use('Agg')  # non-interactive rendering env
         self.app = Flask(__name__)
         self.home = None
         self.away = None
@@ -41,11 +41,13 @@ class Host:
                     raise ValueError(f"Game data is empty for H:{self.home.full_name}, "
                                      f"A:{self.away.full_name}, Season:{self.season}, DB:{self.db}!")
                 return self.pack_json(data, 200)
+            except TypeError as e:
+                self.pack_json(e, 404)
             except Exception as e:
                 self.pack_json(e, 400)
 
         @self.app.route('/monte_carlo/team_in_db')
-        def get_teams_in_db() -> dict:
+        def get_teams_in_db() -> dict:                              # TODO: check previous year too
             self.game_date = request.args.get('game_date')
 
             for team in [self.home, self.away]:
@@ -55,7 +57,7 @@ class Host:
             self.log.info("Database contains all necessary data!")
             return self.pack_json("OK", 200)
 
-        @self.app.route('/simulation')
+        @self.app.route('/monte_carlo/simulation')
         def get_monte_carlo_sim() -> dict:
             game_type = request.args.get('game_type')
             epochs = int(request.args.get('epochs'))
@@ -74,7 +76,7 @@ class Host:
             except Exception as e:
                 return self.pack_json(e, 400)
 
-    def pack_json(self, message: Any, status_code: int):
+    def pack_json(self, message: Any, status_code: int) -> dict:
         return {
                     'message': message,
                     'status': status_code
