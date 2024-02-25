@@ -19,7 +19,8 @@ Dependencies:
     - GameBuilder: Class from simulator.game_service module for managing game simulations.
     - GameTools: Class from simulator.tools module providing various tools for game simulations.
 """
-
+import _io
+from io import BytesIO
 from typing import Optional
 import matplotlib.pyplot as plt
 import numpy as np
@@ -154,7 +155,7 @@ class MonteCarlo:
         self.home_scores = np.array([])
         self.away_scores = np.array([])
 
-    def run(self) -> plt.figure:
+    def run(self) -> _io.BytesIO:
         """
         Runs the Monte Carlo simulation for the desired amount of epochs, documenting final scores per team.
         :return: None
@@ -167,19 +168,23 @@ class MonteCarlo:
             self.away_scores = np.append(self.away_scores, game.away_pts)
         return self.historgram()
 
-    def historgram(self) -> plt.figure:
+    def historgram(self) -> _io.BytesIO:
         """
         Builds histogram from simulated epochs.
         :return: matplotlib histogram figure of epoch simulations
         """
-        fig = plt.figure()
-        plt.hist(self.home_scores, bins=20, color='yellow', alpha=0.7, label=f'Home: '
-                                                                             f'{self.home_team.short_name}')
-        plt.hist(self.away_scores, bins=20, color='blue', alpha=0.7, label=f'Visitor: '
-                                                                           f'{self.away_team.short_name}')
-        plt.xlabel('Team Scores (PPG)')
-        plt.ylabel('Frequency (simulations)')
-        plt.title('Team Scores Histogram')
-        plt.legend()
-        plt.grid(True)
-        return fig
+        fig, ax = plt.subplots()  # Create figure and axes without displaying
+        ax.hist(self.home_scores, bins=20, color='yellow', alpha=0.7, label=f'Home: {self.home_team.short_name}')
+        ax.hist(self.away_scores, bins=20, color='blue', alpha=0.7, label=f'Visitor: {self.away_team.short_name}')
+        ax.set_xlabel('Team Scores (PPG)')
+        ax.set_ylabel('Frequency (simulations)')
+        ax.set_title('Team Scores Histogram')
+        ax.legend()
+        ax.grid(True)
+
+        # Save the figure to a BytesIO buffer
+        buffer = BytesIO()
+        fig.savefig(buffer, format='png')
+        plt.close(fig)
+        buffer.seek(0)
+        return buffer

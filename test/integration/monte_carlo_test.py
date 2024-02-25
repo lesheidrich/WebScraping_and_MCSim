@@ -13,9 +13,8 @@ Methods:
     - test_regular: Tests the successful return of plt.figure from a Monte Carlo regular game.
     - test_playoff: Tests the successful return of plt.figure from a Monte Carlo playoff game.
 """
-
+import _io
 import unittest
-import matplotlib
 from model.teams import Teams
 from simulator.monte_carlo import MonteCarlo
 
@@ -33,7 +32,7 @@ class TestMonteCarlo(unittest.TestCase):
     """
     def test_regular(self):
         """
-        Tests successful return of plt.figure from Monte Carlo regular game.
+        Tests successful return of BytesIO for matplotlib figure from Monte Carlo regular game.
         :return: None
         """
         season = "1991-1992"
@@ -43,13 +42,12 @@ class TestMonteCarlo(unittest.TestCase):
         game_type = "regular"
         mc = MonteCarlo(None, season, home, away, game_date, game_type, 10)
         result = mc.run()
-        # plt.show()
-        self.assertTrue(isinstance(result, matplotlib.figure.Figure))
+        self.assertTrue(isinstance(result, _io.BytesIO))
         self.assertIsNotNone(result)
 
     def test_playoff(self):
         """
-        Tests successful return of plt.figure from Monte Carlo playoff game.
+        Tests successful return of BytesIO for matplotlib figure from Monte Carlo playoff game.
         :return: None
         """
         home = Teams.from_full_name('Phoenix Suns')
@@ -59,6 +57,5 @@ class TestMonteCarlo(unittest.TestCase):
         game_type = "playoff"
         mc = MonteCarlo(None, season, home, away, game_date, game_type, 10)
         result = mc.run()
-        # plt.show()
-        self.assertTrue(isinstance(result, matplotlib.figure.Figure))
+        self.assertTrue(isinstance(result, _io.BytesIO))
         self.assertIsNotNone(result)
