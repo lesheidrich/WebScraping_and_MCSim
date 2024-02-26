@@ -245,7 +245,7 @@ class Persist:
                 conn.insert_record(table_name, data, preset_headers)
             except ConnectionError as e:
                 print(f"ConnectionError while attempting Persist.insert into {table_name}: "
-                      f"{row}\nData is likely duplicate entry!: {e}")
+                      f"{row.iloc[0]}-{row.iloc[1]}-{row.iloc[2]}-{row.iloc[3]}...\n{e}")
         conn.disconnect()
 
     @staticmethod

@@ -24,12 +24,17 @@ Tested Methods:
     - test_run_singe_individual(self): Test the run_single method for 'individual' argument.
     - test_run_singe_player(self): Test the run_single method for 'player' argument.
 """
-
+import os.path
 import unittest
 from typing import Literal
+
+import pandas as pd
+
 from controller.control_service import ScrapeControl
+from controller.dto_service import Persist
 from model.db_handler import MySQLHandler
-from project_secrets import XAMPP_TEST
+from project_secrets import XAMPP_TEST, PROJECT_FOLDER
+from webscraper.parse_service import RealGMParser
 
 
 class TestScrapeControl(unittest.TestCase):
@@ -182,3 +187,48 @@ class TestScrapeControl(unittest.TestCase):
         :return: None
         """
         self.run_single_base("player", "player_regular_home")
+
+    def test_individual_no_scrape(self):
+        """
+        No-scrape test method that ensures unique parameter functions correctly in individual table.
+        :return: None
+        """
+        # assert empty
+        tbl_len = self.get_table_length("individual_games_regular")
+        self.assertEqual(tbl_len, 1)
+
+        # read to df and persist
+        individual_path = os.path.join(PROJECT_FOLDER, "test", "content", "html_test_content", "individual6.html")
+        with open(individual_path, "r") as file:
+            content = file.readlines()
+        html_str = "\n".join(content)
+        df = RealGMParser.html_table_2_df(html_str)
+        Persist.insert(df, "individual_games_regular", "individual", XAMPP_TEST)
+
+        # check insert succeeded
+        tbl_len = self.get_table_length("individual_games_regular")
+        self.assertTrue(tbl_len > 1)
+
+        # duplicate persist
+        Persist.insert(df, "individual_games_regular", "individual", XAMPP_TEST)
+
+        # check duplicate
+        conn = MySQLHandler(XAMPP_TEST)
+        res = conn.read("individual_games_regular", "count(id)",
+                        'player="Raef LaFrentz" and date="2006-01-04"')
+        raef_count = res[1][0]
+        self.assertEqual(raef_count, 1)
+
+        self.truncate_all()
+
+    def get_table_length(self, table_name: str) -> int:
+        """
+        Returns row count (including header) as length of table.
+        :param table_name: str table to check length for
+        :return: int for length of table
+        """
+        conn = MySQLHandler(XAMPP_TEST)
+        res = conn.read(table_name, "*")
+        conn.disconnect()
+        return len(res)
+

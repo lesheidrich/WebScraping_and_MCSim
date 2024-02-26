@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="ConnectionError added to Persist.insert">
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="html test content added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/dto_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/integration/control_service_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/integration/control_service_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,94 +42,96 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for control_service_test.TestScrapeControl.test_read.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for control_service_test.TestScrapeControl.test_run_all.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_individual.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_player.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_team.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for control_service_test.TestScrapeControl.test_truncate.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for control_service_test.TestScrapeControl.test_truncate_all.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_connect.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_disconnect.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_execute_query.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs_false.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_insert.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_read.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db_false.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db_true.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_service_test.TestPersist.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_service_test.TestPersist.test_get_game_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_service_test.TestPersist.test_season_in_db.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_service_test.TestPersist.test_season_in_db_false.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_service_test.TestPersist.test_team_in_db_false.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_service_test.TestPersist.test_team_in_db_true.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_service_test.TestPersist.test_team_in_playoffs.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_service_test.TestPersist.test_team_in_playoffs_false.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_date_w_individual.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_date_w_individual_date_repetition.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_get_player_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_get_team_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_len.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_mj.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date_ok.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date_previous.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for game_service_test.TestGameBuilder.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for game_service_test.TestGameBuilder.test_choose_player.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for game_service_test.TestGameBuilder.test_in_current_play.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for game_service_test.TestGameBuilder.test_on_court.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for game_service_test.TestGameBuilder.test_switch_possession.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for game_service_test.TestGameBuilder.test_tip_off.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for logger_test.TestLogger.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for monte_carlo_test.TestMonteCarlo.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_regular.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.test_depth_table_2_df.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.test_full_name_populate_depth_position.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.test_html_table_2_df.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.test_html_table_append_df.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.test_initial_name_populate_depth_position.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_depth_2_players.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_footnote_unavailable.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_footnote_unavailable_not_found.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for parse_service_test.TestRealGMParser.test_players_df_add_columns.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for proxy_handler_test.TestProxyHandler.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for selenium_service_test.TestChromeDriver.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for selenium_service_test.TestFirefoxDriver.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for selenium_service_test.TestWebDriverFactory.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for teams_test.TestTeams.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for teams_test.TestTeams.test_from_city_name.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for teams_test.TestTeams.test_from_full_name.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for teams_test.TestTeams.test_from_link_name.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for teams_test.TestTeams.test_from_short_name.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_test.TestScraperFacade.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_test.TestScraperFacade.test_chrome_selenium_scrape.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_proxy_scrape.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_scrape.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_test.TestScraperFacade.test_ip_valid.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_test.TestScraperFacade.test_requests_proxy_scrape.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_utilities_test.TestProxyKit.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_utilities_test.TestProxyKit.test_is_valid_ip_proper.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_utilities_test.TestProxyKit.test_proxy_to_dict_improper.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for webscraper_utilities_test.TestWebKit.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.regression_test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dblin/PycharmProjects/WebScraping_and_MCSim/simulator&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests for control_service_test.TestScrapeControl.test_individual_no_scrape.executor": "Run",
+    "Python tests.Python tests for control_service_test.TestScrapeControl.test_player_no_scrape.executor": "Run",
+    "Python tests.Python tests for control_service_test.TestScrapeControl.test_read.executor": "Run",
+    "Python tests.Python tests for control_service_test.TestScrapeControl.test_run_all.executor": "Run",
+    "Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_individual.executor": "Run",
+    "Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_player.executor": "Run",
+    "Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_team.executor": "Run",
+    "Python tests.Python tests for control_service_test.TestScrapeControl.test_truncate.executor": "Run",
+    "Python tests.Python tests for control_service_test.TestScrapeControl.test_truncate_all.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_connect.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_disconnect.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_execute_query.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_in_playoffs_false.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_insert.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_read.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db_false.executor": "Run",
+    "Python tests.Python tests for db_handler_test.TestMySQLHandler.test_season_in_db_true.executor": "Run",
+    "Python tests.Python tests for dto_service_test.TestPersist.executor": "Run",
+    "Python tests.Python tests for dto_service_test.TestPersist.test_get_game_data.executor": "Run",
+    "Python tests.Python tests for dto_service_test.TestPersist.test_season_in_db.executor": "Run",
+    "Python tests.Python tests for dto_service_test.TestPersist.test_season_in_db_false.executor": "Run",
+    "Python tests.Python tests for dto_service_test.TestPersist.test_team_in_db_false.executor": "Run",
+    "Python tests.Python tests for dto_service_test.TestPersist.test_team_in_db_true.executor": "Run",
+    "Python tests.Python tests for dto_service_test.TestPersist.test_team_in_playoffs.executor": "Run",
+    "Python tests.Python tests for dto_service_test.TestPersist.test_team_in_playoffs_false.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_date_w_individual.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_date_w_individual_date_repetition.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_get_player_data.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_get_team_data.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_len.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_roster_mj.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date_ok.executor": "Run",
+    "Python tests.Python tests for dto_sim_test.TestTeamBuilder.test_validate_game_date_previous.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_choose_player.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_in_current_play.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_on_court.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_switch_possession.executor": "Run",
+    "Python tests.Python tests for game_service_test.TestGameBuilder.test_tip_off.executor": "Run",
+    "Python tests.Python tests for logger_test.TestLogger.executor": "Run",
+    "Python tests.Python tests for monte_carlo_test.TestMonteCarlo.executor": "Run",
+    "Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff.executor": "Run",
+    "Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_regular.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_depth_table_2_df.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_full_name_populate_depth_position.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_html_table_2_df.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_html_table_append_df.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_initial_name_populate_depth_position.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_depth_2_players.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_footnote_unavailable.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_parse_footnote_unavailable_not_found.executor": "Run",
+    "Python tests.Python tests for parse_service_test.TestRealGMParser.test_players_df_add_columns.executor": "Run",
+    "Python tests.Python tests for proxy_handler_test.TestProxyHandler.executor": "Run",
+    "Python tests.Python tests for selenium_service_test.TestChromeDriver.executor": "Run",
+    "Python tests.Python tests for selenium_service_test.TestFirefoxDriver.executor": "Run",
+    "Python tests.Python tests for selenium_service_test.TestWebDriverFactory.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.test_from_city_name.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.test_from_full_name.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.test_from_link_name.executor": "Run",
+    "Python tests.Python tests for teams_test.TestTeams.test_from_short_name.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.test_chrome_selenium_scrape.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_proxy_scrape.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.test_firefox_selenium_scrape.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.test_ip_valid.executor": "Run",
+    "Python tests.Python tests for webscraper_test.TestScraperFacade.test_requests_proxy_scrape.executor": "Run",
+    "Python tests.Python tests for webscraper_utilities_test.TestProxyKit.executor": "Run",
+    "Python tests.Python tests for webscraper_utilities_test.TestProxyKit.test_is_valid_ip_proper.executor": "Run",
+    "Python tests.Python tests for webscraper_utilities_test.TestProxyKit.test_proxy_to_dict_improper.executor": "Run",
+    "Python tests.Python tests for webscraper_utilities_test.TestWebKit.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.regression_test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/dblin/PycharmProjects/WebScraping_and_MCSim/simulator",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\simulator" />
@@ -136,11 +141,11 @@
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\unit" />
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
+      <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\unit" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Python tests for control_service_test.TestScrapeControl.test_individual_no_scrape">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -185,6 +190,51 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for control_service_test.TestScrapeControl.test_individual_no_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="WebScraping_and_MCSim" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_individual_no_scrape&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for control_service_test.TestScrapeControl.test_player_no_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="WebScraping_and_MCSim" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_player_no_scrape&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for control_service_test.TestScrapeControl.test_run_singe_player" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="WebScraping_and_MCSim" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_run_singe_player&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for control_service_test.TestScrapeControl.test_run_singe_team" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -200,58 +250,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for db_handler_test.TestMySQLHandler.test_read" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="WebScraping_and_MCSim" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;db_handler_test.TestMySQLHandler.test_read&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for monte_carlo_test.TestMonteCarlo.test_playoff" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="WebScraping_and_MCSim" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;monte_carlo_test.TestMonteCarlo.test_playoff&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for monte_carlo_test.TestMonteCarlo.test_regular" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="WebScraping_and_MCSim" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;monte_carlo_test.TestMonteCarlo.test_regular&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_individual_no_scrape" />
+        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_player" />
+        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_player_no_scrape" />
         <item itemvalue="Python.regression_test" />
         <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_team" />
-        <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler.test_read" />
-        <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff" />
-        <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_regular" />
       </list>
     </recent_temporary>
   </component>
@@ -479,12 +484,19 @@
       <option name="project" value="LOCAL" />
       <updated>1708979006742</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="html test content added">
+      <option name="closed" value="true" />
+      <created>1708979398069</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1708979398069</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="webscraper reinitialization" />
     <MESSAGE value="lint and gitignore" />
     <MESSAGE value="selenium_service decorated and refactored" />
     <MESSAGE value="secrets put back" />
@@ -509,6 +521,7 @@
     <MESSAGE value="lint" />
     <MESSAGE value="teams list amended for 90s" />
     <MESSAGE value="ConnectionError added to Persist.insert" />
-    <option name="LAST_COMMIT_MESSAGE" value="ConnectionError added to Persist.insert" />
+    <MESSAGE value="html test content added" />
+    <option name="LAST_COMMIT_MESSAGE" value="html test content added" />
   </component>
 </project>
