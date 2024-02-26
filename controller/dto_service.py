@@ -241,7 +241,11 @@ class Persist:
             del data['#']
             if preset_headers == "individual":
                 data["Date"] = datetime.strptime(data["Date"], '%b %d, %Y').strftime('%Y-%m-%d')
-            conn.insert_record(table_name, data, preset_headers)
+            try:
+                conn.insert_record(table_name, data, preset_headers)
+            except ConnectionError as e:
+                print(f"ConnectionError while attempting Persist.insert into {table_name}: "
+                      f"{row}\nData is likely duplicate entry!: {e}")
         conn.disconnect()
 
     @staticmethod
