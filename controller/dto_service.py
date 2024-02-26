@@ -248,8 +248,8 @@ class Persist:
     def get_game_data(home: str, away: str, season: str, db_host: Optional[str] = None) -> pd.DataFrame:
         """
         Gets df of game dates for specified nba teams in season.
-        :param home: str of nba team, format: "Chicago Bulls"
-        :param away: str of nba team, format: "Chicago Bulls"
+        :param home: str of nba city, format: "Chicago"
+        :param away: str of nba city, format: "Chicago"
         :param season: str of season to check, format: '1991-1992'
         :param db_host: str of db host URL for MySQLHandler instance to connect. Defaults
         to None (for xampp's nba db)

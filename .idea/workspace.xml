@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="sql dumps added user and regular">
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="lint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/dto_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/monte_carlo.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/monte_carlo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/integration/monte_carlo_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/integration/monte_carlo_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/data/nba .sql" beforeDir="false" afterPath="$PROJECT_DIR$/model/data/nba .sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/data/nba_test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/model/data/nba_test.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/FileContentIndex/86610b7a-06ea-4cfc-bdc7-b59dce07aa96.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +155,7 @@
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.regression_test">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -460,7 +470,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708949505310</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="lint">
+      <option name="closed" value="true" />
+      <created>1708953231790</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1708953231790</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -487,6 +505,7 @@
     <MESSAGE value="exception handling" />
     <MESSAGE value="view" />
     <MESSAGE value="sql dumps added user and regular" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql dumps added user and regular" />
+    <MESSAGE value="lint" />
+    <option name="LAST_COMMIT_MESSAGE" value="lint" />
   </component>
 </project>
