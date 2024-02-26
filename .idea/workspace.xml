@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="teams list amended for 90s">
-      <change afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/FileContentIndex/d9161a24-60fc-44a9-b7eb-4b93e8e44dc1.vsidx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/dto_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_service.py" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="ConnectionError added to Persist.insert">
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -475,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708972935139</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="ConnectionError added to Persist.insert">
+      <option name="closed" value="true" />
+      <created>1708979006742</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1708979006742</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -504,6 +508,7 @@
     <MESSAGE value="sql dumps added user and regular" />
     <MESSAGE value="lint" />
     <MESSAGE value="teams list amended for 90s" />
-    <option name="LAST_COMMIT_MESSAGE" value="teams list amended for 90s" />
+    <MESSAGE value="ConnectionError added to Persist.insert" />
+    <option name="LAST_COMMIT_MESSAGE" value="ConnectionError added to Persist.insert" />
   </component>
 </project>
