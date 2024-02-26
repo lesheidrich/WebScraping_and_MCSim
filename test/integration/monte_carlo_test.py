@@ -13,7 +13,6 @@ Methods:
     - test_regular: Tests the successful return of plt.figure from a Monte Carlo regular game.
     - test_playoff: Tests the successful return of plt.figure from a Monte Carlo playoff game.
 """
-import _io
 import unittest
 from model.teams import Teams
 from simulator.monte_carlo import MonteCarlo

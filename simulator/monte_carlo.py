@@ -19,11 +19,10 @@ Dependencies:
     - GameBuilder: Class from simulator.game_service module for managing game simulations.
     - GameTools: Class from simulator.tools module providing various tools for game simulations.
 """
-import _io
 import base64
 import statistics
 from io import BytesIO
-from typing import Optional, List
+from typing import Optional
 import matplotlib.pyplot as plt
 import numpy as np
 from controller.dto_sim import TeamBuilder
@@ -177,8 +176,10 @@ class MonteCarlo:
         :return: BytesIO buffer matplotlib prob. density figure of epoch simulations
         """
         fig, ax = plt.subplots()
-        ax.hist(self.home_scores, bins=20, color='yellow', alpha=0.7, label=f'Home: {self.home_team.short_name}')
-        ax.hist(self.away_scores, bins=20, color='blue', alpha=0.7, label=f'Visitor: {self.away_team.short_name}')
+        ax.hist(self.home_scores, bins=20, color='yellow', alpha=0.7,
+                label=f'Home: {self.home_team.short_name}')
+        ax.hist(self.away_scores, bins=20, color='blue', alpha=0.7,
+                label=f'Visitor: {self.away_team.short_name}')
         ax.set_xlabel('Team Scores (PPG)')
         ax.set_ylabel('Frequency (simulations)')
         ax.set_title('Team Scores Histogram')

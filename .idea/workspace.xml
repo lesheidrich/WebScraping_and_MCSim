@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="view">
-      <change afterPath="$PROJECT_DIR$/model/data/nba .sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/FileContentIndex/86610b7a-06ea-4cfc-bdc7-b59dce07aa96.vsidx" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="sql dumps added user and regular">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/data/nba.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/data/nba_test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/model/data/nba_test.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/monte_carlo.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/monte_carlo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/integration/monte_carlo_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/integration/monte_carlo_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +145,7 @@
       <recent name="C:\Users\dblin\PycharmProjects\WebScraping_and_MCSim\test\content" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_team">
+  <component name="RunManager" selected="Python.regression_test">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -159,6 +160,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="regression_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WebScraping_and_MCSim" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/regression_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -197,21 +220,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for dto_service_test.TestPersist.test_get_game_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="WebScraping_and_MCSim" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;dto_service_test.TestPersist.test_get_game_data&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for monte_carlo_test.TestMonteCarlo.test_playoff" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
@@ -244,11 +252,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.regression_test" />
         <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_run_singe_team" />
         <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler.test_read" />
         <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_playoff" />
         <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo.test_regular" />
-        <item itemvalue="Python tests.Python tests for dto_service_test.TestPersist.test_get_game_data" />
       </list>
     </recent_temporary>
   </component>
@@ -444,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708900234365</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="sql dumps added user and regular">
+      <option name="closed" value="true" />
+      <created>1708949505310</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1708949505310</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -470,6 +486,7 @@
     <MESSAGE value="plt runtime GUI threading issue fixed" />
     <MESSAGE value="exception handling" />
     <MESSAGE value="view" />
-    <option name="LAST_COMMIT_MESSAGE" value="view" />
+    <MESSAGE value="sql dumps added user and regular" />
+    <option name="LAST_COMMIT_MESSAGE" value="sql dumps added user and regular" />
   </component>
 </project>

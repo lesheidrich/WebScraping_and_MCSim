@@ -6,6 +6,7 @@ from test.unit.db_handler_test import TestMySQLHandler
 from test.unit.dto_service_test import TestPersist
 from test.unit.dto_sim_test import TestTeamBuilder
 from test.unit.game_service_test import TestGameBuilder
+from test.unit.proxy_handler_test import TestProxyHandler
 from test.unit.teams_test import TestTeams
 from test.unit.webscraper_test import TestScraperFacade
 from test.linter.linter import TestLint
@@ -24,14 +25,14 @@ def unittests() -> unittest.TestSuite:
 
     test_suite.addTests([
         unittest.TestLoader().loadTestsFromTestCase(TestLogger),
-        # unittest.TestLoader().loadTestsFromTestCase(TestProxyHandler),
+        unittest.TestLoader().loadTestsFromTestCase(TestProxyHandler),
         unittest.TestLoader().loadTestsFromTestCase(TestWebKit),
         unittest.TestLoader().loadTestsFromTestCase(TestProxyKit),
         unittest.TestLoader().loadTestsFromTestCase(TestFirefoxDriver),
         unittest.TestLoader().loadTestsFromTestCase(TestChromeDriver),
         unittest.TestLoader().loadTestsFromTestCase(TestWebDriverFactory),
         unittest.TestLoader().loadTestsFromTestCase(TestRealGMParser),
-        # unittest.TestLoader().loadTestsFromTestCase(TestScraperFacade),
+        unittest.TestLoader().loadTestsFromTestCase(TestScraperFacade),
         unittest.TestLoader().loadTestsFromTestCase(TestTeams),
         unittest.TestLoader().loadTestsFromTestCase(TestMySQLHandler),
         unittest.TestLoader().loadTestsFromTestCase(TestPersist),
