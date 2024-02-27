@@ -11,6 +11,7 @@ from log.logger import Logger
 from model.teams import Teams
 from project_secrets import PROJECT_FOLDER
 from simulator.monte_carlo import MonteCarlo
+from webscraper.utilities import WebKit
 
 
 class Host:
@@ -67,13 +68,15 @@ class Host:
             last_season = f"{self.season[:3]}{int(self.season[3])-1}{self.season[4:8]}{int(self.season[8])-1}"
 
             try:
+                # pack missing dict
                 for season in [last_season, self.season]:
                     for team in [self.home, self.away]:
                         if not Persist.season_in_db(season, team.short_name, self.db):
                             self.log.info(f"{team} for {season} season is not in DB!")
                             if season not in self.missing_seasons:
                                 self.missing_seasons[season] = []
-                            self.missing_seasons[season].append(team.short_name)
+                            self.missing_seasons[season].append(team.link_name)
+                # pack comment
                 if self.missing_seasons:
                     message = ""
                     for k, v in self.missing_seasons.items():
@@ -87,18 +90,32 @@ class Host:
 
         @self.app.route('/monte_carlo/season_data')
         def get_season_data() -> dict:
-
             proxy_list = rf"{request.args.get('proxy_list')}"
             check_proxies = bool(request.args.get('check_proxies'))
             scrape_method = request.args.get('scrape_method')
+            proxies = proxy_list if proxy_list else None
 
-            print(proxy_list)
+            print(self.missing_seasons)
 
-            # sc = ScrapeControl(proxy_list,
-            #                    "1991-1992",
-            #                    "Chicago-Bulls/4",
-            #                    check_proxies,
-            #                    db_host=self.db)
+            for k_season, v_list in self.missing_seasons.items():
+                v_list_copy = v_list[:]
+                for team_str in v_list_copy:
+                    # scrape
+                    sc = ScrapeControl(proxies, k_season, team_str, check_proxies, db_host=self.db)
+                    try:
+                        try:
+                            sc.run_all(scrape_method)
+                        except Exception:
+                            WebKit.random_delay()
+                            sc.run_all(scrape_method)
+                        del sc
+
+                        # remove team from list
+                        v_list.remove(team_str)
+                    except Exception as e:
+                        self.pack_json(e, 400)
+
+            print("MISSING:\n", self.missing_seasons)
             return self.pack_json("", 200)
 
         @self.app.route('/monte_carlo/simulation')
