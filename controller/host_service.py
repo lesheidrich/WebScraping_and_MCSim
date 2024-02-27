@@ -47,15 +47,21 @@ class Host:
                 self.pack_json(e, 400)
 
         @self.app.route('/monte_carlo/team_in_db')
-        def get_teams_in_db() -> dict:                              # TODO: check previous year too
+        def get_teams_in_db() -> dict:
             self.game_date = request.args.get('game_date')
+            last_season = f"{self.season[:3]}{int(self.season[3])-1}{self.season[4:8]}{int(self.season[8])-1}"
 
-            for team in [self.home, self.away]:
-                if not Persist.season_in_db(self.season, team.short_name, self.db):
-                    self.log.info(f"{team} for {self.season} season is not in DB!")
-                    return self.pack_json(team.short_name, 400)
+            missing_seasons = set()
+            for season in [last_season, self.season]:
+                for team in [self.home, self.away]:
+                    if not Persist.season_in_db(season, team.short_name, self.db):
+                        self.log.info(f"{team} for {season} season is not in DB!")
+                        missing_seasons.add(season)
+            if missing_seasons:
+                return self.pack_json(",".join(missing_seasons), 204)
+
             self.log.info("Database contains all necessary data!")
-            return self.pack_json("OK", 200)
+            return self.pack_json("", 200)
 
         @self.app.route('/monte_carlo/simulation')
         def get_monte_carlo_sim() -> dict:
