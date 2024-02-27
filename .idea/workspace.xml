@@ -4,38 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="teams in db host checks both seasons as set">
-      <change afterPath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapePopUp.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapePopUp.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapePopUp.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapeView.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapeView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapeView.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/NBA_Sim_View/img/bball_transp.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.ScrapePopUp.resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.ScrapeView.resources" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="missing seasons updated to send comment and store json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/host_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/host_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/GameData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/MonteCarlo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/MonteCarlo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/NBA_Sim_View.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/NBA_Sim_View.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/Properties/Resources.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/Properties/Resources.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.Properties.Resources.resources" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.Properties.Resources.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -551,12 +523,19 @@
       <option name="project" value="LOCAL" />
       <updated>1709039452680</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="missing seasons updated to send comment and store json">
+      <option name="closed" value="true" />
+      <created>1709069036324</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1709069036324</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="parse service tested and commented" />
     <MESSAGE value="webscraper integration test" />
     <MESSAGE value="db handler tested" />
     <MESSAGE value="controller" />
@@ -581,6 +560,7 @@
     <MESSAGE value="sqls updated for unique constraint" />
     <MESSAGE value="cleared test log" />
     <MESSAGE value="teams in db host checks both seasons as set" />
-    <option name="LAST_COMMIT_MESSAGE" value="teams in db host checks both seasons as set" />
+    <MESSAGE value="missing seasons updated to send comment and store json" />
+    <option name="LAST_COMMIT_MESSAGE" value="missing seasons updated to send comment and store json" />
   </component>
 </project>
