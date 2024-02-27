@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="decorated host">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="scraper view draft done">
       <change beforePath="$PROJECT_DIR$/controller/host_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/host_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapePopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapePopUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -547,12 +538,19 @@
       <option name="project" value="LOCAL" />
       <updated>1709069856237</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="scraper view draft done">
+      <option name="closed" value="true" />
+      <created>1709074260051</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1709074260051</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="db handler tested" />
     <MESSAGE value="controller" />
     <MESSAGE value="persist class tests done" />
     <MESSAGE value="commented and decorated dto and control service. altered loop in insert to _ from index" />
@@ -577,6 +575,7 @@
     <MESSAGE value="teams in db host checks both seasons as set" />
     <MESSAGE value="missing seasons updated to send comment and store json" />
     <MESSAGE value="decorated host" />
-    <option name="LAST_COMMIT_MESSAGE" value="decorated host" />
+    <MESSAGE value="scraper view draft done" />
+    <option name="LAST_COMMIT_MESSAGE" value="scraper view draft done" />
   </component>
 </project>

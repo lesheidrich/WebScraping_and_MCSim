@@ -90,6 +90,15 @@ class Host:
 
         @self.app.route('/monte_carlo/season_data')
         def get_season_data() -> dict:
+            """
+            Order: 3
+            Takes params of proxy list, check proxies (boolean: if yes, then check), and scrape method
+            from client.
+            Iterates over missing parameters from missing_seasons dictionary. Attempts to scrape, in case
+            of error will re-attempt again (sc.run_all() also re-attempts all failed attempts with Firefox).
+            Successful scrape attempts result in dropping of list params.
+            :return: json of success, or failure
+            """
             proxy_list = rf"{request.args.get('proxy_list')}"
             check_proxies = bool(request.args.get('check_proxies'))
             scrape_method = request.args.get('scrape_method')
