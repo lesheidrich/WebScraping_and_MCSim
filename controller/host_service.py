@@ -6,6 +6,7 @@ import matplotlib
 from flask import Flask, render_template, jsonify, request
 from matplotlib import pyplot as plt
 
+from controller.control_service import ScrapeControl
 from controller.dto_service import Persist
 from log.logger import Logger
 from model.teams import Teams
@@ -22,6 +23,7 @@ class Host:
         self.season = None
         self.game_date = None
         self.db = None
+        self.missing_seasons = {}
         self.log = Logger(log_file="app_test_log.log",
                           name="FLASK HOST",
                           log_level="INFO")
@@ -51,16 +53,36 @@ class Host:
             self.game_date = request.args.get('game_date')
             last_season = f"{self.season[:3]}{int(self.season[3])-1}{self.season[4:8]}{int(self.season[8])-1}"
 
-            missing_seasons = set()
             for season in [last_season, self.season]:
                 for team in [self.home, self.away]:
                     if not Persist.season_in_db(season, team.short_name, self.db):
                         self.log.info(f"{team} for {season} season is not in DB!")
-                        missing_seasons.add(season)
-            if missing_seasons:
-                return self.pack_json(",".join(missing_seasons), 204)
+                        if season not in self.missing_seasons:
+                            self.missing_seasons[season] = []
+                        self.missing_seasons[season].append(team.short_name)
+            if self.missing_seasons:
+                message = ""
+                for k, v in self.missing_seasons.items():
+                    message += f"{k}: {', '.join(v)} "
+                return self.pack_json(message, 204)
 
             self.log.info("Database contains all necessary data!")
+            return self.pack_json("", 200)
+
+        @self.app.route('/monte_carlo/season_data')
+        def get_season_data() -> dict:
+
+            proxy_list = rf"{request.args.get('proxy_list')}"
+            check_proxies = bool(request.args.get('check_proxies'))
+            scrape_method = request.args.get('scrape_method')
+
+            print(proxy_list)
+
+            # sc = ScrapeControl(proxy_list,
+            #                    "1991-1992",
+            #                    "Chicago-Bulls/4",
+            #                    check_proxies,
+            #                    db_host=self.db)
             return self.pack_json("", 200)
 
         @self.app.route('/monte_carlo/simulation')
