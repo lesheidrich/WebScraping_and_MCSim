@@ -139,22 +139,27 @@ class Host:
             for k_season, v_list in self.missing_seasons.items():
                 v_list_copy = v_list[:]
                 for team_str in v_list_copy:
-                    # scrape
-                    sc = ScrapeControl(proxies, k_season, team_str, check_proxies, db_host=self.db)
-                    try:
-                        try:
-                            sc.run_all(scrape_method)
-                        # pylint: disable=W0718
-                        except Exception:
-                            WebKit.random_delay()
-                            sc.run_all(scrape_method)
-                        del sc
 
-                        # remove team from list
-                        v_list.remove(team_str)
-                    # pylint: disable=W0718
-                    except Exception as e:
-                        self.pack_json(e, 400)
+                    # check if other client updated
+                    team_obj = Teams.from_link_name(team_str)
+                    if not Persist.season_in_db(k_season, team_obj.short_name, self.db):
+
+                        # scrape
+                        sc = ScrapeControl(proxies, k_season, team_str, check_proxies, db_host=self.db)
+                        try:
+                            try:
+                                sc.run_all(scrape_method)
+                            # pylint: disable=W0718
+                            except Exception:
+                                WebKit.random_delay()
+                                sc.run_all(scrape_method)
+                            del sc
+
+                            # remove team from list
+                            v_list.remove(team_str)
+                        # pylint: disable=W0718
+                        except Exception as e:
+                            self.pack_json(e, 400)
 
             return self.pack_json("", 200)
 

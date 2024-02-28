@@ -4,31 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="decorated season_data">
-      <change afterPath="$PROJECT_DIR$/project_secrets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="project secrets to static class">
       <change beforePath="$PROJECT_DIR$/controller/host_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/host_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/log/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/db_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/db_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/integration/control_service_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/integration/control_service_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/linter/.pylintrc" beforeDir="false" afterPath="$PROJECT_DIR$/test/linter/.pylintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/linter/linter.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/linter/linter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/logger_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/logger_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/unit/proxy_handler_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/proxy_handler_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapePopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapePopUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscraper/proxy/proxy_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/webscraper/proxy/proxy_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -579,12 +556,19 @@
       <option name="project" value="LOCAL" />
       <updated>1709074619561</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="project secrets to static class">
+      <option name="closed" value="true" />
+      <created>1709151904387</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1709151904387</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="persist class tests done" />
     <MESSAGE value="commented and decorated dto and control service. altered loop in insert to _ from index" />
     <MESSAGE value="loosened lint" />
     <MESSAGE value="scrape integration testing" />
@@ -609,6 +593,7 @@
     <MESSAGE value="decorated host" />
     <MESSAGE value="scraper view draft done" />
     <MESSAGE value="decorated season_data" />
-    <option name="LAST_COMMIT_MESSAGE" value="decorated season_data" />
+    <MESSAGE value="project secrets to static class" />
+    <option name="LAST_COMMIT_MESSAGE" value="project secrets to static class" />
   </component>
 </project>
