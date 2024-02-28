@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="gitignore updated, view removed">
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="view added back">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_secrets.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -595,12 +596,19 @@
       <option name="project" value="LOCAL" />
       <updated>1709153072964</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="view added back">
+      <option name="closed" value="true" />
+      <created>1709153704751</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1709153704751</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="scrape integration testing" />
     <MESSAGE value="dto_sim commented" />
     <MESSAGE value="game service done" />
     <MESSAGE value="mc commented and decorated" />
@@ -625,6 +633,7 @@
     <MESSAGE value="project secrets to static class" />
     <MESSAGE value="double check if team in db before scraping added" />
     <MESSAGE value="gitignore updated, view removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore updated, view removed" />
+    <MESSAGE value="view added back" />
+    <option name="LAST_COMMIT_MESSAGE" value="view added back" />
   </component>
 </project>
