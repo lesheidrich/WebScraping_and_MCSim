@@ -159,6 +159,98 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+#--------------------------------------------------------------------------------------------
+# Visual Studio temporary files
+.vscode/
+.vs/
+bin/
+obj/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+*.log
+*.vspscc
+*.vssscc
+*.ncb
+*.suo
+*.user
+*.docstates
+*.cache
+*.ilk
+*.pdb
+*.idb
+*.dep
+*.exp
+*.tmp
+*.pch
+*.meta
+*.obj
+*.pch
+*.ipch
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.opendb
+*.rsuser
+*.scc
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.obj
+*.tlog
+*.d
+*.ipdb
+*.pdb
+*.log
+*.idb
+*.meta
+*.obj
+*.sbr
+*.log
+*.log.*
+*.orig
+
+# Rider
+.idea/
+*.sln.iml
+
+
 # Custom rules
 project_secrets.py
 .github
