@@ -1,13 +1,14 @@
-from controller.dto_service import Persist
+import os
 from controller.host_service import Host
-from model.db_handler import MySQLHandler
-from model.teams import Teams
-from project_secrets import XAMPP_TEST
-from simulator.monte_carlo import MonteCarlo
+from project_secrets import Hidden
+
 
 if __name__ == '__main__':
+    Hidden.set_project_folder(os.getcwd())
     server = Host()
     server.run()
+
+
 
 
     # season = "1991-1992"

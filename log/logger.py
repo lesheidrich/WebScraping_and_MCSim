@@ -21,7 +21,7 @@ import os
 import re
 from datetime import datetime
 from typing import Literal
-import project_secrets
+from project_secrets import Hidden
 
 
 class Logger:
@@ -109,7 +109,7 @@ class Logger:
         :param file: str application filename (can add subdirectories in log dir)
         :return: str of absolute log file path
         """
-        log_dir = os.path.join(project_secrets.get_project_folder(), 'log')
+        log_dir = os.path.join(Hidden.get_project_folder(), 'log')
         path = os.path.join(log_dir, file)
 
         if not path.endswith(".log"):

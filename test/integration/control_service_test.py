@@ -27,13 +27,10 @@ Tested Methods:
 import os.path
 import unittest
 from typing import Literal
-
-import pandas as pd
-
 from controller.control_service import ScrapeControl
 from controller.dto_service import Persist
 from model.db_handler import MySQLHandler
-from project_secrets import XAMPP_TEST, PROJECT_FOLDER
+from project_secrets import Hidden
 from webscraper.parse_service import RealGMParser
 
 
@@ -64,11 +61,13 @@ class TestScrapeControl(unittest.TestCase):
         test_run_singe_player(self): Test the run_single method for 'player' argument.
     """
     def setUp(self):
+        if not Hidden.get_project_folder().endswith("WebScraping_and_MCSim"):
+            Hidden.set_project_folder(os.path.dirname(os.path.dirname(os.getcwd())))
         self.sc = ScrapeControl("proxies_full.csv",
                                 "1991-1992",
                                 "Chicago-Bulls/4",
                                 False,
-                                db_host=XAMPP_TEST)
+                                db_host=Hidden.get_xampp_test_uri())
 
     def tearDown(self):
         del self.sc
@@ -78,7 +77,7 @@ class TestScrapeControl(unittest.TestCase):
         Utility method to truncate all working tables in nba_test db.
         :return: None
         """
-        conn = MySQLHandler(XAMPP_TEST)
+        conn = MySQLHandler(Hidden.get_xampp_test_uri())
         tables = ["individual_games_playoff", "individual_games_regular", "player_playoff_away",
                   "player_playoff_home", "player_regular_away", "player_regular_home",
                   "team_playoff", "team_regular"]
@@ -97,7 +96,7 @@ class TestScrapeControl(unittest.TestCase):
         :return: None
         """
         # ensure test tables are empty to begin with
-        conn = MySQLHandler(XAMPP_TEST)
+        conn = MySQLHandler(Hidden.get_xampp_test_uri())
         self.assertFalse(conn.season_in_db("1991-1992", "CHI"))
         conn.disconnect()
 
@@ -105,7 +104,7 @@ class TestScrapeControl(unittest.TestCase):
         self.sc.run_all("requests_scrape")
 
         # test and clean-up
-        conn = MySQLHandler(XAMPP_TEST)
+        conn = MySQLHandler(Hidden.get_xampp_test_uri())
         self.assertTrue(conn.season_in_db("1991-1992", "CHI"))
 
         individual = conn.read("individual_games_regular", "*")
@@ -140,13 +139,13 @@ class TestScrapeControl(unittest.TestCase):
         :param scrape_method: str of scrape method to use, default: "requests_scrape"
         :return: None
         """
-        conn = MySQLHandler(XAMPP_TEST)
+        conn = MySQLHandler(Hidden.get_xampp_test_uri())
         self.assertFalse(conn.season_in_db(season, team))
         conn.disconnect()
 
         self.sc.run_single(category, scrape_method)
 
-        conn = MySQLHandler(XAMPP_TEST)
+        conn = MySQLHandler(Hidden.get_xampp_test_uri())
         table = conn.read(table_name, "*")
         conn.disconnect()
 
@@ -198,22 +197,26 @@ class TestScrapeControl(unittest.TestCase):
         self.assertEqual(tbl_len, 1)
 
         # read to df and persist
-        individual_path = os.path.join(PROJECT_FOLDER, "test", "content", "html_test_content", "individual6.html")
+        individual_path = os.path.join(Hidden.get_project_folder(), "test", "content",
+                                       "html_test_content", "individual6.html")
+        # pylint: disable=W1514
         with open(individual_path, "r") as file:
             content = file.readlines()
         html_str = "\n".join(content)
         df = RealGMParser.html_table_2_df(html_str)
-        Persist.insert(df, "individual_games_regular", "individual", XAMPP_TEST)
+        Persist.insert(df, "individual_games_regular", "individual",
+                       Hidden.get_xampp_test_uri())
 
         # check insert succeeded
         tbl_len = self.get_table_length("individual_games_regular")
         self.assertTrue(tbl_len > 1)
 
         # duplicate persist
-        Persist.insert(df, "individual_games_regular", "individual", XAMPP_TEST)
+        Persist.insert(df, "individual_games_regular", "individual",
+                       Hidden.get_xampp_test_uri())
 
         # check duplicate
-        conn = MySQLHandler(XAMPP_TEST)
+        conn = MySQLHandler(Hidden.get_xampp_test_uri())
         res = conn.read("individual_games_regular", "count(id)",
                         'player="Raef LaFrentz" and date="2006-01-04"')
         raef_count = res[1][0]
@@ -227,8 +230,7 @@ class TestScrapeControl(unittest.TestCase):
         :param table_name: str table to check length for
         :return: int for length of table
         """
-        conn = MySQLHandler(XAMPP_TEST)
+        conn = MySQLHandler(Hidden.get_xampp_test_uri())
         res = conn.read(table_name, "*")
         conn.disconnect()
         return len(res)
-

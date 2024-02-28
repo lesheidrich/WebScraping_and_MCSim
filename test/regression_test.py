@@ -1,5 +1,21 @@
-import unittest
+"""
+Module: regression_test.py
 
+Module is a regression test containing unit-test test cases and integration-test test cases as runnable
+suites, as well as a full program lint.
+
+NOTICE:
+    * Scrape testing with proxies can run for extended time periods, depending on proxy availability.
+    * Selenium-based proxy scrapers have even longer runtimes, and are therefore commented out when not in
+      use. Average test times are around 2 hours when enabled.
+
+WARNING:
+    * Integration tests contain live scraper functions. Please make sure your VPN is turned on!
+    * Built in proxies applied during testing have not been vetted or validated to ensure anonymity!
+"""
+
+import os
+import unittest
 from test.integration.control_service_test import TestScrapeControl
 from test.integration.monte_carlo_test import TestMonteCarlo
 from test.unit.db_handler_test import TestMySQLHandler
@@ -14,6 +30,7 @@ from test.unit.parse_service_test import TestRealGMParser
 from test.unit.selenium_service_test import TestWebDriverFactory, TestChromeDriver, TestFirefoxDriver
 from test.unit.webscraper_utilities_test import TestWebKit, TestProxyKit
 from unit.logger_test import TestLogger
+from project_secrets import Hidden
 
 
 def unittests() -> unittest.TestSuite:
@@ -57,10 +74,12 @@ def integration_tests() -> unittest.TestSuite:
 
 
 if __name__ == '__main__':
+    Hidden.set_project_folder(os.path.dirname(os.getcwd()))
+
     unit = unittest.TextTestRunner()
     integration = unittest.TextTestRunner()
 
     unit.run(unittests())
     # integration.run(integration_tests)
 
-    TestLint.run_linter(exceptions=["parse_service_html.py", "regression_test.py", "main.py"])
+    TestLint.run_linter(exceptions=["parse_service_html.py"], path=Hidden.get_project_folder())

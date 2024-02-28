@@ -7,15 +7,11 @@ on those files, excluding specified exceptions.
 
 Classes:
     TestLint: A utility class for linting Python files in a project directory.
-
-Attributes:
-    PROJECT_FOLDER: A constant representing the root folder of the project.
 """
 
 import os
 from typing import List
 from pylint import lint
-from project_secrets import PROJECT_FOLDER
 
 
 class TestLint:
@@ -29,9 +25,6 @@ class TestLint:
         list_files_recursively: Recursively compiles a list of Python modules to lint from a project
         directory.
         run_linter: Lints all modules in the project directory, excluding specified exceptions.
-
-    Attributes:
-        PROJECT_FOLDER: The root folder of the project.
     """
     @staticmethod
     def list_files_recursively(folder_path: str) -> List[str]:
@@ -49,7 +42,7 @@ class TestLint:
         return file_list
 
     @staticmethod
-    def run_linter(exceptions: list, path: str = PROJECT_FOLDER) -> None:
+    def run_linter(exceptions: list, path: str) -> None:
         """
         Lints all modules in project directory, excluding param exceptions.
         :param exceptions: list of str filenames to exclude from lint

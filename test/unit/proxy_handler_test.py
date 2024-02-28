@@ -23,9 +23,10 @@ Methods:
 
 Note: Some tests involve the use of mocking to simulate external dependencies such as requests.
 """
+import os
 import unittest
 from unittest.mock import patch, Mock
-import project_secrets
+from project_secrets import Hidden
 import requests
 from webscraper.proxy.proxy_handler import ProxyHandler
 
@@ -63,7 +64,7 @@ class TestProxyHandler(unittest.TestCase):
         :return: None
         """
         test_path = self.handler._build_path("proxies_test.csv")
-        absolute_path = project_secrets.get_project_folder() + "\\webscraper\\proxy\\proxies_test.csv"
+        absolute_path = os.path.join(Hidden.get_project_folder(), "webscraper", "proxy", "proxies_test.csv")
         self.assertEqual(absolute_path, test_path)
 
     def test_absolute_build_path(self):
@@ -71,7 +72,7 @@ class TestProxyHandler(unittest.TestCase):
         Ensures _build_path() returns correct absolute path for absolute path input.
         :return: None
         """
-        absolute_path = project_secrets.get_project_folder() + "\\webscraper\\proxy\\proxies_test.csv"
+        absolute_path = os.path.join(Hidden.get_project_folder(), "webscraper", "proxy", "proxies_test.csv")
         test_path = self.handler._build_path(absolute_path)
         self.assertEqual(absolute_path, test_path)
 

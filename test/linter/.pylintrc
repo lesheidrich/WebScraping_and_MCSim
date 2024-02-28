@@ -7,7 +7,8 @@ disable=
     expression-not-assigned,
     too-many-arguments,
     too-many-instance-attributes,
-    invalid-name
+    invalid-name,
+    too-many-statements
 
 max-line-length=110
 

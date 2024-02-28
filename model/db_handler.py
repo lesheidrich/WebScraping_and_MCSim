@@ -38,7 +38,7 @@ Methods:
 
 from typing import List, Optional
 from urllib.parse import urlparse
-from project_secrets import XAMPP_URI
+from project_secrets import Hidden
 import mysql.connector
 
 
@@ -79,7 +79,7 @@ class MySQLHandler:
 
     def __init__(self, uri: Optional[str]):
         if uri is None:
-            uri = XAMPP_URI
+            uri = Hidden.get_xampp_uri()
         parsed = urlparse(uri)
         self.host = parsed.hostname
         self.username = parsed.username
