@@ -155,3 +155,9 @@
 2024-02-28 21:12:11,831 - Scrape Control - INFO - Team Chicago-Bulls/4 with season 1990-1991 is already in the database.
 2024-02-28 21:12:11,831 - Scrape Control - INFO - Scraping category: individual, team: Chicago-Bulls/4, season: 1990-1991.
 2024-02-28 21:16:08,409 - FLASK HOST - INFO - Database contains all necessary data!
+2024-02-28 21:33:06,713 - FLASK HOST - INFO - Database contains all necessary data!
+2024-02-28 21:33:18,674 - FLASK HOST - INFO - Teams.CLEVELAND_CAVALIERS for 1990-1991 season is not in DB!
+2024-02-28 21:33:35,663 - Scrape Control - INFO - Scraping category: player, team: Cleveland-Cavaliers/5, season: 1990-1991.
+2024-02-28 21:33:50,881 - Scrape Control - INFO - Scraping category: team, team: Cleveland-Cavaliers/5, season: 1990-1991.
+2024-02-28 21:33:50,885 - Scrape Control - INFO - Team Cleveland-Cavaliers/5 with season 1990-1991 is already in the database.
+2024-02-28 21:33:50,885 - Scrape Control - INFO - Scraping category: individual, team: Cleveland-Cavaliers/5, season: 1990-1991.
