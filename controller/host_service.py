@@ -105,7 +105,8 @@ class Host:
                             self.log.info(f"{team} for {season} season is not in DB!")
                             if season not in self.missing_seasons:
                                 self.missing_seasons[season] = []
-                            self.missing_seasons[season].append(team.link_name)
+                            if team.link_name not in self.missing_seasons[season]:
+                                self.missing_seasons[season].append(team.link_name)
                 # pack comment
                 if self.missing_seasons:
                     message = ""
@@ -119,7 +120,7 @@ class Host:
             except Exception as e:
                 return self.pack_json(e, 400)
 
-        @self.app.route('/monte_carlo/season_data')
+        @self.app.route('/monte_carlo/season_data')  # TODO: if 'forced'=message then just scrape both home and away for season
         def get_season_data() -> dict:
             """
             Order: 3
