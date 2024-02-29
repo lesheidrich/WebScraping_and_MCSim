@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="reset rest timeouts">
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="logs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/host_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/host_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/log/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view" beforeDir="false" afterPath="$PROJECT_DIR$/view" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -654,12 +655,19 @@
       <option name="project" value="LOCAL" />
       <updated>1709247285468</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="logs">
+      <option name="closed" value="true" />
+      <created>1709247315957</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1709247315957</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mc tested" />
     <MESSAGE value="plt runtime GUI threading issue fixed" />
     <MESSAGE value="exception handling" />
     <MESSAGE value="view" />
@@ -684,6 +692,7 @@
     <MESSAGE value="view added" />
     <MESSAGE value="db and view force scrape" />
     <MESSAGE value="reset rest timeouts" />
-    <option name="LAST_COMMIT_MESSAGE" value="reset rest timeouts" />
+    <MESSAGE value="logs" />
+    <option name="LAST_COMMIT_MESSAGE" value="logs" />
   </component>
 </project>

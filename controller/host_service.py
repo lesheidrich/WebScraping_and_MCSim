@@ -25,12 +25,6 @@ class Host:
 
     Attributes:
         app (Flask): The Flask application instance.
-        home (Teams): The home team for the game.
-        away (Teams): The away team for the game.
-        season (str): The season for which the game data is requested.
-        game_date (str): The date of the game.
-        db (str): The database URI.
-        missing_seasons (dict): A dictionary containing information about missing seasons and teams.
         log (Logger): The logger instance for logging application events.
 
     Methods:

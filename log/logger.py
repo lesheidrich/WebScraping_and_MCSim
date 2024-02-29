@@ -89,6 +89,7 @@ class Logger:
         self.logger = logging.getLogger(name)
         self.logger.setLevel(level)
         self._setup_file_handler(self.log_file_path, level)
+        self.truncate_if_too_big()
 
     def _setup_file_handler(self, log_file: str, log_level) -> None:
         """
@@ -179,6 +180,18 @@ class Logger:
         # pylint: disable=W0718
         except Exception as e:
             print(f"Error clearing log file! {e}")
+
+    def truncate_if_too_big(self, max_size_bytes=10485760) -> None:
+        """
+        Truncates log file if it exceeds arg threshold size. Default size is 10 mB.
+        :param max_size_bytes: int of max mB
+        :return: None
+        """
+        if os.path.exists(self.log_file_path):
+            log_size = os.path.getsize(self.log_file_path)
+            if log_size > max_size_bytes:
+                self.clear_log()
+                self.info("Log file cleared due to size exceeding threshold.")
 
     def has_open_handlers(self) -> bool:
         """
