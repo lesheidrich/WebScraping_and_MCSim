@@ -249,6 +249,12 @@ class Persist:
         conn.disconnect()
 
     @staticmethod
+    def delete_records(table_name: str, condition: str, db_host: Optional[str] = None):
+        conn = MySQLHandler(db_host)
+        conn.delete_record(table_name, condition)
+        conn.disconnect()
+
+    @staticmethod
     def get_game_data(home: str, away: str, season: str, db_host: Optional[str] = None) -> pd.DataFrame:
         """
         Gets df of game dates for specified nba teams in season.

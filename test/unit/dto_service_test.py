@@ -27,6 +27,10 @@ Methods:
 import unittest
 import pandas as pd
 from controller.dto_service import Persist
+from model.db_handler import MySQLHandler
+from project_secrets import Hidden
+from test.content.parse_service_html import PLAYER_HTML
+from webscraper.parse_service import RealGMParser
 
 
 class TestPersist(unittest.TestCase):
@@ -100,3 +104,37 @@ class TestPersist(unittest.TestCase):
         """
         result = Persist.team_in_db("2025-2026", "team_regular", None)
         self.assertFalse(result)
+
+    def test_delete_records(self):
+        """
+        Test ensures successful persistence and deletion from table.
+        :return: None
+        """
+        sauce = PLAYER_HTML
+        df = RealGMParser.html_table_2_df(sauce)
+        RealGMParser.players_df_add_columns(df)
+        df["Season"] = "1991-1992"
+
+        # db is empty to start
+        self.assertEqual(self.get_player_table_len(), 0)
+
+        # db is populated
+        Persist.insert(df, "player_regular_home", "player",
+                       Hidden.get_xampp_test_uri())
+        self.assertTrue(self.get_player_table_len() > 0)
+
+        # empty again
+        Persist.delete_records("player_regular_home", 'season="1991-1992" and team="CHI"',
+                               Hidden.get_xampp_test_uri())
+        self.assertEqual(self.get_player_table_len(), 0)
+
+
+    def get_player_table_len(self) -> int:
+        """
+        Utility method returns nba_test.player_regular_home table length.
+        :return: int nba_test.player_regular_home table length
+        """
+        conn = MySQLHandler(Hidden.get_xampp_test_uri())
+        count = conn.read("player_regular_home", "count(id)")
+        conn.disconnect()
+        return count[1][0]

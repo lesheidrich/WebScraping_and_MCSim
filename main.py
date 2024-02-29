@@ -11,10 +11,6 @@ if __name__ == '__main__':
     server = Host()
     server.run()
 
-
-
-
-
     # season = "1991-1992"
     # home = Teams.from_full_name('Chicago Bulls')
     # away = Teams.from_link_name('Miami-Heat/15')
@@ -23,4 +19,10 @@ if __name__ == '__main__':
     # mc = MonteCarlo(None, season, home, away, game_date, game_type, 100)
     # result = mc.run()
 
+
+    # sc = ScrapeControl("proxies_full.csv",
+    #                                 "1991-1992",
+    #                                 "Chicago-Bulls/4",
+    #                                 False,
+    #                                 db_host=Hidden.get_xampp_uri())
 

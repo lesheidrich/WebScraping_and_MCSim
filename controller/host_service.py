@@ -42,16 +42,12 @@ class Host:
         pack_json(message: Any, status_code: int) -> dict: Utility method to assemble JSON responses.
         run(): Method to run the Flask host until manually aborted by the user.
     """
+
     def __init__(self):
         matplotlib.use('Agg')  # non-interactive rendering env
         self.app = Flask(__name__)
-        self.home = None
-        self.away = None
-        self.season = None
-        self.game_date = None
-        self.db = None
-        self.missing_seasons = {}
-        self.log = Logger(log_file="app_test_log.log",
+        # self.app.config['TIMEOUT'] = 500
+        self.log = Logger(log_file="application_log.log",
                           name="FLASK HOST",
                           log_level="INFO")
 
@@ -60,27 +56,30 @@ class Host:
             """
             Order: 1
             View: Get Games button (Find Games)
-            Takes params of home team, away team, season and DB URI from client.
             Reads df of game schedule for selected params from DB and returns it as json to api.
             :return: json of game schedule
             """
-            self.home = Teams.from_full_name(request.args.get('home'))
-            self.away = Teams.from_full_name(request.args.get('away'))
-            self.season = request.args.get('season')
-            self.db = request.args.get('dbURI')
+            home = Teams.from_full_name(request.args.get('home'))
+            away = Teams.from_full_name(request.args.get('away'))
+            season = request.args.get('season')
+            db = request.args.get('dbURI')
 
             try:
-                df = Persist.get_game_data(self.home.full_name, self.away.full_name, self.season, self.db)
+                df = Persist.get_game_data(home.full_name, away.full_name, season, db)
                 df['date'] = df['date'].astype(str)
                 data = df.to_json(orient='records')
                 if len(df) < 1:
-                    raise ValueError(f"Game data is empty for H:{self.home.full_name}, "
-                                     f"A:{self.away.full_name}, Season:{self.season}, DB:{self.db}!")
+                    message = (f"Game data is empty for H:{home.full_name}, A:{away.full_name}, Season:"
+                               f"{season}, DB:{db}!")
+                    self.log.warning(message)
+                    raise ValueError(message)
                 return self.pack_json(data, 200)
             except TypeError as e:
+                self.log.error(f"get_game_data() raised TypeError while responding to request: {e}")
                 return self.pack_json(e, 404)
             # pylint: disable=W0718
             except Exception as e:
+                self.log.error(f"get_game_data() raised Exception while responding to request: {e}")
                 return self.pack_json(e, 400)
 
         @self.app.route('/monte_carlo/team_in_db')
@@ -88,80 +87,97 @@ class Host:
             """
             Order: 2
             View: Simulate button (Find Games)
-            Takes param of game date from client. Initializes previous season date from it.
             Reviews current and previous season to make sure both home and away team is in DB.
             Constructs json of missing data attrib.
             Sends json response containing comment of seasons and teams missing for viewing.
             :return: json of missing seasons and teams for client viewing
             """
-            self.game_date = request.args.get('game_date')
-            last_season = f"{self.season[:3]}{int(self.season[3])-1}{self.season[4:8]}{int(self.season[8])-1}"
+            season = request.args.get('season')
+            home = Teams.from_full_name(request.args.get('home'))
+            away = Teams.from_full_name(request.args.get('away'))
+            db = request.args.get('db')
+
+            last_season = f"{season[:3]}{int(season[3]) - 1}{season[4:8]}{int(season[8]) - 1}"
+            message = ""
 
             try:
                 # pack missing dict
-                for season in [last_season, self.season]:
-                    for team in [self.home, self.away]:
-                        if not Persist.season_in_db(season, team.short_name, self.db):
-                            self.log.info(f"{team} for {season} season is not in DB!")
-                            if season not in self.missing_seasons:
-                                self.missing_seasons[season] = []
-                            if team.link_name not in self.missing_seasons[season]:
-                                self.missing_seasons[season].append(team.link_name)
-                # pack comment
-                if self.missing_seasons:
-                    message = ""
-                    for k, v in self.missing_seasons.items():
-                        message += f"{k}: {', '.join(v)} "
+                for season in [last_season, season]:
+                    for team in [home, away]:
+                        if not Persist.season_in_db(season, team.short_name, db):
+                            self.log.info(f"{team.short_name} for {season} season is not in DB!")
+                            if team.short_name not in message:
+                                message += f" {team.short_name}"
+
+                if message:
+                    self.log.info(f"Response with 204:{message} sent to client.")
                     return self.pack_json(message, 204)
 
-                self.log.info("Database contains all necessary data!")
+                self.log.info(f"Database contains {season}: {home.short_name} and {away.short_name}!")
                 return self.pack_json("", 200)
             # pylint: disable=W0718
             except Exception as e:
+                self.log.error(f"get_teams_in_db() raised Exception while responding to request: {e}")
                 return self.pack_json(e, 400)
 
-        @self.app.route('/monte_carlo/season_data')  # TODO: if 'forced'=message then just scrape both home and away for season
+        @self.app.route('/monte_carlo/season_data')
         def get_season_data() -> dict:
             """
             Order: 3
             View: Scrape button (Scrape Pop Up)
-            Takes params of proxy list, check proxies (boolean: if yes, then check), and scrape method
-            from client.
             Iterates over missing parameters from missing_seasons dictionary. Attempts to scrape, in case
             of error will re-attempt again (sc.run_all() also re-attempts all failed attempts with Firefox).
             Successful scrape attempts result in dropping of list params.
             :return: json of success, or failure
             """
+            season = request.args.get('season')
+            home = Teams.from_full_name(request.args.get('home'))
+            away = Teams.from_full_name(request.args.get('away'))
+            db = request.args.get('db')
             proxy_list = rf"{request.args.get('proxy_list')}"
             check_proxies = bool(request.args.get('check_proxies'))
             scrape_method = request.args.get('scrape_method')
+            forced = bool(request.args.get('forced'))
+
             proxies = proxy_list if proxy_list else None
+            last_season = f"{season[:3]}{int(season[3]) - 1}{season[4:8]}{int(season[8]) - 1}"
 
-            for k_season, v_list in self.missing_seasons.items():
-                v_list_copy = v_list[:]
-                for team_str in v_list_copy:
+            for s in [last_season, season]:
+                for t in [home, away]:
 
-                    # check if other client updated
-                    team_obj = Teams.from_link_name(team_str)
-                    if not Persist.season_in_db(k_season, team_obj.short_name, self.db):
+                    # not brute force scrape checks if other client updated db already
+                    if not forced:
+                        if Persist.season_in_db(s, t.short_name, db):
+                            continue
 
-                        # scrape
-                        sc = ScrapeControl(proxies, k_season, team_str, check_proxies, db_host=self.db)
+                    # scrape
+                    sc = ScrapeControl(proxies, s, t.link_name, check_proxies, db_host=db)
+                    try:
                         try:
-                            try:
-                                sc.run_all(scrape_method)
-                            # pylint: disable=W0718
-                            except Exception:
-                                WebKit.random_delay()
-                                sc.run_all(scrape_method)
-                            del sc
-
-                            # remove team from list
-                            v_list.remove(team_str)
+                            sc.run_all(scrape_method)
+                            self.log.info(f"\nSCRAPING {t.link_name} for season {s} with "
+                                          f"{scrape_method}.")
                         # pylint: disable=W0718
                         except Exception as e:
-                            self.pack_json(e, 400)
+                            WebKit.random_delay()
+                            sc.run_all(scrape_method)
+                            self.log.warning(f"{scrape_method} ran into an error while scraping "
+                                             f"{t.short_name} for season {s}. Attempting to scrape "
+                                             f"again.\nDetails: {e}")
+                        del sc
+                    # pylint: disable=W0718
+                    except Exception as e:
+                        # deletes if unsuccessful so in_db returns False
+                        Persist.delete_records("player_regular_home",
+                                               f'season="{s}" and team="{t.short_name}"')
+                        Persist.delete_records("player_regular_away",
+                                               f'season="{s}" and team="{t.short_name}"')
+                        self.log.error(f"get_season_data() raised Exception while responding to request. "
+                                       f"Season {s} for team {t.short_name} has been rolled back.\n{e}")
+                        self.pack_json(e, 400)
 
+            self.log.info(f"get_season_data() responded with 200 on {season}:{home.short_name},"
+                          f"{away.short_name}.")
             return self.pack_json("", 200)
 
         @self.app.route('/monte_carlo/simulation')
@@ -169,16 +185,20 @@ class Host:
             """
             Order: last
             View: Simulate button (Find Games) || auto activated after Scrape button (Monte Carlo)
-            Takes params of game type ('regular' || 'playoff') and epochs (for sim) from client.
             Responds to client with simulation graphs and message of game data as json.
             :return: json of simulation graphs and game data
             """
             game_type = request.args.get('game_type')
             epochs = int(request.args.get('epochs'))
+            season = request.args.get('season')
+            home = Teams.from_full_name(request.args.get('home'))
+            away = Teams.from_full_name(request.args.get('away'))
+            db = request.args.get('db')
+            game_date = request.args.get('game_date')
 
             try:
                 plt.ioff()  # interactive mode
-                mc = MonteCarlo(self.db, self.season, self.home, self.away, self.game_date, game_type, epochs)
+                mc = MonteCarlo(db, season, home, away, game_date, game_type, epochs)
                 result = mc.run()
 
                 return {
@@ -189,6 +209,8 @@ class Host:
                 }
             # pylint: disable=W0718
             except Exception as e:
+                self.log.error(f"get_monte_carlo_sim() raised Exception while responding to request: "
+                               f"{e}")
                 return self.pack_json(e, 400)
 
     def pack_json(self, message: Any, status_code: int) -> dict:
@@ -199,9 +221,9 @@ class Host:
         :return: json response to client
         """
         return {
-                    'message': message,
-                    'status': status_code
-                }
+            'message': message,
+            'status': status_code
+        }
 
     def run(self) -> None:
         """

@@ -87,8 +87,10 @@ class ScrapeControl:
             for link, table in zip(links, tables):
                 if (not self.in_playoffs and "Playoff" not in link) or self.in_playoffs:
                     try:
+                        self.log.info(f"Scraping: process_{category}() {link}. ")
                         method = getattr(self, f"process_{category}")
                         method(scrape_method, link, table)
+                        self.log.info(f"process_{category}() scraped {link}.")
                     # pylint: disable=W0718
                     except Exception as e:
                         self.log.warning(f"Scrape method {scrape_method} failed for {link} on table {table}."
