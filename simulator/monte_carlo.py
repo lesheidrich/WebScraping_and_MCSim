@@ -170,6 +170,41 @@ class MonteCarlo:
 
         return [self.prob_density(), self.violin_plot(), self.get_stats()]
 
+    def run_plt(self):
+        """
+        Runs the Monte Carlo simulation for the desired amount of epochs, documenting final scores per team.
+        :return: (str, str, str) prob. density plot, violin plot, mode and percentage stats
+        """
+        for _ in range(self.epochs):
+            game = Simulation(self.db_host, self.season, self.home_team, self.away_team, self.game_date,
+                              self.game_type)
+            game.play_game()
+            self.home_scores = np.append(self.home_scores, game.home_pts)
+            self.away_scores = np.append(self.away_scores, game.away_pts)
+
+        prob_density_plot = self.prob_density()
+        violin_plot = self.violin_plot()
+        self.display_plots(prob_density_plot, violin_plot)
+
+    def display_plots(self, prob_density_plot, violin_plot):
+        """
+        Display the generated plots.
+        :param prob_density_plot: BytesIO buffer of the probability density plot
+        :param violin_plot: BytesIO buffer of the violin plot
+        """
+        # Decode base64 strings and plot the figures
+        prob_density_img = plt.imread(BytesIO(base64.b64decode(prob_density_plot)))
+        violin_img = plt.imread(BytesIO(base64.b64decode(violin_plot)))
+
+        # Display the plots
+        fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+        axes[0].imshow(prob_density_img)
+        axes[0].axis('off')
+        axes[1].imshow(violin_img)
+        axes[1].axis('off')
+        plt.tight_layout()
+        plt.show()
+
     def prob_density(self) -> str:
         """
         Builds probability density plot as BytesIO buffer.
@@ -182,7 +217,7 @@ class MonteCarlo:
                 label=f'Visitor: {self.away_team.short_name}')
         ax.set_xlabel('Team Scores (PPG)')
         ax.set_ylabel('Frequency (simulations)')
-        ax.set_title('Team Scores Histogram')
+        ax.set_title('Team Scores Probability Density')
         ax.legend()
         ax.grid(True)
 
@@ -198,7 +233,7 @@ class MonteCarlo:
         for pc, color in zip(violin_parts['bodies'], ['yellow', 'blue']):
             pc.set_facecolor(color)
         ax.set_ylabel('Team Scores (PPG)')
-        ax.set_title('Violin Plot of Team Scores')
+        ax.set_title('Team Scores Violin Plot')
         ax.set_xticks([1, 2])
         ax.set_xticklabels([f'Home: {self.home_team.short_name}', f'Visitor: {self.away_team.short_name}'])
         ax.grid(True)
