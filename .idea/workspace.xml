@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="log auto clears">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/monte_carlo.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/monte_carlo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view" beforeDir="false" afterPath="$PROJECT_DIR$/view" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/FileContentIndex/3ae3c43e-d9b9-40d2-93b0-f6a8a2593951.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/FileContentIndex/f6b52416-e4a0-4fa0-80ac-3eb5df06905c.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View.sln" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/MonteCarlo.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/MonteCarlo.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/NBA_Sim_View.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/NBA_Sim_View.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapeView.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapeView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/ScrapeView.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.ScrapeView.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/packages.config" afterDir="false" />
-    </list>
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="test cases" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -696,12 +666,19 @@
       <option name="project" value="LOCAL" />
       <updated>1709248147553</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="test cases">
+      <option name="closed" value="true" />
+      <created>1709417652480</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1709417652480</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="exception handling" />
     <MESSAGE value="view" />
     <MESSAGE value="sql dumps added user and regular" />
     <MESSAGE value="lint" />
@@ -726,7 +703,8 @@
     <MESSAGE value="reset rest timeouts" />
     <MESSAGE value="logs" />
     <MESSAGE value="log auto clears" />
-    <option name="LAST_COMMIT_MESSAGE" value="log auto clears" />
+    <MESSAGE value="test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="test cases" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
