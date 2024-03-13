@@ -93,6 +93,7 @@ class TeamBuilder:
         self.roster = Roster()
         self.build_roster(self.player_df)
         self.disconnect()
+        self.validate_roster()
 
     def __del__(self):
         if self.conn.connection.is_connected:
@@ -105,7 +106,7 @@ class TeamBuilder:
         """
         self.conn.disconnect()
 
-    def build_roster(self, df: pd.DataFrame) -> None:
+    def build_roster(self, pl_df: pd.DataFrame) -> None:
         """
         Populates roster instance's position lists (e.g.: Roster.SG, etc.)
         Follows player df to reconstruct roster stats from individual game data
@@ -113,13 +114,49 @@ class TeamBuilder:
         last few weeks of season are also weighted compared to earlier games). Stats
         are loaded into Player instances, which populate the Roster position lists.
         All stats are calculated averages from individual games.
-        :param df: player df for team and season
+        :param pl_df: player df for team and season
         :return: None
         """
-        for _, row in df.iterrows():
-            if row["position"]:
+        # pd.set_option('display.max_rows', None)
+        # pd.set_option('display.max_columns', None)
+        # print(self.individual_df)
+        # print(self.player_df)
+
+        for _, row in pl_df.iterrows():
+            test = row["position"] and row["player"] in self.individual_df['player'].unique()
+            if test:
                 position = getattr(self.roster, row["position"])
-                position.append(Player(self.individual_df[self.individual_df['player'] == row["player"]],
+                position.append(Player(self.individual_df.loc[self.individual_df['player'] == row["player"], :],
+                                       row["player"], row["GP"], row["depth"], row["MPG"]))
+                setattr(self.roster, row["position"], position)
+            # draft picks and traded players
+            if row["position"] and not test:
+                # mock individual df fabricated from season data for draft picks and trades
+                mock_ind_df = pd.DataFrame({
+                    "id": [row["id"]],
+                    "player": [row["player"]],
+                    "date": [self.individual_df['date'].max()],
+                    "team": [row["team"]],
+                    "MIN": [row["MPG"]],
+                    "PTS": [row["PPG"]],
+                    "FGM": [row["FGM"]],
+                    "FGA": [row["FGA"]],
+                    "3PM": [row["3PM"]],
+                    "3PA": [row["3PA"]],
+                    "FTM": [row["FTM"]],
+                    "FTA": [row["FTA"]],
+                    "ORB": [row["ORB"]],
+                    "DRB": [row["DRB"]],
+                    "REB": [row["RPG"]],
+                    "AST": [row["APG"]],
+                    "STL": [0],
+                    "BLK": [0],
+                    "TOV": [0],
+                    "PF": [0],
+                    "interval_game": [0]
+                })
+                position = getattr(self.roster, row["position"])
+                position.append(Player(mock_ind_df,
                                        row["player"], row["GP"], row["depth"], row["MPG"]))
 
     def date_w_individual(self, team: Teams, game_date: str, game_type: str,
@@ -223,6 +260,13 @@ class TeamBuilder:
         if not season_start <= game_date_dt <= season_end:
             raise ValueError(f"Game date {game_date} is outside the scope of the {season} season!")
 
+    def validate_roster(self) -> None:
+        for attrib in ["PF", "SF", "PG", "SG", "C"]:
+            position = getattr(self.roster, attrib)
+            if len(position) < 1:
+                raise ValueError(f"Position {attrib} is empty! All roster positions must be filled for "
+                                 f"{self.h_or_a} team!")
+
 
 class Roster:
     """
@@ -248,6 +292,16 @@ class Roster:
 
     def __iter__(self):
         return iter(self.PF + self.SF + self.PG + self.SG + self.C)
+
+    def get_stat_df(self) -> pd.DataFrame:
+        pd.set_option('display.max_rows', None)
+        pd.set_option('display.max_columns', None)
+
+        cols = ["name", "playtime_w", "adjusted_points", "player_w", "totalPpercent", "AST", "ORB", "STL"]
+        records = []
+        for p in self.__iter__():
+            records.append([p.name, p.playtime_w, p.adjusted_points, p.playtime_w, p.totalPpercent, p.AST, p.ORB, p.STL])
+        return pd.DataFrame(records, columns=cols)
 
 
 class Player:
@@ -296,20 +350,20 @@ class Player:
     """
     def __init__(self, df: pd.DataFrame, player: str, GP: str, depth: str, avg_min: float):
         # avg stats
-        self.TOV = None
-        self.BLK = None
-        self.STL = None
-        self.AST = None
-        self.REB = None
-        self.DRB = None
-        self.ORB = None
-        self.FTA = None
-        self.FTM = None
-        self.threePA = None
-        self.threePM = None
-        self.FGA = None
-        self.FGM = None
-        self.PTS = None
+        self.TOV = 0
+        self.BLK = 0
+        self.STL = 0
+        self.AST = 0
+        self.REB = 0
+        self.DRB = 0
+        self.ORB = 0
+        self.FTA = 0
+        self.FTM = 0
+        self.threePA = 0
+        self.threePM = 0
+        self.FGA = 0
+        self.FGM = 0
+        self.PTS = 0
         self.populate_attribs(df)
         self.FGpercent = self.handle_zero_div(self.FGM, self.FGA)
         self.threePpercent = self.handle_zero_div(self.threePM, self.threePA)
@@ -387,8 +441,8 @@ class Player:
         :return: float for player's play probability per game
         """
         prob = avg_min / 48
-        if not self.played_last_game(df):
-            return 0
+        # if not self.played_last_game(df):
+        #     return 0
 
         if depth == "2":
             prob *= 0.25

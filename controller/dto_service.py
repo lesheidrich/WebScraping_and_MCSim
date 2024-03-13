@@ -249,7 +249,14 @@ class Persist:
         conn.disconnect()
 
     @staticmethod
-    def delete_records(table_name: str, condition: str, db_host: Optional[str] = None):
+    def delete_records(table_name: str, condition: str, db_host: Optional[str] = None) -> None:
+        """
+        Deletes record(s) matching specified condition param.
+        :param table_name: str of table to delete from
+        :param condition: str of condition after WHERE in sql command
+        :param db_host: str connection URL for MySQLHandler instance
+        :return: None
+        """
         conn = MySQLHandler(db_host)
         conn.delete_record(table_name, condition)
         conn.disconnect()

@@ -25,11 +25,11 @@ Methods:
 """
 
 import unittest
-import pandas as pd
+from test.content.parse_service_html import PLAYER_HTML
 from controller.dto_service import Persist
 from model.db_handler import MySQLHandler
 from project_secrets import Hidden
-from test.content.parse_service_html import PLAYER_HTML
+import pandas as pd
 from webscraper.parse_service import RealGMParser
 
 

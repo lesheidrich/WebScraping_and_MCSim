@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="test cases">
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="requirements">
+      <change afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/TestStore/OutputMessages/f2003430-7b54-45fc-2845-987c6fb21f25/StandardOutput.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/dto_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/dto_sim.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/dto_sim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view" beforeDir="false" afterPath="$PROJECT_DIR$/view" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulator/game_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/game_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/regression_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/regression_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/unit/dto_service_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/unit/dto_service_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,18 +232,18 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for control_service_test.TestScrapeControl.test_individual_no_scrape" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for db_handler_test.TestMySQLHandler" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="WebScraping_and_MCSim" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/unit" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;control_service_test.TestScrapeControl.test_individual_no_scrape&quot;" />
+      <option name="_new_target" value="&quot;db_handler_test.TestMySQLHandler&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -272,11 +279,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for dto_service_test.TestPersist.test_delete_records" />
         <item itemvalue="Python.regression_test" />
+        <item itemvalue="Python tests.Python tests for db_handler_test.TestMySQLHandler" />
+        <item itemvalue="Python tests.Python tests for dto_service_test.TestPersist.test_delete_records" />
         <item itemvalue="Python tests.Python tests for monte_carlo_test.TestMonteCarlo" />
         <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl" />
-        <item itemvalue="Python tests.Python tests for control_service_test.TestScrapeControl.test_individual_no_scrape" />
       </list>
     </recent_temporary>
   </component>
@@ -295,14 +302,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708340286792</updated>
-    </task>
-    <task id="LOCAL-00001" summary="webscraper reinitialization">
-      <option name="closed" value="true" />
-      <created>1708344062381</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1708344062382</updated>
     </task>
     <task id="LOCAL-00002" summary="lint and gitignore">
       <option name="closed" value="true" />
@@ -688,12 +687,19 @@
       <option name="project" value="LOCAL" />
       <updated>1709508050598</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="requirements">
+      <option name="closed" value="true" />
+      <created>1709653062769</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1709653062769</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="view" />
     <MESSAGE value="sql dumps added user and regular" />
     <MESSAGE value="lint" />
     <MESSAGE value="teams list amended for 90s" />
@@ -718,17 +724,14 @@
     <MESSAGE value="logs" />
     <MESSAGE value="log auto clears" />
     <MESSAGE value="test cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="test cases" />
+    <MESSAGE value="requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="requirements" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/simulator/game_service.py</url>
-          <line>161</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="row.empty" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

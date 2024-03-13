@@ -146,7 +146,7 @@ class GameBuilder:
         :return: list of Player instances that are on court
         """
         playing = []
-        for position in [roster.PF, roster.SF, roster.PG, roster.SG, roster.C]:
+        for _, position in enumerate([roster.PF, roster.SF, roster.PG, roster.SG, roster.C]):
             playing.append(self.choose_player(position))
         return playing
 
