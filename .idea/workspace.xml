@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="longer runtime">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view" beforeDir="false" />
-    </list>
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="view back" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -294,14 +289,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708340286792</updated>
-    </task>
-    <task id="LOCAL-00005" summary="test parser done">
-      <option name="closed" value="true" />
-      <created>1708359311736</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1708359311736</updated>
     </task>
     <task id="LOCAL-00006" summary="parse service tested and commented">
       <option name="closed" value="true" />
@@ -687,12 +674,19 @@
       <option name="project" value="LOCAL" />
       <updated>1711058170754</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="view back">
+      <option name="closed" value="true" />
+      <created>1711059351619</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1711059351619</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ConnectionError added to Persist.insert" />
     <MESSAGE value="html test content added" />
     <MESSAGE value="testing for unique check in db" />
     <MESSAGE value="sqls updated for unique constraint" />
@@ -717,7 +711,8 @@
     <MESSAGE value="debugged roster error for team change and draft" />
     <MESSAGE value="log cleared" />
     <MESSAGE value="longer runtime" />
-    <option name="LAST_COMMIT_MESSAGE" value="longer runtime" />
+    <MESSAGE value="view back" />
+    <option name="LAST_COMMIT_MESSAGE" value="view back" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
