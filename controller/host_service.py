@@ -40,7 +40,7 @@ class Host:
     def __init__(self):
         matplotlib.use('Agg')  # non-interactive rendering env
         self.app = Flask(__name__)
-        # self.app.config['TIMEOUT'] = 500
+        self.app.config['TIMEOUT'] = 100000
         self.log = Logger(log_file="application_log.log",
                           name="FLASK HOST",
                           log_level="INFO")
@@ -203,9 +203,9 @@ class Host:
                 }
             # pylint: disable=W0718
             except Exception as e:
-                self.log.error(f"get_monte_carlo_sim() raised Exception while responding to request: "
-                               f"{e}")
-                return self.pack_json(e, 400)
+                comment = f"get_monte_carlo_sim() raised Exception while responding to request: {e}"
+                self.log.error(comment)
+                return self.pack_json(comment, 400)
 
     def pack_json(self, message: Any, status_code: int) -> dict:
         """

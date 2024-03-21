@@ -17,10 +17,11 @@ if __name__ == '__main__':
     server = Host()
     server.run()
 
-    # season = "1990-1991"
+
+    # season = "1992-1993"
     # home = Teams.from_full_name('Chicago Bulls')
     # away = Teams.from_full_name('Boston Celtics')
-    # game_date = "1991-02-26"
+    # game_date = "1992-12-05"
     # game_type = "regular"
     # mc = MonteCarlo(None, season, home, away, game_date, game_type, 10000)
     # result = mc.run_plt()

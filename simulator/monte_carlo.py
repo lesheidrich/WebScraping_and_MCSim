@@ -242,7 +242,7 @@ class MonteCarlo:
 
     def save_2_bytesIO_buffer_string(self, fig) -> str:
         """
-        Converts matplotlib figure to BytesIO buffer to enable base64 conversion by Flask.
+        Converts matplotlib figure to BytesIO buffer to enable base64 conversion.
         :param fig: matplotlib figure of plotted graph
         :return: BytesIO buffer of matplotlib figure
         """
