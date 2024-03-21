@@ -1,0 +1,138 @@
+2024-03-17 14:34:26,593 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 14:34:26,835 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 14:34:59,492 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 14:39:10,510 - FLASK HOST - INFO - Database contains 1991-1992: CHI and DET!
+2024-03-17 14:43:09,534 - FLASK HOST - INFO - Database contains 1991-1992: CHI and DET!
+2024-03-17 14:43:34,332 - FLASK HOST - INFO - Database contains 1991-1992: CHI and DET!
+2024-03-17 14:45:41,216 - FLASK HOST - INFO - Database contains 1991-1992: CHI and DET!
+2024-03-17 22:19:50,654 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:19:50,836 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:25:59,070 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:25:59,246 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:26:23,954 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:26:24,127 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:26:29,666 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:26:29,849 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:26:34,712 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:26:53,867 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:27:01,537 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:30:32,406 - FLASK HOST - INFO - Database contains 1992-1993: CHI and ATL!
+2024-03-17 22:31:13,253 - FLASK HOST - INFO - Database contains 1992-1993: BOS and ATL!
+2024-03-17 22:31:58,444 - FLASK HOST - INFO - Database contains 1992-1993: BOS and ATL!
+2024-03-17 22:32:10,877 - FLASK HOST - INFO - Database contains 1992-1993: CHI and ATL!
+2024-03-17 22:32:20,910 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:32:21,080 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:33:08,793 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:33:08,953 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:33:13,444 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:33:13,633 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:33:17,538 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:33:17,710 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:33:21,546 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:33:21,713 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:33:25,385 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:33:25,579 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:33:28,954 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:33:29,140 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:33:36,988 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:33:47,068 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-17 22:33:47,210 - FLASK HOST - ERROR - get_monte_carlo_sim() raised Exception while responding to request: Total of weights must be greater than zero
+2024-03-17 22:33:51,974 - FLASK HOST - INFO - Database contains 1992-1993: CHI and BOS!
+2024-03-19 13:44:52,141 - PROXY HANDLER - WARNING - Proxy check failed for request invalid_proxy:port: Error
+2024-03-19 13:44:52,141 - PROXY HANDLER - WARNING - Proxy check failed for request invalid_proxy:port: Error
+2024-03-19 13:44:52,142 - PROXY HANDLER - INFO - Proxy check succeeded
+IP: unit_test_ip
+Status Code: 200
+Response: unit_test_ip
+2024-03-19 13:44:52,142 - PROXY HANDLER - INFO - Proxy check succeeded
+IP: unit_test_ip
+Status Code: 200
+Response: unit_test_ip
+2024-03-19 13:44:52,142 - PROXY HANDLER - INFO - Proxy check succeeded
+IP: unit_test_ip
+Status Code: 200
+Response: unit_test_ip
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - ******************************
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - ******************************
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - ******************************
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - ******************************
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - ******************************
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - COMMENCING PROXY LIST CHECK
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - COMMENCING PROXY LIST CHECK
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - COMMENCING PROXY LIST CHECK
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - COMMENCING PROXY LIST CHECK
+2024-03-19 13:44:52,144 - PROXY HANDLER - INFO - COMMENCING PROXY LIST CHECK
+2024-03-19 13:45:07,042 - PROXY HANDLER - INFO - CURRENT WORKING PROXY LIST:
+103.83.232.122:80
+111.59.4.88:9002
+120.37.121.209:9091
+122.155.165.191:3128
+103.83.232.122:80
+
+2024-03-19 13:45:07,042 - PROXY HANDLER - INFO - CURRENT WORKING PROXY LIST:
+103.83.232.122:80
+111.59.4.88:9002
+120.37.121.209:9091
+122.155.165.191:3128
+103.83.232.122:80
+
+2024-03-19 13:45:07,042 - PROXY HANDLER - INFO - CURRENT WORKING PROXY LIST:
+103.83.232.122:80
+111.59.4.88:9002
+120.37.121.209:9091
+122.155.165.191:3128
+103.83.232.122:80
+
+2024-03-19 13:45:07,042 - PROXY HANDLER - INFO - CURRENT WORKING PROXY LIST:
+103.83.232.122:80
+111.59.4.88:9002
+120.37.121.209:9091
+122.155.165.191:3128
+103.83.232.122:80
+
+2024-03-19 13:45:07,042 - PROXY HANDLER - INFO - CURRENT WORKING PROXY LIST:
+103.83.232.122:80
+111.59.4.88:9002
+120.37.121.209:9091
+122.155.165.191:3128
+103.83.232.122:80
+
+2024-03-19 18:45:15,554 - FLASK HOST - INFO - Database contains 1991-1992: DAL and MIN!
+2024-03-19 18:45:29,723 - FLASK HOST - INFO - Database contains 1991-1992: DAL and MIN!
+2024-03-19 21:11:02,978 - FLASK HOST - INFO - Database contains 1991-1992: CHI and BOS!
+2024-03-19 21:12:26,995 - FLASK HOST - INFO - Database contains 1991-1992: CHI and LAL!
+2024-03-19 21:14:14,339 - FLASK HOST - INFO - Database contains 1991-1992: CHI and ORL!
+2024-03-20 15:42:29,319 - FLASK HOST - INFO - Database contains 1991-1992: CHI and MIA!
+2024-03-20 15:49:09,175 - FLASK HOST - INFO - Database contains 1991-1992: CHI and MIA!
+2024-03-20 16:03:34,032 - FLASK HOST - INFO - Database contains 1991-1992: CHI and MIA!
+2024-03-20 16:28:03,704 - FLASK HOST - INFO - Database contains 1991-1992: CHI and MIA!
+2024-03-21 16:55:33,715 - FLASK HOST - INFO - Database contains 1991-1992: BOS and MIL!
+2024-03-21 16:56:14,989 - FLASK HOST - INFO - Database contains 1991-1992: BOS and MIL!
+2024-03-21 16:56:46,091 - FLASK HOST - INFO - Database contains 1991-1992: BOS and MIL!
+2024-03-21 16:59:39,553 - FLASK HOST - INFO - Database contains 1991-1992: BOS and MIL!
+2024-03-21 17:03:05,988 - FLASK HOST - INFO - Database contains 1991-1992: BOS and MIL!
+2024-03-21 17:14:45,422 - FLASK HOST - INFO - Database contains 1991-1992: BOS and MIL!
+2024-03-21 17:48:01,888 - FLASK HOST - INFO - Database contains 1991-1992: LAL and ORL!
+2024-03-21 17:54:05,768 - FLASK HOST - INFO - Database contains 1991-1992: LAL and ORL!
+2024-03-21 18:06:47,306 - FLASK HOST - INFO - Database contains 1991-1992: LAL and ORL!
+2024-03-21 19:25:24,191 - FLASK HOST - INFO - Database contains 1991-1992: ATL and NYK!
+2024-03-21 19:34:39,994 - FLASK HOST - INFO - Database contains 1991-1992: ATL and NYK!
+2024-03-21 19:37:11,680 - FLASK HOST - INFO - Database contains 1991-1992: NYK and GSW!
+2024-03-21 19:41:14,097 - FLASK HOST - INFO - Database contains 1991-1992: NYK and GSW!
+2024-03-21 19:52:58,629 - FLASK HOST - INFO - Database contains 1991-1992: NYK and GSW!
+2024-03-21 20:17:50,529 - FLASK HOST - INFO - Database contains 1991-1992: HOU and SAS!
+2024-03-21 20:20:12,100 - FLASK HOST - INFO - Database contains 1991-1992: HOU and SAS!
+2024-03-21 20:22:52,861 - FLASK HOST - INFO - Database contains 1991-1992: DEN and MIA!
+2024-03-21 20:26:22,029 - FLASK HOST - INFO - Database contains 1991-1992: DEN and MIA!
+2024-03-21 20:38:01,001 - FLASK HOST - INFO - Database contains 1991-1992: DEN and MIA!
+2024-03-21 21:03:38,231 - FLASK HOST - INFO - Database contains 1991-1992: LAL and MIA!
+2024-03-21 21:06:28,935 - FLASK HOST - INFO - Database contains 1991-1992: LAL and CHA!
+2024-03-21 21:10:31,981 - FLASK HOST - INFO - Database contains 1991-1992: LAL and CHA!
+2024-03-21 21:24:17,941 - FLASK HOST - INFO - Database contains 1991-1992: LAL and CHA!
+2024-03-21 22:01:59,603 - FLASK HOST - INFO - Database contains 1991-1992: CHI and NYK!
+2024-03-21 22:05:05,022 - FLASK HOST - INFO - Database contains 1991-1992: CHI and LAL!
+2024-03-21 22:05:49,841 - FLASK HOST - INFO - Database contains 1991-1992: CHI and PHI!
+2024-03-21 22:06:37,347 - FLASK HOST - INFO - Database contains 1991-1992: CHI and POR!
+2024-03-21 22:07:04,329 - FLASK HOST - INFO - Database contains 1991-1992: CHI and POR!
+2024-03-21 22:09:09,574 - FLASK HOST - INFO - Database contains 1991-1992: CHI and POR!
+2024-03-21 22:21:42,820 - FLASK HOST - INFO - Database contains 1991-1992: CHI and POR!

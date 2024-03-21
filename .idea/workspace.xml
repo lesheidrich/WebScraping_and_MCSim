@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="log cleared">
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="longer runtime">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/host_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/host_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/monte_carlo.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/monte_carlo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view" beforeDir="false" afterPath="$PROJECT_DIR$/view" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/MonteCarlo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/MonteCarlo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,14 +294,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708340286792</updated>
-    </task>
-    <task id="LOCAL-00004" summary="secrets put back">
-      <option name="closed" value="true" />
-      <created>1708349895521</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1708349895521</updated>
     </task>
     <task id="LOCAL-00005" summary="test parser done">
       <option name="closed" value="true" />
@@ -697,12 +679,19 @@
       <option name="project" value="LOCAL" />
       <updated>1710624025465</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="longer runtime">
+      <option name="closed" value="true" />
+      <created>1711058170753</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1711058170754</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="teams list amended for 90s" />
     <MESSAGE value="ConnectionError added to Persist.insert" />
     <MESSAGE value="html test content added" />
     <MESSAGE value="testing for unique check in db" />
@@ -727,7 +716,8 @@
     <MESSAGE value="requirements" />
     <MESSAGE value="debugged roster error for team change and draft" />
     <MESSAGE value="log cleared" />
-    <option name="LAST_COMMIT_MESSAGE" value="log cleared" />
+    <MESSAGE value="longer runtime" />
+    <option name="LAST_COMMIT_MESSAGE" value="longer runtime" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
