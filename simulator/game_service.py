@@ -82,10 +82,20 @@ class GameBuilder:
         shooter = GameTools.weighted_random_sample(players, w, 1, shooter_w_mult)[0]
         # type of shot attempted
         shot_points_w = [shooter.FGA, shooter.threePA]
-        points = GameTools.weighted_random_sample([2, 3], shot_points_w, 1, 1)[0]
-        if points == 2:
-            return GameTools.step(shooter.FGpercent/100) * points
-        return GameTools.step(shooter.threePpercent/100) * points
+
+        try:
+            if sum(shot_points_w) == 0:
+                shooter.FGpercent = 50
+                shot_points_w[0] = 10
+
+            points = GameTools.weighted_random_sample([2, 3], shot_points_w, 1, 1)[0]
+            if points == 2:
+                return GameTools.step(shooter.FGpercent/100) * points
+            return GameTools.step(shooter.threePpercent/100) * points
+        except Exception as e:
+            raise ValueError(f"shot_attempt error for shooter: {shooter.name}, "
+                             f"shot_points_w: {shot_points_w}, FGP: {shooter.FGpercent}.\n{e}") from e
+
 
     def switch_possession(self) -> None:
         """
