@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{781C3DFD-5E5C-409A-970B-ABF959F5DAFD}|NBA_Sim_View\\NBA_Sim_View.csproj|solutionrelative:nba_sim_view\\findgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{836EF7AE-9C88-4160-8699-17190DF7A8A8}|NBA_Sim_View_Test\\NBA_Sim_View_Test.csproj|C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\nba_sim_view_test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{836EF7AE-9C88-4160-8699-17190DF7A8A8}|NBA_Sim_View_Test\\NBA_Sim_View_Test.csproj|solutionrelative:nba_sim_view_test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{781C3DFD-5E5C-409A-970B-ABF959F5DAFD}|NBA_Sim_View\\NBA_Sim_View.csproj|C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\nba_sim_view\\montecarlo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{781C3DFD-5E5C-409A-970B-ABF959F5DAFD}|NBA_Sim_View\\NBA_Sim_View.csproj|solutionrelative:nba_sim_view\\montecarlo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{836EF7AE-9C88-4160-8699-17190DF7A8A8}|NBA_Sim_View_Test\\NBA_Sim_View_Test.csproj|C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\nba_sim_view_test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{836EF7AE-9C88-4160-8699-17190DF7A8A8}|NBA_Sim_View_Test\\NBA_Sim_View_Test.csproj|solutionrelative:nba_sim_view_test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{781C3DFD-5E5C-409A-970B-ABF959F5DAFD}|NBA_Sim_View\\NBA_Sim_View.csproj|C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\nba_sim_view\\montecarlo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UnitTest1.cs",
               "DocumentMoniker": "C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\NBA_Sim_View_Test\\UnitTest1.cs",
               "RelativeDocumentMoniker": "NBA_Sim_View_Test\\UnitTest1.cs",
@@ -62,18 +62,20 @@
               "RelativeToolTip": "NBA_Sim_View\\MonteCarlo.cs",
               "ViewState": "AQIAADQAAAAAAAAAAAAQwDoAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-24T18:42:21.684Z"
+              "WhenOpened": "2024-02-24T18:42:21.684Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MonteCarlo.cs [Design]",
               "DocumentMoniker": "C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\NBA_Sim_View\\MonteCarlo.cs",
               "RelativeDocumentMoniker": "NBA_Sim_View\\MonteCarlo.cs",
-              "ToolTip": "C:\\Users\\dblin\\PycharmProjects\\WebScraping_and_MCSim\\view\\NBA_Sim_View\\MonteCarlo.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\PycharmProjects\\WebScraping_and_MCSim\\view\\NBA_Sim_View\\MonteCarlo.cs [Design]",
+              "ToolTip": "C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\NBA_Sim_View\\MonteCarlo.cs [Design]",
+              "RelativeToolTip": "NBA_Sim_View\\MonteCarlo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-24T18:40:23.419Z"
+              "WhenOpened": "2024-02-24T18:40:23.419Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -83,7 +85,7 @@
               "RelativeDocumentMoniker": "NBA_Sim_View\\FindGame.cs",
               "ToolTip": "C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\NBA_Sim_View\\FindGame.cs",
               "RelativeToolTip": "NBA_Sim_View\\FindGame.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAAwGkAAAAqAAAA",
+              "ViewState": "AQIAAAoBAAAAAAAAAAD4vxQBAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-22T18:56:23.25Z",
               "EditorCaption": ""
@@ -94,10 +96,11 @@
               "Title": "FindGame.cs [Design]",
               "DocumentMoniker": "C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\NBA_Sim_View\\FindGame.cs",
               "RelativeDocumentMoniker": "NBA_Sim_View\\FindGame.cs",
-              "ToolTip": "C:\\Users\\dblin\\PycharmProjects\\WebScraping_and_MCSim\\view\\NBA_Sim_View\\FindGame.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\PycharmProjects\\WebScraping_and_MCSim\\view\\NBA_Sim_View\\FindGame.cs [Design]",
+              "ToolTip": "C:\\Users\\dblin\\GitHub\\WebScraping_and_MCSim\\view\\NBA_Sim_View\\FindGame.cs [Design]",
+              "RelativeToolTip": "NBA_Sim_View\\FindGame.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T17:03:09.548Z"
+              "WhenOpened": "2024-02-22T17:03:09.548Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",

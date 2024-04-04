@@ -164,7 +164,7 @@
             this.tbDB.Name = "tbDB";
             this.tbDB.Size = new System.Drawing.Size(398, 22);
             this.tbDB.TabIndex = 3;
-            this.tbDB.Text = "URI connection str";
+            this.tbDB.Text = "URL connection str";
             this.tbDB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbDB_MouseClick);
             // 
             // rbDefault

@@ -195,13 +195,13 @@ namespace NBA_Sim_View
         {
             tbDB.Enabled = false;
             dbHost = string.Empty;
-            tbDB.Text = "URI connection str";
+            tbDB.Text = "URL connection str";
         }
 
         private void rbCustom_CheckedChanged(object sender, EventArgs e)
         {
             tbDB.Enabled = true;
-            tbDB.Text = "URI connection str";
+            tbDB.Text = "URL connection str";
         }
 
         private void tbDB_MouseClick(object sender, MouseEventArgs e)
@@ -222,7 +222,7 @@ namespace NBA_Sim_View
         private void InitialFormSettings() 
         {
             rbDefault.Checked = true;
-            tbDB.Text = "URI connection str";
+            tbDB.Text = "URL connection str";
             cbHome.Text = "-- Home Team --";
             cbAway.Text = "-- Away Team --";
             cbSeason.Text = "-- Season --";

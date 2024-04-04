@@ -7,17 +7,20 @@
     <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="game service fix and view fix">
       <change afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/FileContentIndex/49731e72-0449-444c-9083-0fb5b9594beb.vsidx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/FileContentIndex/e39c2e0b-5190-46cd-bbcf-af47387a7664.vsidx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/game_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/game_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/FindGame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/NBA_Sim_View.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
