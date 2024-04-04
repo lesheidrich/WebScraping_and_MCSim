@@ -96,7 +96,6 @@ class GameBuilder:
             raise ValueError(f"shot_attempt error for shooter: {shooter.name}, "
                              f"shot_points_w: {shot_points_w}, FGP: {shooter.FGpercent}.\n{e}") from e
 
-
     def switch_possession(self) -> None:
         """
         Effectively gives the ball to the other team, changing offense direction.
