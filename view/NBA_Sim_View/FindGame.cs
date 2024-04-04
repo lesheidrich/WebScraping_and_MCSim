@@ -104,10 +104,10 @@ namespace NBA_Sim_View
                             dgvGetGames.Rows.Add(
                                 game.id,
                                 game.date,
-                                game.visitor_team,
-                                game.visitor_pts,
                                 game.home_team,
                                 game.home_pts,
+                                game.visitor_team,
+                                game.visitor_pts,
                                 game.attendance,
                                 game.arena,
                                 game.game_type
@@ -236,10 +236,11 @@ namespace NBA_Sim_View
             dgvGetGames.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvGetGames.Columns.Add("id", "ID");
             dgvGetGames.Columns.Add("date", "Date");
-            dgvGetGames.Columns.Add("visitor_team", "Visitor Team");
-            dgvGetGames.Columns.Add("visitor_pts", "Visitor Points");
+
             dgvGetGames.Columns.Add("home_team", "Home Team");
             dgvGetGames.Columns.Add("home_pts", "Home Points");
+            dgvGetGames.Columns.Add("visitor_team", "Visitor Team");
+            dgvGetGames.Columns.Add("visitor_pts", "Visitor Points");
             dgvGetGames.Columns.Add("attendance", "Attendance");
             dgvGetGames.Columns.Add("arena", "Arena");
             dgvGetGames.Columns.Add("game_type", "Game Type");

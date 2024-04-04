@@ -1,0 +1,21 @@
+2024-03-25 5:21:08 PM - UI LOG - MC Test - Error on 1992-1993: Boston Celtics VS Denver Nuggets
+
+2024-03-25 5:26:30 PM - UI LOG - MC Test - Error on 1992-1993: Chicago Bulls VS Boston Celtics
+
+2024-03-25 5:48:39 PM - UI LOG - MC Test - Error on 1992-1993: Indiana Pacers VS Orlando Magic
+
+2024-03-25 6:07:28 PM - UI LOG - MC Test - Error on 1992-1993: Orlando Magic VS Charlotte Hornets
+
+
+
+2024-03-25 6:37:01 PM - UI LOG - MC Test - Error on 1993-1994: Chicago Bulls VS Atlanta Hawks
+
+2024-03-25 6:40:43 PM - UI LOG - MC Test - Error on 1993-1994: Cleveland Cavaliers VS Charlotte Hornets
+
+2024-03-25 6:42:54 PM - UI LOG - MC Test - Error on 1993-1994: Cleveland Cavaliers VS New York Knicks
+
+2024-03-25 7:38:26 PM - UI LOG - MC Test - Error on 1993-1994: Utah Jazz VS Atlanta Hawks
+
+--------------------------------------------------------------------------------------------------------
+
+TODAY

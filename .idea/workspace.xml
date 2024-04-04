@@ -4,33 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="view out again">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/app_test_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/app_test_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/application_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulator/game_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulator/game_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/TestStore/0/005.testlog" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/TestStore/0/005.testlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/TestStore/OutputMessages/f2003430-7b54-45fc-2845-987c6fb21f25/StandardOutput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/v17/TestStore/OutputMessages/f2003430-7b54-45fc-2845-987c6fb21f25/StandardOutput.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/RestSharp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/bin/Debug/RestSharp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View/obj/Debug/NBA_Sim_View.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View_Test/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View_Test/UnitTest1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View_Test/bin/Debug/NBA_Sim_View_Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View_Test/bin/Debug/NBA_Sim_View_Test.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View_Test/bin/Debug/NBA_Sim_View_Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View_Test/bin/Debug/NBA_Sim_View_Test.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/NBA_Sim_View_Test.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/NBA_Sim_View_Test.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/NBA_Sim_View_Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/NBA_Sim_View_Test.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/NBA_Sim_View_Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View_Test/obj/Debug/NBA_Sim_View_Test.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/NBA_Sim_View_Test/test_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/view/NBA_Sim_View_Test/test_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/packages/RestSharp.110.2.0/lib/net471/RestSharp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/view/packages/RestSharp.110.2.0/lib/net471/RestSharp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/packages/RestSharp.110.2.0/lib/net6.0/RestSharp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/view/packages/RestSharp.110.2.0/lib/net6.0/RestSharp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/packages/RestSharp.110.2.0/lib/net7.0/RestSharp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/view/packages/RestSharp.110.2.0/lib/net7.0/RestSharp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/packages/RestSharp.110.2.0/lib/netstandard2.0/RestSharp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/view/packages/RestSharp.110.2.0/lib/netstandard2.0/RestSharp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/packages/TestStack.White.0.13.3/tools/TestStack.White.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/view/packages/TestStack.White.0.13.3/tools/TestStack.White.psm1" afterDir="false" />
+    <list default="true" id="8a7ad742-3cf2-4c2b-a6fb-aa6dc0cbcbbf" name="Changes" comment="game service fix and view fix">
+      <change afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/FileContentIndex/49731e72-0449-444c-9083-0fb5b9594beb.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/.vs/NBA_Sim_View/FileContentIndex/e39c2e0b-5190-46cd-bbcf-af47387a7664.vsidx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,14 +292,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708340286792</updated>
-    </task>
-    <task id="LOCAL-00007" summary="webscraper integration test">
-      <option name="closed" value="true" />
-      <created>1708371963411</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1708371963411</updated>
     </task>
     <task id="LOCAL-00008" summary="webscraper integration test">
       <option name="closed" value="true" />
@@ -709,12 +677,19 @@
       <option name="project" value="LOCAL" />
       <updated>1711059605086</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="game service fix and view fix">
+      <option name="closed" value="true" />
+      <created>1712244331839</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1712244331840</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="html test content added" />
     <MESSAGE value="testing for unique check in db" />
     <MESSAGE value="sqls updated for unique constraint" />
     <MESSAGE value="cleared test log" />
@@ -739,7 +714,8 @@
     <MESSAGE value="log cleared" />
     <MESSAGE value="longer runtime" />
     <MESSAGE value="view back" />
-    <option name="LAST_COMMIT_MESSAGE" value="view back" />
+    <MESSAGE value="game service fix and view fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="game service fix and view fix" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -52,7 +52,7 @@ namespace NBA_Sim_View_Test
 
         private string[] seasons = new string[]
         {
-            "1991-1992", "1992-1993", "1993-1994", "1994-1995", "1995-1996"
+            "1991-1992", "1992-1993", "1993-1994", "1994-1995"
         };
 
 
@@ -230,8 +230,8 @@ namespace NBA_Sim_View_Test
                             {
                                 using (StreamWriter sw = new StreamWriter(filePath, true))
                                 {
-                                    sw.WriteLine($"{DateTime.Now} - UI LOG - MC Test - Error on {nbaTeams[i]} " +
-                                        $"VS {nbaTeams[j]}: {e}\n");
+                                    sw.WriteLine($"{DateTime.Now} - UI LOG - MC Test - Error on {season}: {nbaTeams[i]} " +
+                                        $"VS {nbaTeams[j]}\n");
                                 }
                             }
                         }
@@ -239,7 +239,7 @@ namespace NBA_Sim_View_Test
                 }
             }
 
-            //var season = "1991-1992";
+            //var season = "1994-1995";
             //for (int i = 0; i < nbaTeams.Length; i++)
             //{
             //    for (int j = 0; j < nbaTeams.Length; j++)
