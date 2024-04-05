@@ -53,8 +53,6 @@ namespace NBA_Sim_View
 
         public void GraphSimulationData()
         {
-            //RestClient client = new RestClient("http://127.0.0.1:5000/monte_carlo/simulation");
-
             var options = new RestClientOptions($"http://127.0.0.1:5000/monte_carlo/simulation");
             options.MaxTimeout = 100000000;
 
