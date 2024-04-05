@@ -68,11 +68,11 @@ namespace NBA_Sim_View
             {
                 if (rbRequests.Checked || rbFirefox.Checked || rbChrome.Checked)
                 {
-                    lblCheckProxies_Click(sender, e);  // to false
+                    lblCheckProxies_Click(sender, e);  
                 }
             }
 
-            btnScrape.Enabled = false;                 // further calls disabled until scrape finished
+            btnScrape.Enabled = false;                 
             btnScrape.Text = "Scrape in Progress";
             btnScrape.ForeColor = Color.Goldenrod;
 
@@ -89,8 +89,6 @@ namespace NBA_Sim_View
             options.MaxTimeout = 500000;
 
             RestClient scrapeClient = new RestClient(options);
-
-            //RestClient scrapeClient = new RestClient("http://127.0.0.1:5000/monte_carlo/season_data");
             RestRequest request = new RestRequest();
 
             request.AddQueryParameter("check_proxies", checkProxies);
