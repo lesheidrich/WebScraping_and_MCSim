@@ -37,9 +37,9 @@ Match data is constructed in team roster instances, which house player instances
 Each game operates based on offensive possessions, where decisions regarding the outcome of single events are made by random weighted sampling and random probability thresholds pertaining to player stats. Total possessions per game are based on each team's pace. 
 
 Games run for the parameterized epoch count, resulting in a display similar to the below example:
-- *Top right*: outcome of the original NBA game.
-- *Top left*: simulated outcome, with the percentage of games won, and the mode of scores for each team.
-- *Probability density graph*: x axis represents scores, y represents the volume for each score. Yellow is home, blue is away.
-- *Violin graph*: y axis represents score range, the width of each resulting cluster represents how often the score occurred.
+- **Top right**: outcome of the original NBA game.
+- **Top left**: simulated outcome, with the percentage of games won, and the mode of scores for each team.
+- **Probability density graph**: x-axis represents scores, y-axis represents the volume for each score. Yellow is home, blue is away.
+- **Violin graph**: y-axis represents score range, the width of each resulting cluster represents how often the score occurred.
 
 ![Monte Carlo simulation results](https://github.com/lesheidrich/Thesis/blob/main/img/user-guide/MonteCarlo.png?raw=true)
