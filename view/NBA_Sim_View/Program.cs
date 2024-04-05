@@ -8,9 +8,6 @@ namespace NBA_Sim_View
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
