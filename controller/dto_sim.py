@@ -261,6 +261,10 @@ class TeamBuilder:
             raise ValueError(f"Game date {game_date} is outside the scope of the {season} season!")
 
     def validate_roster(self) -> None:
+        """
+        Ensures all roster positions are filled.
+        :return: None
+        """
         for attrib in ["PF", "SF", "PG", "SG", "C"]:
             position = getattr(self.roster, attrib)
             if len(position) < 1:
@@ -294,13 +298,19 @@ class Roster:
         return iter(self.PF + self.SF + self.PG + self.SG + self.C)
 
     def get_stat_df(self) -> pd.DataFrame:
+        """
+        Returns df with all columns and rows printable. Columns all pertain to player weight stats and
+        the metrics they are based on.
+        :return: df of player stats with rows and columns fully printable
+        """
         pd.set_option('display.max_rows', None)
         pd.set_option('display.max_columns', None)
 
         cols = ["name", "playtime_w", "adjusted_points", "player_w", "totalPpercent", "AST", "ORB", "STL"]
         records = []
-        for p in self.__iter__():
-            records.append([p.name, p.playtime_w, p.adjusted_points, p.playtime_w, p.totalPpercent, p.AST, p.ORB, p.STL])
+        for p in iter(self):
+            records.append([p.name, p.playtime_w, p.adjusted_points, p.playtime_w, p.totalPpercent, p.AST, 
+                            p.ORB, p.STL])
         return pd.DataFrame(records, columns=cols)
 
 
@@ -426,7 +436,7 @@ class Player:
             return num/den * 100
         return 0
 
-    def calculate_playtime_w(self, depth: str, avg_min: float, df: pd.DataFrame) -> float:
+    def calculate_playtime_w(self, depth: str, avg_min: float) -> float:
         """
         Play probability logic:
           - first string players probability is left unchanged
@@ -441,8 +451,6 @@ class Player:
         :return: float for player's play probability per game
         """
         prob = avg_min / 48
-        # if not self.played_last_game(df):
-        #     return 0
 
         if depth == "2":
             prob *= 0.25
