@@ -16,7 +16,6 @@ namespace NBA_Sim_View
             set { status = value; }
         }
 
-
         private string message;
 
         public string Message
@@ -40,7 +39,5 @@ namespace NBA_Sim_View
             get { return image2; }
             set { image2 = value; }
         }
-
-
     }
 }
