@@ -239,29 +239,6 @@ namespace NBA_Sim_View_Test
                 }
             }
 
-            //var season = "1994-1995";
-            //for (int i = 0; i < nbaTeams.Length; i++)
-            //{
-            //    for (int j = 0; j < nbaTeams.Length; j++)
-            //    {
-            //        if (!nbaTeams[i].Equals(nbaTeams[j]))
-            //        {
-            //            try
-            //            {
-            //                RunMCTest(nbaTeams[i], nbaTeams[j], season);
-            //            }
-            //            catch (Exception e)
-            //            {
-            //                using (StreamWriter sw = new StreamWriter(filePath, true))
-            //                {
-            //                    sw.WriteLine($"{DateTime.Now} - UI LOG - MC Test - Error on {nbaTeams[i]} " +
-            //                        $"VS {nbaTeams[j]}: {e}\n");
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-
             // open the log
             try
             {
@@ -271,12 +248,10 @@ namespace NBA_Sim_View_Test
             {
                 Console.WriteLine("Error while attempting to open file: " + ex.Message);
             }
-
         }
 
         public void RunMCTest(string home_team, string away_team, string yrs)
         {
-
             Application application = Application.Launch(appPath);
             Window window = application.GetWindow("Monte Carlo");
 
