@@ -14,9 +14,9 @@ Project documentation is available in the [thesis](https://github.com/lesheidric
     - Python 3.11 or later must be installed.
     - A VPN service is suggested.
     - XAMPP 3.3.0 or later (or any other database service that works with MySQL and MariaDB).
-2. From [*/model/data/*](https://github.com/lesheidrich/WebScraping_and_MCSim/tree/master/model/data) upload *nba.sql* and *nba_test.sql* to your database. Depending on your database provider you may need to break the *individual_games_regular* table into smaller chunks, due to row limitations.
+2. From [*/model/data/*](https://github.com/lesheidrich/WebScraping_and_MCSim/tree/master/model/data) upload [*nba.sql*](https://github.com/lesheidrich/WebScraping_and_MCSim/tree/master/model/data/nba.sql) and [*nba_test.sql*](https://github.com/lesheidrich/WebScraping_and_MCSim/tree/master/model/data/nba_test.sql) to your database. Depending on your database provider you may need to break the *individual_games_regular* table into smaller chunks, due to row limitations.
 3. Install requirements by navigating to the project folder or using the absolute path with the command: `pip install -r requirements.txt`
-4. Fill out *project_secrets.py* with the necessary access data.
+4. Fill out [*project_secrets.py*](https://github.com/lesheidrich/WebScraping_and_MCSim/tree/master/Secrets_TMP.py) with the necessary access data.
 5. Ensure your database is running, then start the back end service by running *main.py*.
 6. The client application found in */view* should be downloaded to, and run from the client system. */view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe* will commence
 the client application.
