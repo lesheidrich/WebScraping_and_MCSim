@@ -7,14 +7,14 @@ Project documentation is available in the [thesis](https://github.com/lesheidric
 
 # Installation
 1. Installation prerequisites:
-• An internet connection.
-• Client side:
-– Operating system must be Microsoft Windows 10 or later.
-– .NET framework 4.8 or later.
-• Server side:
-– Python 3.11 or later must be installed.
-– A VPN service is suggested.
-– XAMPP 3.3.0 or later (or any other database service that works with
+  - An internet connection.
+  - Client side:
+    - Operating system must be Microsoft Windows 10 or later.
+    - .NET framework 4.8 or later.
+- Server side:
+  - Python 3.11 or later must be installed.
+  - A VPN service is suggested.
+  - XAMPP 3.3.0 or later (or any other database service that works with
 MySQL and MariaDB).
 2. Retrieve the source code from https://github.com/lesheidrich/WebScraping_
 and_MCSim
