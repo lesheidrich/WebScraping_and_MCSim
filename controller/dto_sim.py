@@ -126,8 +126,8 @@ class TeamBuilder:
             test = row["position"] and row["player"] in self.individual_df['player'].unique()
             if test:
                 position = getattr(self.roster, row["position"])
-                position.append(Player(self.individual_df.loc[self.individual_df['player'] == row["player"], :],
-                                       row["player"], row["GP"], row["depth"], row["MPG"]))
+                position.append(Player(self.individual_df.loc[self.individual_df['player'] == row["player"], 
+                                       :], row["player"], row["GP"], row["depth"], row["MPG"]))
                 setattr(self.roster, row["position"], position)
             # draft picks and traded players
             if row["position"] and not test:
@@ -382,7 +382,7 @@ class Player:
         self.GP = int(GP)
         self.depth = depth
         # weights
-        self.playtime_w = self.calculate_playtime_w(depth, avg_min, df)
+        self.playtime_w = self.calculate_playtime_w(depth, avg_min)
         self.totalPpercent = self.calulate_totalPpercent()
         self.adjusted_points = self.calculate_adjusted_points()
         self.player_w = (self.adjusted_points/100 + self.playtime_w)/2
