@@ -17,7 +17,7 @@ Project documentation is available in the [thesis](https://github.com/lesheidric
 2. From */model/data/* upload *nba.sql* and *nba_test.sql* to your database. Depending on your database provider you may need to break the *individual_games_regular* table into smaller chunks, due to row limitations.
 3. Install requirements by navigating to the project folder or using the absolute path with the command: `pip install -r requirements.txt`
 4. Fill out *project_secrets.py* with the necessary access data.
-5. Ensure your database is running, then start the back end service by running *main.py*.
+5. Ensure your database is running, then start the back-end service by running *main.py*.
 6. The client application found in */view* should be downloaded to, and run from the client system. */view/NBA_Sim_View/bin/Debug/NBA_Sim_View.exe* will commence
 the client application.
 
