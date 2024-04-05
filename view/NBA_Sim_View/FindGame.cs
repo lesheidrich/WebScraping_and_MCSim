@@ -250,20 +250,6 @@ namespace NBA_Sim_View
         {
             // gets content from cell click
             SaveGameContentsFromRows(e.RowIndex);
-            //if (e.RowIndex >= 0 && e.RowIndex < dgvGetGames.Rows.Count)
-            //{
-            //    dgvGetGames.Rows[e.RowIndex].Selected = true;
-            //    DataGridViewRow row = dgvGetGames.Rows[e.RowIndex];
-
-            //    gameDate = row.Cells["date"].Value.ToString();
-            //    visitorTeam = row.Cells["visitor_team"].Value.ToString();
-            //    visitorPts = row.Cells["visitor_pts"].Value.ToString();
-            //    homeTeam = row.Cells["home_team"].Value.ToString();
-            //    homePts = row.Cells["home_pts"].Value.ToString();
-            //    attendance = row.Cells["attendance"].Value.ToString();
-            //    arena = row.Cells["arena"].Value.ToString();
-            //    gameType = row.Cells["game_type"].Value.ToString();
-            //}
         }
 
         private void SaveGameContentsFromRows(int index)
