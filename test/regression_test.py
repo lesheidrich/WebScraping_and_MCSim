@@ -80,6 +80,6 @@ if __name__ == '__main__':
     integration = unittest.TextTestRunner()
 
     unit.run(unittests())
-    # integration.run(integration_tests())
+    integration.run(integration_tests())
 
     TestLint.run_linter(exceptions=["parse_service_html.py"], path=Hidden.get_project_folder())
