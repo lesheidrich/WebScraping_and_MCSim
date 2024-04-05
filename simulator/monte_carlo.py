@@ -197,7 +197,7 @@ class MonteCarlo:
         violin_img = plt.imread(BytesIO(base64.b64decode(violin_plot)))
 
         # Display the plots
-        fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+        _, axes = plt.subplots(1, 2, figsize=(10, 5))
         axes[0].imshow(prob_density_img)
         axes[0].axis('off')
         axes[1].imshow(violin_img)
